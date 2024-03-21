@@ -33,6 +33,9 @@ insert into climate_data (city, country, month_data, temperature, humidity, prec
 insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('New York', 'USA', 'April', 11.6, 65.2, 0.8);
 insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('New York', 'USA', 'May', 15.4, 70.6, 10.4);
 
+insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('San Francisco', 'USA', 'January', 10.0, 55.5, 15.2);
+
+
 commit;
 
 --git add, commit and push this file to your github repository

@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.sme</groupId>
-	<artifactId>climatedata</artifactId>
+	<artifactId>climateservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>climatedata</name>
 	<description>Demo project for Spring Boot</description>
