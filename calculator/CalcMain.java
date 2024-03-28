@@ -1,59 +1,56 @@
-//Java console program with menu options for Add, Subtract, Multiply, Divide and Exit: with exception handling
-
+//Java console program with menu options for Add, Subtract, Multiply, Divide, remainder and Exit: with exception handling for divide by zero, input mismatch and invalid choice
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class CalcMain {
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String choice = "";
+        Scanner sc = new Scanner(System.in);
+        int choice;
+        double num1, num2;
         do {
+            System.out.println("Calculator Menu");
             System.out.println("1. Add");
             System.out.println("2. Subtract");
             System.out.println("3. Multiply");
             System.out.println("4. Divide");
             System.out.println("5. Exit");
             System.out.println("Enter your choice: ");
-            choice = scanner.nextLine();
-            switch (choice) {
-                case "1":
-                    System.out.println("Enter first number: ");
-                    int num1 = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Enter second number: ");
-                    int num2 = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Result: " + (num1 + num2));
+            try {
+                choice = sc.nextInt();
+                if (choice == 5) {
+                    System.out.println("Exiting the program");
                     break;
-                case "2":
-                    System.out.println("Enter first number: ");
-                    num1 = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Enter second number: ");
-                    num2 = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Result: " + (num1 - num2));
-                    break;
-                case "3":
-                    System.out.println("Enter first number: ");
-                    num1 = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Enter second number: ");
-                    num2 = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Result: " + (num1 * num2));
-                    break;
-                case "4":
-                    System.out.println("Enter first number: ");
-                    num1 = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Enter second number: ");
-                    num2 = Integer.parseInt(scanner.nextLine());
-                    if (num2 == 0) {
-                        System.out.println("Cannot divide by zero");
-                    } else {
+                }
+                System.out.println("Enter first number: ");
+                num1 = sc.nextDouble();
+                System.out.println("Enter second number: ");
+                num2 = sc.nextDouble();
+                switch (choice) {
+                    case 1:
+                        System.out.println("Result: " + (num1 + num2));
+                        break;
+                    case 2:
+                        System.out.println("Result: " + (num1 - num2));
+                        break;
+                    case 3:
+                        System.out.println("Result: " + (num1 * num2));
+                        break;
+                    case 4:
+                        if (num2 == 0) {
+                            throw new ArithmeticException("Divide by zero error");
+                        }
                         System.out.println("Result: " + (num1 / num2));
-                    }
-                    break;
-                case "5":
-                    System.out.println("Exiting...");
-                    break;
-                default:
-                    System.out.println("Invalid choice");
+                        break;
+                    default:
+                        System.out.println("Invalid choice");
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number");
+                sc.nextLine();
+            } catch (ArithmeticException e) {
+                System.out.println(e.getMessage());
             }
-        } while (!choice.equals("5"));
+        } while (true);
+        sc.close();
     }
 }

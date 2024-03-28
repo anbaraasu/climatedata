@@ -1,29 +1,26 @@
-# read list of climatedata from http://localhost:1111/api/v1/climate url with exception handling
+# read list of climatedata from http://localhost:1111/api/v1/climatedata url with exception handling
 #plot the chart with temperature for each city only for January month from data response
 #exception handling for invalid data
-import requests
-import json
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 
-# read list of climatedata from http://localhost:1111/api/v1/climate url with exception handling
-data = []
+import requests
+import matplotlib.pyplot as plt
+import json
+
 try:
-    url = "http://localhost:1111/api/v1/climate"
-    response = requests.get(url)
+    response = requests.get("http://localhost:1111/api/v1/climatedata")
     data = response.json()
-except:
-    print("Error in reading data from url")
-    
-    
-#plot the chart with temperature for each city only for January month from data response
-#exception handling for invalid data
-try:
-    df = pd.DataFrame(data)
-    df = df[df['monthData'] == 'January']
-    df = df[['city', 'temperature']]
-    df.plot(x='city', y='temperature', kind='bar')
+    print(data)
+    cities = []
+    temperatures = []
+    for city in data:
+        cities.append(city['city'])
+        temperatures.append(city['temperature'])
+    plt.bar(cities, temperatures)
+    plt.xlabel('Cities')
+    plt.ylabel('Temperature')
+    plt.title('Temperature in cities for January')
     plt.show()
-except:
-    print("Error in plotting chart")
+except json.JSONDecodeError:
+    print("Error: Invalid JSON data.")
+except requests.exceptions.RequestException as e:
+    print("Error: Cannot connect to server. Please check your internet connection.")
