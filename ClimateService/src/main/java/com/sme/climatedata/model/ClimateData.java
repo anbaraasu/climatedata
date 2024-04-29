@@ -19,7 +19,7 @@ import jakarta.persistence.Id;
 public class ClimateData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String city;
     private String country;
     private String monthData;
