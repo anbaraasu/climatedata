@@ -26,15 +26,12 @@ insert into climate_data (city, country, month_data, temperature, humidity, prec
 insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('Bangalore', 'India', 'April', 31.6, 75.2, 0.8);
 insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('Bangalore', 'India', 'May', 33.4, 80.6, 10.4);
 
---insert few records for us cities
-insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('New York', 'USA', 'January', 0.0, 55.5, 15.2);
-insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('New York', 'USA', 'February', 2.8, 57.3, 10.1);
-insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('New York', 'USA', 'March', 6.7, 60.7, 5.0);
-insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('New York', 'USA', 'April', 11.6, 65.2, 0.8);
-insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('New York', 'USA', 'May', 15.4, 70.6, 10.4);
-
-insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('San Francisco', 'USA', 'January', 10.0, 55.5, 15.2);
-
+--chennai data
+insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('Chennai', 'India', 'January', 25.6, 65.5, 5.2);
+insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('Chennai', 'India', 'February', 27.8, 67.3, 0.1);
+insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('Chennai', 'India', 'March', 30.7, 70.7, 0.0);
+insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('Chennai', 'India', 'April', 35.6, 75.2, 0.8);
+insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('Chennai', 'India', 'May', 37.4, 80.6, 10.4);
 
 commit;
 

@@ -8,71 +8,45 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Controller class for handling climate data related requests.
- */
+//Rest Controller API for Climate Data version 1.0
 @RestController
-@RequestMapping("/api/v1/climatedata")
+@RequestMapping("/api/v1/climate")
 public class ClimateController {
 
     private final ClimateService climateService;
 
-    /**
-     * Constructor for ClimateController.
-     * @param climateService The ClimateService instance to be used for handling climate data.
-     */
     public ClimateController(ClimateService climateService) {
         this.climateService = climateService;
     }
 
-    /**
-     * Get all climate data.
-     * @return A ResponseEntity containing a list of ClimateData objects.
-     */
+    //Get all Climate Data
     @GetMapping
     public ResponseEntity<List<ClimateData>> getAllClimateData() {
-        return ResponseEntity.ok(climateService.getAllClimateData());
+        return new ResponseEntity<>(climateService.getAllClimateData(), HttpStatus.OK);
     }
 
-    /**
-     * Get climate data by ID.
-     * @param id The ID of the climate data.
-     * @return A ResponseEntity containing the ClimateData object with the specified ID.
-     */
+    //Get Climate Data by Id
     @GetMapping("/{id}")
     public ResponseEntity<ClimateData> getClimateDataById(@PathVariable Long id) {
-        return ResponseEntity.ok(climateService.getClimateDataById(id));
+        return new ResponseEntity<>(climateService.getClimateDataById(id), HttpStatus.OK);
     }
 
-    /**
-     * Create new climate data.
-     * @param climateData The ClimateData object to be created.
-     * @return A ResponseEntity containing the created ClimateData object.
-     */
+    //Create Climate Data
     @PostMapping
     public ResponseEntity<ClimateData> createClimateData(@RequestBody ClimateData climateData) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(climateService.createClimateData(climateData));
+        return new ResponseEntity<>(climateService.createClimateData(climateData), HttpStatus.CREATED);
     }
 
-    /**
-     * Update existing climate data.
-     * @param id The ID of the climate data to be updated.
-     * @param climateData The updated ClimateData object.
-     * @return A ResponseEntity containing the updated ClimateData object.
-     */
+    //Update Climate Data
     @PutMapping("/{id}")
     public ResponseEntity<ClimateData> updateClimateData(@PathVariable Long id, @RequestBody ClimateData climateData) {
-        return ResponseEntity.ok(climateService.updateClimateData(id, climateData));
+        return new ResponseEntity<>(climateService.updateClimateData(id, climateData), HttpStatus.OK);
     }
 
-    /**
-     * Delete climate data by ID.
-     * @param id The ID of the climate data to be deleted.
-     * @return A ResponseEntity with no content.
-     */
+    //Delete Climate Data
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteClimateData(@PathVariable Long id) {
         climateService.deleteClimateData(id);
-        return ResponseEntity.noContent().build();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

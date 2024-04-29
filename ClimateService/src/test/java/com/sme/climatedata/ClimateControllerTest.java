@@ -48,4 +48,6 @@ public class ClimateControllerTest {
         assertEquals(50.0f, result.get(0).getHumidity());
         assertEquals(0.0f, result.get(0).getPrecipitation());
     }
+
+    
 }
