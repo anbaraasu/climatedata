@@ -20,6 +20,39 @@ import com.sme.climatedata.service.ClimateService;
 @ExtendWith(MockitoExtension.class)
 public class ClimateControllerTest {
 
+    @Mock
+    private ClimateService climateService;
+
+    @InjectMocks
+    private ClimateController climateController;
+
+    @Test
+    public void testGetAllClimateData() {
+        ClimateData climateData1 = new ClimateData(1, "city1", "country1", "month1", 1.0f, 1.0f, 1.0f);
+        ClimateData climateData2 = new ClimateData(2, "city2", "country2", "month2", 2.0f, 2.0f, 2.0f);
+        List<ClimateData> climateDataList = Arrays.asList(climateData1, climateData2);
+
+        when(climateService.getAllClimateData()).thenReturn(climateDataList);
+
+        List<ClimateData> result = climateController.getAllClimateData();
+
+        assertEquals(2, result.size());
+        assertEquals(climateData1, result.get(0));
+        assertEquals(climateData2, result.get(1));
+    }
 
     
+
+    @Test
+    public void testAddClimateData() {
+        ClimateData climateData = new ClimateData(1, "city1", "country1", "month1", 1.0f, 1.0f, 1.0f);
+
+        when(climateService.createClimateData(climateData)).thenReturn(climateData);
+
+        ClimateData result = climateController.addClimateData(climateData);
+
+        assertEquals(climateData, result);
+    }
+
+  
 }

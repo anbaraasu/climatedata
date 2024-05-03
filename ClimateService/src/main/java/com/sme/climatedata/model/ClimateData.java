@@ -26,4 +26,4 @@ public class ClimateData {
     private Float temperature;
     private Float humidity;
     private Float precipitation;
-}
+} 
