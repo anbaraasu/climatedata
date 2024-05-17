@@ -3,6 +3,22 @@
 
 import java.util.Scanner;
 
+/**
+ * The `CalcMain` class is the main class of the calculator program.
+ * It allows the user to perform basic arithmetic operations on two numbers.
+ */
+public class CalcMain {
+
+    /**
+     * The main method of the `CalcMain` class.
+     * It prompts the user for input and performs the selected arithmetic operation.
+     *
+     * @param args The command-line arguments passed to the program.
+     */
+    public static void main(String[] args) {
+        // Code implementation...
+    }
+}
 public class CalcMain {
 
 	public static void main(String[] args) {

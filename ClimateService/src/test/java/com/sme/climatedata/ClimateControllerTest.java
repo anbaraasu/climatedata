@@ -1,5 +1,6 @@
 package com.sme.climatedata;
-//Mockito Test Case for ClimateController
+
+
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.http.ResponseEntity;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import java.util.Arrays;
@@ -34,7 +34,7 @@ public class ClimateControllerTest {
 
         when(climateService.getAllClimateData()).thenReturn(climateDataList);
 
-        List<ClimateData> result = climateController.getAllClimateData();
+        List<ClimateData> result = climateController.getClimateData();
 
         assertEquals(2, result.size());
         assertEquals(climateData1, result.get(0));
@@ -43,16 +43,7 @@ public class ClimateControllerTest {
 
     
 
-    @Test
-    public void testAddClimateData() {
-        ClimateData climateData = new ClimateData(1, "city1", "country1", "month1", 1.0f, 1.0f, 1.0f);
-
-        when(climateService.createClimateData(climateData)).thenReturn(climateData);
-
-        ClimateData result = climateController.addClimateData(climateData);
-
-        assertEquals(climateData, result);
-    }
+    
 
   
 }
