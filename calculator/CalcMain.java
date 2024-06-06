@@ -15,12 +15,6 @@ public class CalcMain {
      *
      * @param args The command-line arguments passed to the program.
      */
-    public static void main(String[] args) {
-        // Code implementation...
-    }
-}
-public class CalcMain {
-
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		int choice = 0;
@@ -29,7 +23,7 @@ public class CalcMain {
 		while (choice != 5) {
 			System.out.println("Enter 1 for addition, 2 for substraction, 3 for division, 4 for multiplication and 5 for exit");
 			try {
-				choice = scanner.nextLine();
+				choice = Integer.parseInt(scanner.nextLine());
 			} catch (Exception e) {
 				System.out.println("Invalid input, please enter a number between 1 and 5");
 				scanner.nextLine();
