@@ -34,16 +34,11 @@ public class ClimateControllerTest {
 
         when(climateService.getAllClimateData()).thenReturn(climateDataList);
 
-        List<ClimateData> result = climateController.getClimateData();
+        List<ClimateData> result = climateController.getAllClimate();
 
         assertEquals(2, result.size());
         assertEquals(climateData1, result.get(0));
         assertEquals(climateData2, result.get(1));
-    }
-
-    
-
-    
-
+    }   
   
 }
