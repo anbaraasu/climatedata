@@ -1,4 +1,4 @@
-package com.preventivecare.service.impl;
+package com.preventivecare.service;
 
 import com.preventivecare.dto.PatientDTO;
 import com.preventivecare.model.Patient;
@@ -22,15 +22,16 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public List<PatientDTO> getAllPatients() {
-        return patientRepository.findAll().stream().map(this::convertToDTO).collect(Collectors.toList());
-    }
-
-    private PatientDTO convertToDTO(Patient patient) {
-        return new PatientDTO(
-                patient.getPatientName(),
-                patient.getDoctorName(),
-                patient.getHospitalName(),
-                patient.getDiagnosisDetails()
-        );
+        // flatten patient object to DTO including child collections, one patient will
+        // have multiple diagnosis, diagnosis will have hospital and doctor 
+        return patientRepository.findAll().stream()
+                .flatMap(p -> p.getDiagnosis().stream()
+                        .map(d -> PatientDTO.builder()
+                                .patientName(p.getName())
+                                .doctorName(d.getDoctor().getName())
+                                .hospitalName(d.getHospital().getName())
+                                .diagnosisDetails(d.getDescription())
+                                .build()))
+                .collect(Collectors.toList());
     }
 }

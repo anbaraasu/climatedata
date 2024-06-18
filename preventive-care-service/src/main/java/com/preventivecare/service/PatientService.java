@@ -2,8 +2,8 @@ package com.preventivecare.service;
 
 import java.util.List;
 
-import com.preventivecare.model.Patient;
+import com.preventivecare.dto.PatientDTO;
 
 public interface PatientService {
-    List<Patient> getAllPatients();
+    List<PatientDTO> getAllPatients();
 }
