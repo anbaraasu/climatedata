@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Diagnosis {
@@ -13,6 +14,10 @@ public class Diagnosis {
     
     private String name;
     private String description;
+
+    // one to one with hospital
+    @OneToOne
+    private Hospital hospital;
     
     // Constructors, getters, and setters
     

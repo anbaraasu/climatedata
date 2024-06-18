@@ -9,6 +9,14 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
+    <!-- sprint boot parent 2.5.4 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.5.4</version>
+    </parent>
+
+
     <name>Spring Boot Preventive Care</name>
     <description>Spring Boot project for preventive care</description>
 

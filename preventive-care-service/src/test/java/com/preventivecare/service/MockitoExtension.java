@@ -1,7 +1,7 @@
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.junit.jupiter.MockitoExtension;
+package com.preventivecare.service;
 
-@ExtendWith(MockitoExtension.class)
+import org.junit.jupiter.api.extension.ExtendWith;
+
 public class MockitoExtension {
     // This file is intentionally left blank.
 }
