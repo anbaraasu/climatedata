@@ -6,23 +6,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CareEntry {
+public class Diagnosis {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private String title;
+    private String name;
     private String description;
     
     // Constructors, getters, and setters
     
-    public CareEntry() {
+    public Diagnosis() {
     }
     
-    public CareEntry(String title, String description) {
-        this.title = title;
+    public Diagnosis(String name, String description) {
+        this.name = name;
         this.description = description;
     }
+    
+    // Getters and setters
     
     public Long getId() {
         return id;
@@ -32,12 +34,12 @@ public class CareEntry {
         this.id = id;
     }
     
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
     
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
     
     public String getDescription() {
