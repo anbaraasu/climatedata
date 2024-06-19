@@ -46,17 +46,4 @@ INSERT INTO transaction (account_id, type, amount, remarks) VALUES (2, 'credit',
 COMMIT;
 
 
-# trigger - update balance in account table whenever transaction is completed
-DELIMITER //
-CREATE TRIGGER update_balance
-AFTER INSERT ON transaction
-FOR EACH ROW
-BEGIN
-    IF NEW.type = 'credit' THEN
-        UPDATE account SET balance = balance + NEW.amount WHERE id = NEW.account_id;
-    ELSE
-        UPDATE account SET balance = balance - NEW.amount WHERE id = NEW.account_id;
-    END IF;
-END;
-//
-DELIMITER ;
+# create proeedure - to show total balance of a customer, account type , rank over balance use function to get rank 
