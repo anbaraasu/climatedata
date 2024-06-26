@@ -3,8 +3,8 @@
 # release note (your code, productivity number)
 # no chit Chat
 # list of programming/tools/frameworks
-# learn 
-# @ Commands
+# learn - w.r.t concept, proposed directory structure
+# @ Commands - workspace, vscode, terminal (show some terminal commands)
 # Chat (feedback, rerun)
 # Inline (feedback, rerun)
 # Suggestions Panel
