@@ -46,4 +46,4 @@ INSERT INTO transaction (account_id, type, amount, remarks) VALUES (2, 'credit',
 COMMIT;
 
 
-# create proeedure - to show total balance of a customer, account type , rank over balance use function to get rank 
+# CREATE proeedure - to show total balance of a customer, account type , rank over balance use function to get rank 
