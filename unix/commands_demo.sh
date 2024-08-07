@@ -85,3 +85,14 @@ case $choice in
 		join list1.txt list2.txt;;
 	*) echo "Invalid choice";;
 esac
+
+
+# read input as age, print if age is < 13 - kids, age > 12 and < 20 teenagers, age > 19 and < 60 adults, age > 59 senior citizens
+echo "Enter your age: "
+read age
+
+if [ $age -lt 13 ]; then
+	echo "You are a kid."
+elif [ $age -ge 13 ] && [ $age -lt 20 ]; then
+	echo "You are a teenager."
+fi

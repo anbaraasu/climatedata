@@ -32,6 +32,9 @@ CREATE TABLE transaction (
     FOREIGN KEY (account_id) REFERENCES account(id)
 );
 
+# alter transaction table to add transaction_date
+
+
 # records for customer
 INSERT INTO customer (name, age, address, city, state, country, phone, email) VALUES ('John Doe', 30, '123 Main St', 'New York', 'NY', 'USA', '123-456-7890', '');
 INSERT INTO customer (name, age, address, city, state, country, phone, email) VALUES ('Jane Doe', 25, '123 Main St', 'New York', 'NY', 'USA', '123-456-7890', '');
