@@ -232,7 +232,19 @@ tar -czf logs.tar.gz /var/log/*.log
 
 # :w - save the changes
 # :q - do not save the changes
-# :x - save the changes and exit the file
+# :x - save the changes and exit the file or wq! 
 # :w newfilename - write to new file
+
+# i - in place edit
+sed -i 'DEBUG/D' $LOG_DIR/*.log # delete the lines containing DEBUG word in all the log files
+
+sed -i 's/DEBUG/DEBUG_LOG/g' $LOG_DIR/*.log # substitute DEBUG with DEBUG_LOG in all the log files
+
+
+.log 
+1.log 
+
+
+
 
 

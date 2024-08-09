@@ -66,6 +66,11 @@ do
   flag=0
   for i in $(seq 2 $((num/2)))
   do
+    # num=1 i -> 2,0 - inner loop will not run
+    # num=2 i -> 2,1 - inner loop will not run
+    # num=3 i -> 2,1 - inner loop will not run
+    # num=4 i -> 2,2 - inner loop will run for one iteration
+    echo "Value of i:$i"
     if [ $((num % i)) -eq 0 ]; then
       flag=1
       break
@@ -77,6 +82,7 @@ do
 done
 
 # Exercise 9 - demo for while loop, print square of each numbers from 1 to 10
+# while loop is called entry condn loop, loop will run until the condition is true
 #!/bin/bash
 num=1
 while [ $num -le 10 ]
@@ -86,6 +92,7 @@ do
 done
 
 # Exercise 10 - demo for until loop, print cube of each numbers from 1 to 10
+# until loop is called exit condn loop, loop will run until the condition is false
 #!/bin/bash
 num=1
 until [ $num -gt 10 ]

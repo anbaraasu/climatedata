@@ -1,0 +1,24 @@
+---
+- name: Update, install, and verify nginx using shell module
+  hosts: your_remote_host
+  remote_user: your_remote_user
+  tasks:
+    - name: Update package list
+      shell: sudo apt-get update
+      register: update_result
+
+    - name: Install nginx
+      shell: sudo apt-get install -y nginx
+      register: install_result
+
+    - name: Start nginx service
+      shell: sudo systemctl start nginx
+      register: start_result
+
+    - name: Verify nginx service is running
+      shell: sudo systemctl status nginx
+      register: status_result
+
+    - name: Display nginx status
+      debug:
+        msg: "Nginx service status: {{ status_result.stdout_lines }}"

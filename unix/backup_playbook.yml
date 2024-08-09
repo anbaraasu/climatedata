@@ -1,0 +1,22 @@
+
+---
+- name: Backup and verify myapp directory using shell module
+
+  hosts: your_remote_host
+  remote_user: your_remote_user
+  tasks:
+    - name: Create backup directory
+      shell: mkdir -p /backup/myapp_{{ ansible_date_time.date }}
+      args:
+        creates: /backup/myapp_{{ ansible_date_time.date }}
+
+    - name: Copy contents of /opt/myapp to backup directory
+      shell: cp -r /opt/myapp/* /backup/myapp_{{ ansible_date_time.date }}/
+
+    - name: Verify backup by listing contents
+      shell: ls -l /backup/myapp_{{ ansible_date_time.date }}
+      register: backup_contents
+
+    - name: Display backup verification message
+      debug:
+        msg: "Backup completed successfully. Contents: {{ backup_contents.stdout_lines }}"

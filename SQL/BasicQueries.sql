@@ -1,0 +1,52 @@
+# Basic Queries from HR Schema
+-- 1. Display all the employees
+SELECT * FROM hr.employees;
+
+-- 2. Display the first name, last name and salary for all employees
+SELECT first_name, last_name, salary FROM hr.employees;
+
+-- 3. Display the first name, last name and salary for all employees whose salary is greater than 12000
+SELECT first_name, last_name, salary FROM hr.employees WHERE salary > 12000;
+
+-- 4. Display the first name, last name and salary for all employees whose salary is greater than 12000 and less than 15000
+SELECT first_name, last_name, salary FROM hr.employees WHERE salary > 12000 AND salary < 15000;
+
+-- 5. Display the full name and salary for all employeees
+SELECT first_name || ' ' || last_name AS full_name, salary FROM hr.employees;
+
+-- 6. Display the full name and salary/12 for all employees
+SELECT first_name || ' ' || last_name AS full_name, salary/12 AS monthly_salary FROM hr.employees;
+
+
+-- 7. Display the full name and salary for all employees order by salary
+SELECT first_name || ' ' || last_name AS full_name, salary FROM hr.employees ORDER BY salary;
+
+-- 8. Display the full name and salary for all employees order by salary in descending order
+SELECT first_name || ' ' || last_name AS full_name, salary FROM hr.employees ORDER BY salary DESC;
+
+-- 9. Display the full name and salary for all employees order by salary in descending order and first name in ascending order
+SELECT first_name || ' ' || last_name AS full_name, salary FROM hr.employees ORDER BY salary DESC, first_name;
+
+-- 10. Single Row Functions - Example 1
+SELECT first_name, UPPER(first_name) FROM hr.employees;
+
+-- 11. Single Row Functions - Example 2
+SELECT first_name, LENGTH(first_name) FROM hr.employees;
+
+-- 12. Single Row Functions - SUBSTR
+SELECT first_name, SUBSTR(first_name, 1, 3) FROM hr.employees;
+
+-- 13. Single Row Functions - INSTR
+SELECT first_name, INSTR(first_name, 'a') FROM hr.employees;
+
+-- 14. Single Row Functions - EXTRACT
+SELECT first_name, EXTRACT(YEAR FROM hire_date) FROM hr.employees;
+
+-- 15. Single Row Functions - CEIL, FLOOR
+SELECT salary, CEIL(salary/1000)*1000 AS ceil_salary, FLOOR(salary/1000)*1000 AS floor_salary FROM hr.employees;
+
+-- 16. Single Row Functions - TRUNC
+SELECT salary, TRUNC(salary, -3) AS trunc_salary FROM hr.employees;
+
+-- 17. Single Row Functions - COUNT, SUM, AVG, MIN, MAX
+SELECT COUNT(*), SUM(salary), AVG(salary), MIN(salary), MAX(salary) FROM hr.employees;
