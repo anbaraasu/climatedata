@@ -27,12 +27,18 @@
 
 https://www.geeksforgeeks.org/introduction-of-database-normalization/
 
+
+# Normalization - Process of organizing data in a database. To reduce redundancy/duplicate/anomalies and improve data integrity. 
+
+
 # 1NF - Each column should have a single value. Example: Multiple Mobile Numbers should be split into Multiple rows, not columns
 
 # 2NF - 1NF + No partial dependencies - All non-key attributes are fully functional dependent on the primary key. Example: Employee ID, Project ID, Hours worked. Employee ID and Project ID are the primary key. Hours worked is dependent on both Employee ID and Project ID
 
-# 3NF - 2NF + No transitive dependencies
-# BCNF - 3NF + No non-trivial dependencies
+# 3NF - 2NF + No transitive dependencies non prime attributes
+
+# BCNF (3.5 NF) - 3NF + No non-trivial dependencies
+
 # 4NF - Multivalued dependencies
 # 5NF - Join dependencies
 
@@ -49,7 +55,6 @@ https://www.geeksforgeeks.org/introduction-of-database-normalization/
 # OODBMS - Object Oriented Database Management System. Example: ObjectDB
     # OOPS: Object Oriented Programming System. Classes and Objects, Inheritance, Polymorphism, Encapsulation, Abstraction.
 # ORDBMS - RDBMS + OODBMS = Object Relational Database Management System. Example: Oracle
-
 
 
 
@@ -73,4 +78,5 @@ https://www.geeksforgeeks.org/introduction-of-database-normalization/
 
 # Introduction to Oracle database
 # Oracle is a relational database management system. It is a product of Oracle Corporation. Oracle does not fully confirm to ORDBMS, but it has some features of ORDBMS. Oracle is a multi-model database management system. It supports SQL, PL/SQL, Java, XML, JSON, etc. 
+
 

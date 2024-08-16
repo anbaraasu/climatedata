@@ -50,3 +50,10 @@ SELECT salary, TRUNC(salary, -3) AS trunc_salary FROM hr.employees;
 
 -- 17. Single Row Functions - COUNT, SUM, AVG, MIN, MAX
 SELECT COUNT(*), SUM(salary), AVG(salary), MIN(salary), MAX(salary) FROM hr.employees;
+
+
+# Mask the other dights and show only last 3 dights of Salary column from employees tables of hr schema
+
+SELECT salary, 
+       LPAD(SUBSTR(salary, -3), LENGTH(salary), 'X') AS masked_salary 
+FROM hr.employees;

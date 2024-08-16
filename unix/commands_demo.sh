@@ -96,3 +96,7 @@ if [ $age -lt 13 ]; then
 elif [ $age -ge 13 ] && [ $age -lt 20 ]; then
 	echo "You are a teenager."
 fi
+
+
+#!/bin/bash
+# This script is supposed to display disk usage of of directory "/dev"
