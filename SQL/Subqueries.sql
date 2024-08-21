@@ -64,3 +64,12 @@ FROM
     OE.orders o
 WHERE
     order_total > (SELECT AVG(order_total) FROM orders o2 WHERE o.customer_id = o2.customer_id);
+
+
+# PLSQL Block to find the execution time of query select count(*) from hr.employees;
+
+
+
+# Class Room EX: OE Schema - Find the customer name who have not placed any order.. 
+SELECT CUST_FIRST_NAME FROM OE.CUSTOMERS c
+WHERE NOT EXISTS (SELECT 1 FROM OE.ORDERS o WHERE o.CUSTOMER_ID = c.CUSTOMER_ID)
