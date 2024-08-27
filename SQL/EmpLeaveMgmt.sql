@@ -104,5 +104,17 @@ WHERE
     LR.STATUS = 'PENDING';
 
 
+-- PROCEDURE - to approve leave request if the leave is pending, today - start date is  greater than or equal to 5
+CREATE OR REPLACE PROCEDURE AUTO_APPROVE_LEAVE_REQUEST
+AS
+BEGIN
+    UPDATE LEAVE_REQUEST
+    SET 
+    STATUS = 'APPROVED',
+    APPROVED_BY = 5000002
+    WHERE STATUS = 'PENDING' AND TRUNC(SYSDATE) >= TRUNC(START_DATE) + 5;
+    COMMIT;
+END;
+/
 
-
+EXECUTE AUTO_APPROVE_LEAVE_REQUEST;
