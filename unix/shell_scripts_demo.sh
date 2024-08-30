@@ -134,7 +134,7 @@ esac
 
 # Exercise 12 - demo for functions, write a function to check if a number is prime or not
 #!/bin/bash
-is_prime() {
+function is_prime() {
   num=$1
   flag=0
   for i in $(seq 2 $((num/2)))
