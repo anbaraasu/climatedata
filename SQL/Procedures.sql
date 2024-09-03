@@ -10,7 +10,7 @@
 CREATE OR REPLACE PROCEDURE GET_EMPLOYEE_DETAILS(p_emp_id IN NUMBER, p_emp_name OUT VARCHAR2, p_emp_sal OUT NUMBER) AS
 BEGIN
     SELECT first_name, salary INTO p_emp_name, p_emp_sal FROM hr.employees WHERE employee_id = p_emp_id;
-END;
+END GET_EMPLOYEE_DETAILS;
 /
 
 -- execute the procedure
@@ -28,7 +28,7 @@ END;
 CREATE OR REPLACE PROCEDURE UPDATE_EMPLOYEE_SALARY(p_emp_sal IN OUT NUMBER) AS
 BEGIN
     p_emp_sal := p_emp_sal + 1000;
-END;
+END UPDATE_EMPLOYEE_SALARY;
 /
 
 -- execute the procedure

@@ -21,12 +21,13 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Employee Salary: ' || emp_sal);
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('Employee not found');
+        DBMS_OUTPUT.PUT_LINE('Employee not found for ID:1');
     WHEN TOO_MANY_ROWS THEN
         DBMS_OUTPUT.PUT_LINE('More than one employee found');
 END;
 
 -- User-defined Exceptions: User-defined exceptions are defined by the user and raised explicitly in the PLSQL block.
+-- EXCEPTION, RAISE, RAISE_APPLICATION_ERROR, PRAGMA EXCEPTION_INIT
 
 DECLARE
     emp_sal NUMBER;

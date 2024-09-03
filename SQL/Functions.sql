@@ -8,9 +8,9 @@
 CREATE OR REPLACE FUNCTION CALCULATE_PF(p_emp_sal IN NUMBER) RETURN NUMBER AS
     pf NUMBER;
 BEGIN
-    pf := p_emp_sal * 0.12;
+    pf := p_emp_sal / 20 * 0.12;
     RETURN pf;
-END;
+END CALCULATE_PF;
 /
 
 -- execute the function
@@ -33,3 +33,41 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_name);
     DBMS_OUTPUT.PUT_LINE('Employee Salary: ' || emp_sal);
 END;
+
+
+-- sub programs - A subprogram is a program unit/module that performs a specific action. It is a named PLSQL block which is stored in the database. It can be a procedure or a function.
+
+-- Advantages of subprograms:
+--     -- Code reusability
+--     -- Modularity
+--     -- Maintainability
+--     -- Performance
+
+DECLARE 
+    company_name VARCHAR2(50) := 'HCLTech';
+    PROCEDURE PRINT_COMPANY_NAME IS
+        local_company := 'TEST';
+    BEGIN
+        DBMS_OUTPUT.PUT_LINE('Company Name: ' || company_name);
+        company_name := 'Oracle';
+    END PRINT_COMPANY_NAME;    
+BEGIN
+    PRINT_COMPANY_NAME;
+	DBMS_OUTPUT.PUT_LINE('Company Name: ' || company_name);
+END;
+
+-- Recursion - Recursion is a technique in which a function calls itself. It is a powerful technique to solve complex problems. It is used to solve problems that can be broken down into smaller problems of the same type.
+
+-- Demo for recursion
+CREATE OR REPLACE FUNCTION FACTORIAL(n IN NUMBER) RETURN NUMBER AS
+BEGIN
+    IF n = 0 THEN
+        RETURN 1;
+    ELSE
+        RETURN n * FACTORIAL(n - 1);
+    END IF;
+END;
+/
+
+-- execute the function
+SELECT FACTORIAL(5) FROM dual;
