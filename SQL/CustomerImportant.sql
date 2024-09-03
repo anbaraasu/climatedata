@@ -1,4 +1,12 @@
 --Applying Precedence in a Complex Expression
+-- Rules: Order of evaluation
+-- 1. Parentheses
+-- 2. Exponentiation
+-- 3. Multiplication and Division
+-- 4. Addition and Subtraction
+-- 5. Left to right
+
+
 --Consider a more complex expression:
 
 SELECT 2 * 3 + 4 / 2 + 10 - 2 FROM dual;
@@ -9,8 +17,8 @@ The order of evaluation is as follows:
 
 2 * 3 (Multiplication) -> 6
 4 / 2 (Division) -> 2
-10 + 6 (Addition) -> 16
-16 - 2 (Subtraction) -> 14
+10 + 6 + 2 (Addition) -> 18
+18 - 2 (Subtraction) -> 16
 
 */
 
@@ -28,14 +36,15 @@ SELECT first_name, last_name FROM hr.employees WHERE ROWNUM <= 6;
 
 DEFINE emp_id = 100;
 SELECT first_name, last_name FROM hr.employees WHERE employee_id = &emp_id;
-VERIFY emp_id;
+VERIFY emp_id;  -- oracle version.. 
+
 
 -- Using the ACCEPT command
 -- The ACCEPT command is used to prompt the user for input in SQL*Plus. The ACCEPT command takes the following syntax:
 
 ACCEPT variable_name [datatype] [FORMAT format] [PROMPT text]
 
-ACCEPT emp_id NUMBER PROMPT 'Enter Employee ID: ';
+ACCEPT e_id NUMBER PROMPT 'Enter Employee ID: ';
 SELECT first_name, last_name FROM hr.employees WHERE employee_id = &emp_id;
 
 -- Performing arithmetic with date data
