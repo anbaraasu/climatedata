@@ -33,3 +33,92 @@
 -- Triggers cannot be defined on system tables.
 -- Triggers cannot be defined on temporary tables.
 
+CREATE TABLE PERSON(ID INT, NAME VARCHAR2(10), AGE INT, AGE_GROUP VARCHAR2(10), SALARY NUMBER(15,2));
+
+SELECT * FROM PERSON;
+
+-- Trigger Demo for using BEFORE INSERT or UPDATE 
+CREATE OR REPLACE TRIGGER trg_before_insert_update
+BEFORE INSERT OR UPDATE OF AGE
+ON PERSON 
+FOR EACH ROW
+-- trigger when age is not null value
+WHEN (NEW.AGE IS NOT NULL)
+BEGIN
+    -- Trigger code here
+    -- You can access the values of the new row using :NEW.column_name
+    -- For example, :NEW.ID, :NEW.NAME, :NEW.AGE, :NEW.AGE_GROUP
+    -- TO REF VAR :OLD, :NEW
+    -- :OLD - Represents the old value of the column in case of an update or delete operation
+    -- :NEW - Represents the new value of the column in case of an insert or update operation
+    -- Perform any necessary validations or modifications to the new row values
+    
+    -- Example: Set AGE_GROUP based on AGE
+    IF :NEW.AGE < 18 THEN
+        :NEW.AGE_GROUP := 'Child';
+    ELSE
+        :NEW.AGE_GROUP := 'Adult';
+    END IF;
+    
+    -- You can also raise an exception to prevent the insert or update if needed
+    -- Example: Prevent inserting or updating rows with AGE < 0
+    IF :NEW.AGE < 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Age cannot be negative');
+    END IF;
+    DBMS_OUTPUT.PUT_LINE('Trigger fired..');
+END;
+/
+
+-- TEST THE TRIGGER
+INSERT INTO PERSON(ID, NAME, AGE, SALARY) VALUES(1, 'A', 21, 1000);
+
+SELECT * FROM PERSON;
+
+CREATE TABLE PERSON_AUDIT(ID INT, PERSON_ID INT, OLD_SALARY NUMBER(15,2), NEW_SALARY NUMBER(15,2), ACTION CHAR(1), ACTION_DATE DATE, USER_NAME VARCHAR2(50));
+
+CREATE SEQUENCE PERSON_AUDIT_SEQ;
+
+-- Realistic Usecase for AFTER INSERT/UPDATE
+CREATE OR REPLACE TRIGGER trg_person_audit
+AFTER INSERT OR UPDATE OR DELETE ON PERSON
+FOR EACH ROW
+DECLARE
+    AUDIT_REC PERSON_AUDIT%ROWTYPE;
+BEGIN
+    -- Log the changes to a separate table
+    AUDIT_REC.ID := PERSON_AUDIT_SEQ.NEXTVAL;
+    AUDIT_REC.PERSON_ID := :NEW.ID;
+    AUDIT_REC.ACTION_DATE := SYSDATE;
+    AUDIT_REC.USER_NAME := USER;
+
+    IF INSERTING THEN
+        AUDIT_REC.NEW_SALARY := :NEW.SALARY;
+        AUDIT_REC.ACTION := 'I';
+    ELSIF UPDATING THEN
+        AUDIT_REC.NEW_SALARY := :NEW.SALARY;
+        AUDIT_REC.OLD_SALARY := :OLD.SALARY;
+        AUDIT_REC.ACTION := 'U';
+    ELSIF DELETING THEN
+        AUDIT_REC.PERSON_ID := :OLD.ID;
+        AUDIT_REC.OLD_SALARY := :OLD.SALARY;
+        AUDIT_REC.ACTION := 'D';
+    END IF;
+
+    -- Insert the audit record into the audit table
+    INSERT INTO PERSON_AUDIT VALUES AUDIT_REC;
+END trg_person_audit;
+/
+
+-- TEST
+INSERT INTO PERSON(ID, NAME, AGE, SALARY) VALUES(2, 'B', 25, 2000);
+
+SELECT * FROM PERSON_AUDIT;
+
+UPDATE PERSON SET SALARY = 3000 WHERE ID = 2;
+
+SELECT * FROM PERSON_AUDIT;
+
+DELETE FROM PERSON;
+
+SELECT * FROM PERSON_AUDIT;
+
