@@ -1,3 +1,6 @@
+/*
+	Calculate Console App with menu options and exception handlings. 
+ */
 import java.util.Scanner;
 
 public class SME_Calc_Main {
