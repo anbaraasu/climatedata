@@ -23,20 +23,20 @@ END package_name;
 
 -- SPECIFICATION AND BODY - A package has two parts: specification and body. The specification is the interface to the package. It contains the declaration of types, variables, constants, exceptions, cursors, and subprograms. The body contains the implementation of the subprograms.
 
-- Specification - mandatory. We require specification without body to access the variables, constants, types, exceptions.
-- Body - optional
+-- Specification - mandatory. We require specification without body to access the variables, constants, types, exceptions.
+-- Body - optional
 
 -- Demo for persistence of variables in a package (local, public, global)
 
 CREATE OR REPLACE PACKAGE emp_package AS
-    PRAGMA serially_reusable;
+    
 	g_counter NUMBER := 3; -- global variable
     PROCEDURE INCREMENT_COUNTER;
 END emp_package;
 /
 
 CREATE OR REPLACE PACKAGE BODY emp_package AS
-    PRAGMA serially_reusable;
+    
     p_counter NUMBER := 2; -- public variable
     PROCEDURE INCREMENT_COUNTER IS
     l_counter NUMBER := 1; -- local variable
@@ -44,17 +44,21 @@ CREATE OR REPLACE PACKAGE BODY emp_package AS
         g_counter := g_counter + 3;
         p_counter := p_counter + 2;
         l_counter := l_counter + 1;
-        DBMS_OUTPUT.PUT_LINE('Counter: ' || g_counter);
-        DBMS_OUTPUT.PUT_LINE('Counter: ' || p_counter);
-        DBMS_OUTPUT.PUT_LINE('Counter: ' || l_counter);
+        DBMS_OUTPUT.PUT_LINE('Global Counter: ' || g_counter);
+        DBMS_OUTPUT.PUT_LINE('Public Counter: ' || p_counter);
+        DBMS_OUTPUT.PUT_LINE('Local Counter: ' || l_counter);
     END INCREMENT_COUNTER;
 END emp_package;
 /
 
 -- execute the package
+-- g = 3, p = 2, l = 1, g = g +3, p = p + 2, l = l + 1;
 EXEC emp_package.INCREMENT_COUNTER;
+-- g = 6, p = 4, l = 1, g = g +3, p = p + 2, l = l + 1;
 EXEC emp_package.INCREMENT_COUNTER;
+-- g = 9, p = 6, l = 1, g = g +3, p = p + 2, l = l + 1;
 EXEC emp_package.INCREMENT_COUNTER;
+
 
 
 -- Overloading - Overloading is a feature in PLSQL that allows you to define multiple subprograms with the same name but different parameters. It is a technique to define multiple subprograms with the same name but different parameters.
@@ -65,7 +69,7 @@ CREATE OR REPLACE PACKAGE emp_package AS
     PROCEDURE GET_EMPLOYEE_DETAILS(p_emp_id IN NUMBER);
     PROCEDURE GET_EMPLOYEE_DETAILS(p_emp_name IN VARCHAR2);
 END emp_package;
-
+/
 CREATE OR REPLACE PACKAGE BODY emp_package AS
     l_emp_name VARCHAR2(500);
     PROCEDURE GET_EMPLOYEE_DETAILS(p_emp_id IN NUMBER) IS    
@@ -83,13 +87,19 @@ CREATE OR REPLACE PACKAGE BODY emp_package AS
 END emp_package;
 /
 
+EXEC emp_package.GET_EMPLOYEE_DETAILS(110);
+EXEC emp_package.GET_EMPLOYEE_DETAILS('Adam');
+
 -- Demo for public and private package 
 CREATE OR REPLACE PACKAGE emp_package AS
     PROCEDURE GET_EMPLOYEE_DETAILS(p_emp_id IN NUMBER);
 END emp_package;
-
+/
+    
 CREATE OR REPLACE PACKAGE BODY emp_package AS
+    --private proc - this is available as part of spec
     PROCEDURE GET_EMPLOYEE_DETAILS(p_emp_name IN VARCHAR2) IS
+    l_emp_name VARCHAR2(100);
     BEGIN
         SELECT first_name || ' ' || last_name INTO l_emp_name FROM hr.employees 
         WHERE first_name = p_emp_name;
@@ -99,9 +109,12 @@ CREATE OR REPLACE PACKAGE BODY emp_package AS
     PROCEDURE GET_EMPLOYEE_DETAILS(p_emp_id IN NUMBER) IS
     BEGIN
         DBMS_OUTPUT.PUT_LINE('Employee ID: ' || p_emp_id);
+		GET_EMPLOYEE_DETAILS('Adam');
     END GET_EMPLOYEE_DETAILS;
 END emp_package;
 /
+
+EXEC emp_package.GET_EMPLOYEE_DETAILS(110);
 
 
 -- Oracle Inbuilt Package - DBMS_OUTPUT, DBMS_SQL, DBMS_JOB, DBMS_SCHEDULER, DBMS_METADATA, DBMS_LOB, DBMS_RANDOM, DBMS_ALERT, DBMS_PIPE, DBMS_LOCK, DBMS_UTILITY, DBMS_XMLGEN, DBMS_XMLPARSER, DBMS_XMLQUERY, DBMS_XMLSAVE, DBMS_XPLAN, DBMS_XSLPROCESSOR, DBMS_XS_DATAGUIDE, DBMS_XS_DS, DBMS_XS_PRINCIPAL, DBMS_XS_ROLE, DBMS_XS_SESSION, DBMS_XS_USER, DBMS_XS_USER_ROLE, DBMS_XS_USER, UTL_FILE, UTL_HTTP, UTL_INADDR, UTL_RAW, UTL_REF, UTL_SMTP, UTL_TCP, UTL_URL, UTL_I18N, UTL_RECOMP, UTL_RECOMP
@@ -118,6 +131,16 @@ DECLARE
     l_job BINARY_INTEGER;
 BEGIN
     DBMS_JOB.SUBMIT(l_job, 'emp_package.GET_EMPLOYEE_DETAILS(100);', SYSDATE, 'SYSDATE + 5/86400', FALSE);
+    COMMIT;
+END;
+
+-- Run same proc on only monday 
+
+
+DECLARE
+    l_job BINARY_INTEGER;
+BEGIN
+    DBMS_JOB.SUBMIT(l_job, 'emp_package.GET_EMPLOYEE_DETAILS(100);', SYSDATE, next_date(TRUNC(SYSDATE),''MONDAY''), FALSE);
     COMMIT;
 END;
 

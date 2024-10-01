@@ -9,10 +9,26 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Implementation of the ClimateService interface.
+ * This service provides methods to manage climate data.
+ * It interacts with the ClimateDataRepository to perform CRUD operations.
+ * 
+ * @Service - Indicates that this class is a Spring service component.
+ */
 @Service
 public class ClimateServiceImpl implements ClimateService {
     private final ClimateDataRepository climateDataRepository;
 
+    /**
+     * Service implementation for managing climate data.
+     * 
+     * This service provides methods to interact with the climate data repository.
+     * It is annotated with {@code @Autowired} to automatically inject the 
+     * {@link ClimateDataRepository} dependency.
+     * 
+     * @param climateDataRepository the repository used to access climate data
+     */
     @Autowired
     public ClimateServiceImpl(ClimateDataRepository climateDataRepository) {
         this.climateDataRepository = climateDataRepository;

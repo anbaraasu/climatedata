@@ -49,7 +49,7 @@ END;
 
 DECLARE
     emp_sal NUMBER;
-    emp_id NUMBER := 1; 
+    emp_id NUMBER := 120; 
     emp_low_sal EXCEPTION;
 BEGIN
     SELECT salary INTO emp_sal FROM hr.employees WHERE employee_id = emp_id;
@@ -60,8 +60,6 @@ BEGIN
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
         DBMS_OUTPUT.PUT_LINE('Employee not found');
-    WHEN TOO_MANY_ROWS THEN
-        DBMS_OUTPUT.PUT_LINE('More than one employee found');
     WHEN emp_low_sal THEN
         DBMS_OUTPUT.PUT_LINE('Employee salary is less than 10000');
     WHEN OTHERS THEN
@@ -72,7 +70,7 @@ END;
 
 DECLARE
     emp_sal NUMBER;
-    emp_id NUMBER := 1; 
+    emp_id NUMBER := 120; 
     emp_low_sal EXCEPTION;
     PRAGMA EXCEPTION_INIT(emp_low_sal, -20001);
 BEGIN
@@ -87,7 +85,7 @@ EXCEPTION
     WHEN TOO_MANY_ROWS THEN
         DBMS_OUTPUT.PUT_LINE('More than one employee found');
     WHEN emp_low_sal THEN
-        DBMS_OUTPUT.PUT_LINE('Employee salary is less than 10000'); 
+        DBMS_OUTPUT.PUT_LINE('Error Code:' || sqlcode || '. Employee salary is less than 10000. '); 
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error occurred:' || sqlerrm || ' Error code: ' || sqlcode);
 END;

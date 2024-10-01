@@ -37,3 +37,5 @@ commit;
 
 --git add, commit and push this file to your github repository
 
+--insert data for new delhi india
+insert into climate_data (city, country, month_data, temperature, humidity, precipitation) values ('New Delhi', 'India', 'January', 14.6, 55.5, 15.2);

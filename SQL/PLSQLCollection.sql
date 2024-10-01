@@ -102,7 +102,7 @@ END;
 
 DECLARE
     CURSOR emp_cur IS
-        SELECT * FROM employees;
+        SELECT * FROM hr.employees;
     emp_rec employees%ROWTYPE;
 BEGIN
     OPEN emp_cur;
@@ -115,6 +115,22 @@ BEGIN
     END LOOP;
     CLOSE emp_cur;
 END;
+/
+
+-- CURSOR FOR LOOP Demo
+DECLARE
+    CURSOR emp_cur IS
+        SELECT * FROM employees;
+BEGIN
+    FOR emp_rec IN emp_cur
+    LOOP        
+        DBMS_OUTPUT.PUT_LINE('Employee ID: ' || emp_rec.employee_id);
+        DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_rec.first_name);
+        DBMS_OUTPUT.PUT_LINE('Employee Salary: ' || emp_rec.salary);
+    END LOOP;
+END;
+/
+
 
 -- PLSQL script demo on Strong Ref Cursor
 
@@ -135,6 +151,21 @@ BEGIN
     CLOSE emp_rec;
 END;
 
+-- Parameterized CURSOR Demo
+DECLARE
+    CURSOR emp_cur(c_dept_id INT) IS
+        SELECT * FROM hr.employees WHERE DEPARTMENT_ID = c_dept_id;
+	emp_rec HR.EMPLOYEES%ROWTYPE;
+BEGIN
+    FOR emp_rec IN emp_cur(40)
+	LOOP   
+        
+        DBMS_OUTPUT.PUT_LINE('Employee ID: ' || emp_rec.employee_id);
+        DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_rec.first_name);
+        DBMS_OUTPUT.PUT_LINE('Employee Salary: ' || emp_rec.salary);
+    END LOOP;
+END;
+/
 
 -- LIST the customer and unique product bought by name
 

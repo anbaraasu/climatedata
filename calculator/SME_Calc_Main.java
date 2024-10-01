@@ -31,6 +31,11 @@ public class SME_Calc_Main {
 		return a / b;
 	}
 
+	// Method to calculate the cosine of a number
+	public double cosine(double a) {
+		return Math.cos(a);
+	}
+
 	// Main method to run the calculator app
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
@@ -43,7 +48,8 @@ public class SME_Calc_Main {
 			System.out.println("2. Subtract");
 			System.out.println("3. Multiply");
 			System.out.println("4. Divide");
-			System.out.println("5. Exit");
+			System.out.println("5. Cosine");
+			System.out.println("6. Exit");
 			System.out.print("Choose an option: ");
 
 			try {
@@ -84,6 +90,11 @@ public class SME_Calc_Main {
 						}
 						break;
 					case 5:
+						System.out.print("Enter the number: ");
+						num1 = scanner.nextDouble();
+						System.out.println("Result: " + calculator.cosine(num1));
+						break;
+					case 6:
 						exit = true;
 						break;
 					default:
