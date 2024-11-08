@@ -29,14 +29,14 @@ END package_name;
 -- Demo for persistence of variables in a package (local, public, global)
 
 CREATE OR REPLACE PACKAGE emp_package AS
-    
+    PRAGMA SERIALLY_REUSABLE; -- pragma to make the package serially reusable
 	g_counter NUMBER := 3; -- global variable
     PROCEDURE INCREMENT_COUNTER;
 END emp_package;
 /
 
 CREATE OR REPLACE PACKAGE BODY emp_package AS
-    
+    PRAGMA SERIALLY_REUSABLE; -- pragma to make the package serially reusable
     p_counter NUMBER := 2; -- public variable
     PROCEDURE INCREMENT_COUNTER IS
     l_counter NUMBER := 1; -- local variable

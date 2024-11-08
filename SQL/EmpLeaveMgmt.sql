@@ -9,9 +9,6 @@
 #######################################################################################
 */
 
--- TABLES -> EMPLOYEES, LEAVE, COMP_HOLIDAYS, LEAVE_BALANCE
--- TABLE EMPLOYEES - contains employee details - developed by Anbu. EMP_ID PK, EMP_NAME, MGR_ID, EMAIL, PHONE, SAL, DOJ
-
 -- all drop 
 
 DROP TABLE LEAVE;
@@ -22,6 +19,8 @@ DROP SEQUENCE EMP_ID_SEQ;
 DROP VIEW PENDING_LEAVES;
 DROP VIEW EMPLOYEE_LEAVE_DETAILS;
 
+-- TABLES -> EMPLOYEES, LEAVE, COMP_HOLIDAYS, LEAVE_BALANCE
+-- TABLE EMPLOYEES - contains employee details - developed by Anbu. EMP_ID PK, EMP_NAME, MGR_ID, EMAIL, PHONE, SAL, DOJ
 
 CREATE TABLE EMPLOYEES(EMP_ID INT,
     EMP_NAME VARCHAR(50) NOT NULL,

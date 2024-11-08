@@ -1,4 +1,4 @@
--- PLSQL Collections
+-- PLSQL Collections (Composite Data Types)
 --     -- Collection is a group of elements of same type
 
 --     -- 1. Record
@@ -117,6 +117,11 @@ BEGIN
 END;
 /
 
+-- Above script without cursor using TABLE and RECORD TYPE
+
+
+
+
 -- CURSOR FOR LOOP Demo
 DECLARE
     CURSOR emp_cur IS
@@ -134,13 +139,14 @@ END;
 
 -- PLSQL script demo on Strong Ref Cursor
 
+-- EXPLICIT CURSOR - WEAK AND STRONG TYPE. IF REF CURSOR has RETURN then it is Strong typed cursor.
 DECLARE
     TYPE emp_cur IS REF CURSOR RETURN hr.employees%ROWTYPE;
     emp_rec emp_cur;
-    emp_rec1 employees%ROWTYPE;
+    emp_rec1 hr.employees%ROWTYPE;
 BEGIN
     OPEN emp_rec FOR
-        SELECT employee_id, first_name, salary FROM hr.employees;
+        SELECT * FROM hr.employees;
     LOOP
         FETCH emp_rec INTO emp_rec1;
         EXIT WHEN emp_rec%NOTFOUND;

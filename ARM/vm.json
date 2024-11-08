@@ -1,0 +1,116 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_DNAPass_App_name": {
+            "defaultValue": "DNAPass-App",
+            "type": "String"
+        },
+        "disks_DNAPass_App_OsDisk_1_b386e0bb8aef4a60b5239ae09267110c_externalid": {
+            "defaultValue": "/subscriptions/e74df52c-8c72-4132-9148-89c502b5cd37/resourceGroups/Training-RG/providers/Microsoft.Compute/disks/DNAPass-App_OsDisk_1_b386e0bb8aef4a60b5239ae09267110c",
+            "type": "String"
+        },
+        "disks_OVH_DBS_6212_Odisk_01_externalid": {
+            "defaultValue": "/subscriptions/e74df52c-8c72-4132-9148-89c502b5cd37/resourceGroups/TRAINING-RG/providers/Microsoft.Compute/disks/OVH-DBS-6212-Odisk-01",
+            "type": "String"
+        },
+        "networkInterfaces_dnapass_app360_externalid": {
+            "defaultValue": "/subscriptions/e74df52c-8c72-4132-9148-89c502b5cd37/resourceGroups/Training-RG/providers/Microsoft.Network/networkInterfaces/dnapass-app360",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2024-07-01",
+            "name": "[parameters('virtualMachines_DNAPass_App_name')]",
+            "location": "centralus",
+            "identity": {
+                "type": "SystemAssigned"
+            },
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_D8as_v5"
+                },
+                "additionalCapabilities": {
+                    "hibernationEnabled": false
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "canonical",
+                        "offer": "ubuntu-24_04-lts",
+                        "sku": "server",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_DNAPass_App_name'), '_OsDisk_1_b386e0bb8aef4a60b5239ae09267110c')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Premium_LRS",
+                            "id": "[parameters('disks_DNAPass_App_OsDisk_1_b386e0bb8aef4a60b5239ae09267110c_externalid')]"
+                        },
+                        "deleteOption": "Delete",
+                        "diskSizeGB": 128
+                    },
+                    "dataDisks": [
+                        {
+                            "lun": 1,
+                            "name": "OVH-DBS-6212-Odisk-01",
+                            "createOption": "Attach",
+                            "caching": "ReadWrite",
+                            "writeAcceleratorEnabled": false,
+                            "managedDisk": {
+                                "storageAccountType": "Premium_LRS",
+                                "id": "[parameters('disks_OVH_DBS_6212_Odisk_01_externalid')]"
+                            },
+                            "deleteOption": "Detach",
+                            "diskSizeGB": 1024,
+                            "toBeDetached": false
+                        }
+                    ],
+                    "diskControllerType": "SCSI"
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_DNAPass_App_name')]",
+                    "adminUsername": "dnapassadmin",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": false,
+                        "provisionVMAgent": true,
+                        "patchSettings": {
+                            "patchMode": "ImageDefault",
+                            "assessmentMode": "ImageDefault"
+                        }
+                    },
+                    "secrets": [],
+                    "allowExtensionOperations": true,
+                    "requireGuestProvisionSignal": true
+                },
+                "securityProfile": {
+                    "uefiSettings": {
+                        "secureBootEnabled": true,
+                        "vTpmEnabled": true
+                    },
+                    "securityType": "TrustedLaunch"
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[parameters('networkInterfaces_dnapass_app360_externalid')]",
+                            "properties": {
+                                "deleteOption": "Delete"
+                            }
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true
+                    }
+                }
+            }
+        }
+    ]
+}

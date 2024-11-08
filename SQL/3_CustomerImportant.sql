@@ -36,7 +36,7 @@ SELECT first_name, last_name FROM hr.employees WHERE ROWNUM <= 6;
 
 DEFINE emp_id = 100;
 SELECT first_name, last_name FROM hr.employees WHERE employee_id = &emp_id;
-VERIFY emp_id;  -- oracle version.. 
+
 
 
 -- Using the ACCEPT command

@@ -5,14 +5,15 @@
     -- number, varchar, varchar2, char, date, timestamp, decimal
     
     l_name varchar(20) := 'John';
-    g_company_name varchar2(7) := 'HCL';
+    g_company_name varchar2(7) := 'HCLTech';
     l_salary number(15,2) := 10000.00;
 
 -- operators
-    -- arithmetic operators - +, -, *, /, %, **
+    -- arithmetic operators - +, -, *, /, %, ** (BEDMAS)
     -- relational operators - =, !=, <>, >, <, >=, <=
     -- logical operators - AND, OR, NOT
     -- string operators = ||
+    -- assignment operator - := 
 
 -- condn. statements
     -- if-else - if-elsif-else, if-elsif-elsif-else, if-if-else-else(nested if)
@@ -58,10 +59,22 @@
     end if;
     
 -- loop statements - repeat a block of code multiple times
-    -- for loop
-    for i in 1..10 loop
+    -- for loop - finite number of times
+    FOR i IN 1..10 LOOP
         DBMS_OUTPUT.PUT_LINE(i);
-    end loop;
+    END LOOP;
+    
+    -- for loop print in reverse 10 to 1
+    FOR i IN REVERSE 1..10 LOOP
+        DBMS_OUTPUT.PUT_LINE(i);
+    END LOOP;
+    --without loop
+    DBMS_OUTPUT.PUT_LINE(1);
+    DBMS_OUTPUT.PUT_LINE(2);
+    DBMS_OUTPUT.PUT_LINE(3);
+    DBMS_OUTPUT.PUT_LINE(4);
+    DBMS_OUTPUT.PUT_LINE(5);
+
 
     -- 1-10 DBMS_OUTPUT.PUT_LINE even number 
     for i in 1..10 loop
@@ -99,6 +112,32 @@
     -- break - exit the loop
     -- continue - skip the current iteration and continue with next iteration
     -- return - return from a function or procedure
+    -- goto - jump to a label
+    -- exit - exit from a loop
+
+-- Demo with all control statements
+DECLARE 
+    i INT := 1;
+BEGIN
+    WHILE i <= 10 LOOP -- continue from this line        
+    	IF i = 3 THEN
+            i := i + 1;
+            CONTINUE;
+        END IF;
+        IF (i = 4) THEN
+            GOTO skipfour;
+        END IF;
+        DBMS_OUTPUT.PUT_LINE(i);
+        <<skipfour>>
+        i := i + 1;
+        EXIT WHEN (i = 9);
+        IF (i = 6) THEN
+            RETURN; -- GOTO END line. 1, 2, 5 
+        END IF;
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE('Exit');
+END;
+
 
 -- PLSQL Block or Anonymous PLSQL Block
 DECLARE --optional 
@@ -126,7 +165,7 @@ DECLARE
 BEGIN
     l_gender := :Gender;
     l_age := 0; -- assignment
-	IF (l_age > 0 ) THEN
+	IF (l_age > 0) THEN
         IF (l_age < 13) THEN
             DBMS_OUTPUT.PUT_LINE('My Name:' || l_name || ' you are a kid');
     	ELSE IF (l_age >= 13 AND l_age <= 18) THEN
