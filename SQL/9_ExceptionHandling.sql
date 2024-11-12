@@ -27,7 +27,7 @@ EXCEPTION
 END;
 
 -- User-defined Exceptions: User-defined exceptions are defined by the user and raised explicitly in the PLSQL block.
--- EXCEPTION, RAISE, RAISE_APPLICATION_ERROR, PRAGMA EXCEPTION_INIT
+-- EXCEPTION, RAISE or RAISE_APPLICATION_ERROR, PRAGMA EXCEPTION_INIT
 
 DECLARE
     emp_sal NUMBER;
