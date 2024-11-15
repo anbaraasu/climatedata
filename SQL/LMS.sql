@@ -5,6 +5,7 @@
 *   Nomalization: 3NF
 */
 -- Creating table for Librarians
+-- Developed
 CREATE TABLE Librarians (
     librarian_id NUMBER PRIMARY KEY,
     name VARCHAR2(100) NOT NULL,
@@ -182,3 +183,10 @@ JOIN
 -- Joining with Students table to get student details
 JOIN 
     Students s ON bi.student_id = s.student_id;
+
+
+CREATE OR REPLACE PACKAGE BOOK_PKG AS
+	UNIVERSITY_NAME CHAR(3) := 'SSU';
+	FUNCTION calculate_late_fee(issue_date DATE, return_date DATE) RETURN NUMBER;
+	PROCEDURE issue_book(p_name VARCHAR2, p_student_id NUMBER, p_issued_by NUMBER);
+END BOOK_PKG;

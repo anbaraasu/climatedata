@@ -7,7 +7,7 @@
 --END package_name;
 --/
 
--- Amazon - Customer Registration Package, Customer Login Package, Order Package, Product Package, Payment Package, Shipping Package, Notification Package, Feedback Package, Review Package, Rating Package, Cart Package, Wishlist Package, Search Package, Recommendation Package, Promotion Package, Discount Package, Invoice Package.
+-- Amazon - Customer Registration Package, Order Package, Product Package, Payment Package, Shipping Package, Notification Package, Feedback Package, Review Package, Rating Package, Cart Package, Wishlist Package, Search Package, Recommendation Package, Promotion Package, Discount Package, Invoice Package.
 
 -- SYNTAX : 
 CREATE OR REPLACE PACKAGE package_name AS
@@ -17,7 +17,7 @@ END package_name;
 
 CREATE OR REPLACE PACKAGE BODY package_name AS
     -- Implementation section
-    -- Subprograms
+    -- Subprograms (private and public)
 END package_name;
 /
 
@@ -80,9 +80,10 @@ CREATE OR REPLACE PACKAGE BODY emp_package AS
     
     PROCEDURE GET_EMPLOYEE_DETAILS(p_emp_name IN VARCHAR2) IS
     BEGIN
-        SELECT first_name || ' ' || last_name INTO l_emp_name FROM hr.employees 
-        WHERE first_name = p_emp_name;
-        DBMS_OUTPUT.PUT_LINE('Employee full Name: ' || l_emp_name);
+        FOR i in (SELECT first_name || ' ' || last_name INTO l_emp_name FROM hr.employees 
+        WHERE first_name = p_emp_name) LOOP
+            DBMS_OUTPUT.PUT_LINE('Employee full Name: ' || l_emp_name);
+        END LOOP;
     END GET_EMPLOYEE_DETAILS;
 END emp_package;
 /

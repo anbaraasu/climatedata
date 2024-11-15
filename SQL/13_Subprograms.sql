@@ -1,6 +1,7 @@
 -- Sub program - Procedure or Function
 
 DECLARE
+    --global
     COMPANY_NAME VARCHAR2(7) := 'HCLTECH';
 BEGIN
     DECLARE
