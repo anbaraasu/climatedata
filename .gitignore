@@ -47,3 +47,8 @@ tmp/
 
 # node, angular, react
 **/node_modules
+
+# python ignore list
+*.pyc
+__pycache__/
+venv/
