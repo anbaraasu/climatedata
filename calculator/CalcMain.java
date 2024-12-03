@@ -1,3 +1,3 @@
 /*
-	Calculate Console App with menu options and exception handlings. 
+Java Console App for calculator with menu options - add, substract, multiply, divide with exception handlings. 	
  */
