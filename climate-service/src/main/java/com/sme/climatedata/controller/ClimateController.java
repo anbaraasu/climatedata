@@ -31,38 +31,4 @@ public class ClimateController {
     public List<ClimateData> getAllClimateData() {
         return _climateService.getAllClimateData();
     }
-
-    /**
-     * Get climate data by ID.
-     *
-     * @param id the ID of the climate data.
-     * @return the climate data with the specified ID.
-     */
-    @GetMapping("/{id}")
-    public ClimateData getClimateDataById(@PathVariable Long id) {
-        return _climateService.getClimateDataById(id);
-    }
-
-    /**
-     * Add new climate data.
-     *
-     * @param climateData the climate data to add.
-     * @return the added climate data.
-     */
-    @PostMapping("/add")
-    public ClimateData addClimateData(@RequestBody ClimateData climateData) {
-        return _climateService.createClimateData(climateData);
-    }
-
-    
-
-    /**
-     * Delete climate data by ID.
-     *
-     * @param id the ID of the climate data to delete.
-     */
-    @DeleteMapping("/delete/{id}")
-    public void deleteClimateData(@PathVariable Long id) {
-        _climateService.deleteClimateData(id);
-    }
 }
