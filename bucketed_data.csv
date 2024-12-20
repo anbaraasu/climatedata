@@ -1,0 +1,1196 @@
+S.No,DNAPass AS Name,Subject coverage,Weighted Score,Weighted_Score,Subject_Coverage,Bucket
+1,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3973,0.3973,0.48,Advanced Beginner
+2,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3841,0.3841,0.44,Advanced Beginner
+3,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.192,0.192,0.24,Novice
+4,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3406,0.3406,0.32,Advanced Beginner
+5,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,-0.0036,-0.0036,0.0,No Rating
+6,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.4275,0.4275,0.6,No Rating
+7,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2899,0.2899,0.32,No Rating
+8,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2065,0.2065,0.28,Novice
+9,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4191,0.4191,0.44,Advanced Beginner
+10,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3345,0.3345,0.36,Advanced Beginner
+11,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4444,0.4444,0.52,No Rating
+12,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3527,0.3527,0.32,Advanced Beginner
+13,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6063,0.6063,0.64,Competent
+14,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.32,0.32,0.36,Advanced Beginner
+15,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4952,0.4952,0.52,No Rating
+16,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2524,0.2524,0.28,Novice
+17,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6304,0.6304,0.68,Competent
+18,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.3937,0.3937,0.52,No Rating
+19,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.0918,0.0918,0.12,No Rating
+20,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4686,0.4686,0.52,No Rating
+21,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6329,0.6329,0.72,No Rating
+22,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.5749,0.5749,0.72,No Rating
+23,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+24,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.4988,0.4988,0.56,No Rating
+25,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.5217,0.5217,0.68,Competent
+26,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.4964,0.4964,0.56,No Rating
+27,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4167,0.4167,0.48,Advanced Beginner
+28,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2681,0.2681,0.32,No Rating
+29,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4541,0.4541,0.52,No Rating
+30,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5326,0.5326,0.52,Competent
+31,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.599,0.599,0.6,Competent
+32,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.5688,0.5688,0.68,Competent
+33,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.1667,0.1667,0.08,No Rating
+34,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3333,0.3333,0.32,Advanced Beginner
+35,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5133,0.5133,0.52,Competent
+36,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5543,0.5543,0.6,Competent
+37,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3659,0.3659,0.44,Advanced Beginner
+38,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3394,0.3394,0.36,Advanced Beginner
+39,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.186,0.186,0.24,Novice
+40,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.4179,0.4179,0.32,Advanced Beginner
+41,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1872,0.1872,0.24,Novice
+42,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4348,0.4348,0.44,Advanced Beginner
+43,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2838,0.2838,0.28,Novice
+44,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4626,0.4626,0.44,Advanced Beginner
+45,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1727,0.1727,0.2,Novice
+46,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.471,0.471,0.52,No Rating
+47,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5447,0.5447,0.64,Competent
+48,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.442,0.442,0.48,Advanced Beginner
+49,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4662,0.4662,0.52,No Rating
+50,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.4312,0.4312,0.36,Advanced Beginner
+51,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.3925,0.3925,0.52,No Rating
+52,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.6232,0.6232,0.56,Competent
+53,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1932,0.1932,0.2,Novice
+54,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6123,0.6123,0.76,No Rating
+55,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5942,0.5942,0.64,Competent
+56,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1775,0.1775,0.16,Novice
+57,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5725,0.5725,0.64,Competent
+58,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.4843,0.4843,0.6,No Rating
+59,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3442,0.3442,0.44,Advanced Beginner
+60,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1824,0.1824,0.2,Novice
+61,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5713,0.5713,0.56,Competent
+62,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.0531,0.0531,0.08,No Rating
+63,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2524,0.2524,0.32,No Rating
+64,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5326,0.5326,0.52,Competent
+65,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+66,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3406,0.3406,0.4,Advanced Beginner
+67,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3116,0.3116,0.48,Advanced Beginner
+68,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6643,0.6643,0.64,Competent
+69,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.471,0.471,0.48,Advanced Beginner
+70,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1027,0.1027,0.24,Novice
+71,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1522,0.1522,0.2,Novice
+72,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2995,0.2995,0.36,No Rating
+73,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2162,0.2162,0.24,Novice
+74,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.1329,0.1329,0.08,No Rating
+75,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3225,0.3225,0.4,Advanced Beginner
+76,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.6618,0.6618,0.6,Competent
+77,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6655,0.6655,0.76,No Rating
+78,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4167,0.4167,0.44,Advanced Beginner
+79,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6087,0.6087,0.68,Competent
+80,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.5302,0.5302,0.48,No Rating
+81,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.2114,0.2114,0.16,Novice
+82,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5012,0.5012,0.52,Competent
+83,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0942,0.0942,0.04,No Rating
+84,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.1981,0.1981,0.28,Novice
+85,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4058,0.4058,0.44,Advanced Beginner
+86,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2234,0.2234,0.2,Novice
+87,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.192,0.192,0.24,Novice
+88,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1184,0.1184,0.12,Novice
+89,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.3116,0.3116,0.28,No Rating
+90,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2077,0.2077,0.28,Novice
+91,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5024,0.5024,0.64,Competent
+92,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1534,0.1534,0.2,Novice
+93,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.25,0.25,0.24,Novice
+94,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3998,0.3998,0.44,Advanced Beginner
+95,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3225,0.3225,0.36,Advanced Beginner
+96,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3816,0.3816,0.36,Advanced Beginner
+97,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2379,0.2379,0.24,Novice
+98,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2899,0.2899,0.28,Novice
+99,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2295,0.2295,0.32,No Rating
+100,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4348,0.4348,0.48,Advanced Beginner
+101,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1486,0.1486,0.2,Novice
+102,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+103,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.401,0.401,0.4,Advanced Beginner
+104,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2874,0.2874,0.2,Novice
+105,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3937,0.3937,0.36,Advanced Beginner
+106,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2415,0.2415,0.2,Novice
+107,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3684,0.3684,0.36,Advanced Beginner
+108,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.535,0.535,0.48,No Rating
+109,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+110,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5145,0.5145,0.6,Competent
+111,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4432,0.4432,0.4,Advanced Beginner
+112,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5193,0.5193,0.52,Competent
+113,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4372,0.4372,0.44,Advanced Beginner
+114,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2126,0.2126,0.32,No Rating
+115,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3998,0.3998,0.48,Advanced Beginner
+116,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2754,0.2754,0.28,Novice
+117,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5435,0.5435,0.64,Competent
+118,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.337,0.337,0.4,Advanced Beginner
+119,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4348,0.4348,0.4,Advanced Beginner
+120,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.1437,0.1437,0.08,No Rating
+121,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4167,0.4167,0.4,Advanced Beginner
+122,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4638,0.4638,0.4,Advanced Beginner
+123,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.1848,0.1848,0.28,Novice
+124,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.2077,0.2077,0.16,Novice
+125,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+126,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.25,0.25,0.36,No Rating
+127,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3188,0.3188,0.44,Advanced Beginner
+128,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5737,0.5737,0.64,Competent
+129,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1582,0.1582,0.12,Novice
+130,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1582,0.1582,0.2,Novice
+131,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.3853,0.3853,0.52,No Rating
+132,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1196,0.1196,0.16,Novice
+133,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4167,0.4167,0.4,Advanced Beginner
+134,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5145,0.5145,0.64,Competent
+135,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2754,0.2754,0.36,No Rating
+136,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+137,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.4022,0.4022,0.36,Advanced Beginner
+138,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4457,0.4457,0.4,Advanced Beginner
+139,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.6498,0.6498,0.6,Competent
+140,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.256,0.256,0.28,Novice
+141,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2343,0.2343,0.28,Novice
+142,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.442,0.442,0.52,No Rating
+143,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.0688,0.0688,0.16,No Rating
+144,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5157,0.5157,0.52,Competent
+145,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2669,0.2669,0.36,No Rating
+146,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+147,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4601,0.4601,0.52,No Rating
+148,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2234,0.2234,0.2,Novice
+149,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+150,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4384,0.4384,0.44,Advanced Beginner
+151,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5145,0.5145,0.56,Competent
+152,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.308,0.308,0.28,No Rating
+153,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.413,0.413,0.56,No Rating
+154,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6256,0.6256,0.64,Competent
+155,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2754,0.2754,0.32,No Rating
+156,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4046,0.4046,0.48,Advanced Beginner
+157,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.3333,0.3333,0.28,No Rating
+158,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4819,0.4819,0.48,Advanced Beginner
+159,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3418,0.3418,0.32,Advanced Beginner
+160,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3756,0.3756,0.48,Advanced Beginner
+161,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1377,0.1377,0.2,Novice
+162,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.587,0.587,0.64,Competent
+163,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.087,0.087,0.12,No Rating
+164,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.558,0.558,0.64,Competent
+165,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6993,0.6993,0.72,No Rating
+166,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4058,0.4058,0.48,Advanced Beginner
+167,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3587,0.3587,0.36,Advanced Beginner
+168,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6449,0.6449,0.64,Competent
+169,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2452,0.2452,0.28,Novice
+170,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.558,0.558,0.52,Competent
+171,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6944,0.6944,0.76,No Rating
+172,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.3176,0.3176,0.28,No Rating
+173,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5857,0.5857,0.6,Competent
+174,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4118,0.4118,0.44,Advanced Beginner
+175,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.337,0.337,0.48,Advanced Beginner
+176,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3986,0.3986,0.4,Advanced Beginner
+177,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4614,0.4614,0.52,No Rating
+178,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.1667,0.1667,0.28,Novice
+179,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.1872,0.1872,0.08,No Rating
+180,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1558,0.1558,0.2,Novice
+181,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3913,0.3913,0.36,Advanced Beginner
+182,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1594,0.1594,0.2,Novice
+183,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1522,0.1522,0.24,Novice
+184,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.1969,0.1969,0.08,No Rating
+185,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6111,0.6111,0.68,Competent
+186,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5302,0.5302,0.52,Competent
+187,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2331,0.2331,0.24,Novice
+188,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4638,0.4638,0.44,Advanced Beginner
+189,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3297,0.3297,0.44,Advanced Beginner
+190,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5386,0.5386,0.6,Competent
+191,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2101,0.2101,0.24,Novice
+192,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5906,0.5906,0.6,Competent
+193,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5435,0.5435,0.56,Competent
+194,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3998,0.3998,0.48,Advanced Beginner
+195,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5507,0.5507,0.56,Competent
+196,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4686,0.4686,0.44,Advanced Beginner
+197,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2645,0.2645,0.24,Novice
+198,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4855,0.4855,0.48,Advanced Beginner
+199,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3442,0.3442,0.4,Advanced Beginner
+200,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.2029,0.2029,0.16,Novice
+201,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2307,0.2307,0.24,Novice
+202,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2572,0.2572,0.36,No Rating
+203,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.058,0.058,0.08,No Rating
+204,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.221,0.221,0.32,No Rating
+205,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6051,0.6051,0.68,Competent
+206,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.157,0.157,0.16,Novice
+207,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3406,0.3406,0.36,Advanced Beginner
+208,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.192,0.192,0.24,Novice
+209,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3623,0.3623,0.4,Advanced Beginner
+210,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5254,0.5254,0.6,Competent
+211,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.4988,0.4988,0.6,No Rating
+212,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.7174,0.7174,0.72,Proficient
+213,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4058,0.4058,0.4,Advanced Beginner
+214,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1232,0.1232,0.16,Novice
+215,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2597,0.2597,0.32,No Rating
+216,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.6147,0.6147,0.6,Competent
+217,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4082,0.4082,0.48,Advanced Beginner
+218,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3092,0.3092,0.36,Advanced Beginner
+219,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.128,0.128,0.12,Novice
+220,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.0761,0.0761,0.16,No Rating
+221,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3684,0.3684,0.44,Advanced Beginner
+222,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3986,0.3986,0.4,Advanced Beginner
+223,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2693,0.2693,0.28,Novice
+224,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5616,0.5616,0.64,Competent
+225,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3249,0.3249,0.44,Advanced Beginner
+226,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1268,0.1268,0.2,Novice
+227,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.5217,0.5217,0.44,No Rating
+228,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4867,0.4867,0.48,Advanced Beginner
+229,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3454,0.3454,0.4,Advanced Beginner
+230,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5495,0.5495,0.56,Competent
+231,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5845,0.5845,0.6,Competent
+232,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3188,0.3188,0.32,Advanced Beginner
+233,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5664,0.5664,0.64,Competent
+234,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2548,0.2548,0.24,Novice
+235,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5797,0.5797,0.56,Competent
+236,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4964,0.4964,0.52,No Rating
+237,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5761,0.5761,0.6,Competent
+238,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2536,0.2536,0.32,No Rating
+239,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.308,0.308,0.32,Advanced Beginner
+240,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.4589,0.4589,0.56,No Rating
+241,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.0761,0.0761,0.08,No Rating
+242,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5109,0.5109,0.52,Competent
+243,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2935,0.2935,0.28,Novice
+244,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5193,0.5193,0.56,Competent
+245,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4312,0.4312,0.44,Advanced Beginner
+246,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3611,0.3611,0.36,Advanced Beginner
+247,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2935,0.2935,0.28,Novice
+248,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.657,0.657,0.68,Competent
+249,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4118,0.4118,0.44,Advanced Beginner
+250,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1775,0.1775,0.24,Novice
+251,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5217,0.5217,0.52,Competent
+252,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4239,0.4239,0.44,Advanced Beginner
+253,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6123,0.6123,0.68,Competent
+254,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.3611,0.3611,0.52,No Rating
+255,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3188,0.3188,0.44,Advanced Beginner
+256,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4058,0.4058,0.44,Advanced Beginner
+257,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4094,0.4094,0.52,No Rating
+258,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2645,0.2645,0.32,No Rating
+259,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.3973,0.3973,0.52,No Rating
+260,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.4928,0.4928,0.56,No Rating
+261,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4444,0.4444,0.4,Advanced Beginner
+262,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1413,0.1413,0.12,Novice
+263,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2959,0.2959,0.36,No Rating
+264,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.4046,0.4046,0.36,Advanced Beginner
+265,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6002,0.6002,0.64,Competent
+266,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3986,0.3986,0.4,Advanced Beginner
+267,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1159,0.1159,0.16,Novice
+268,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2983,0.2983,0.36,No Rating
+269,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2271,0.2271,0.2,Novice
+270,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.3816,0.3816,0.52,No Rating
+271,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5314,0.5314,0.56,Competent
+272,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.628,0.628,0.72,No Rating
+273,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.25,0.25,0.12,Novice
+274,BNCH-Java-Jr-Java Jr Dev Test-grades,0.88,0.7838,0.7838,0.88,Proficient
+275,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5242,0.5242,0.64,Competent
+276,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5399,0.5399,0.6,Competent
+277,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4553,0.4553,0.44,Advanced Beginner
+278,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4058,0.4058,0.4,Advanced Beginner
+279,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2428,0.2428,0.28,Novice
+280,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.5906,0.5906,0.68,Competent
+281,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6558,0.6558,0.76,No Rating
+282,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3406,0.3406,0.4,Advanced Beginner
+283,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.1884,0.1884,0.28,Novice
+284,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3418,0.3418,0.36,Advanced Beginner
+285,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5749,0.5749,0.6,Competent
+286,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3756,0.3756,0.36,Advanced Beginner
+287,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2742,0.2742,0.24,Novice
+288,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2862,0.2862,0.28,Novice
+289,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3684,0.3684,0.36,Advanced Beginner
+290,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2307,0.2307,0.32,No Rating
+291,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3188,0.3188,0.36,Advanced Beginner
+292,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2391,0.2391,0.2,Novice
+293,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.4348,0.4348,0.56,No Rating
+294,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3333,0.3333,0.44,Advanced Beginner
+295,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5592,0.5592,0.56,Competent
+296,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.3249,0.3249,0.28,No Rating
+297,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.506,0.506,0.52,Competent
+298,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2319,0.2319,0.24,Novice
+299,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.2029,0.2029,0.12,Novice
+300,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1002,0.1002,0.2,Novice
+301,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2053,0.2053,0.28,Novice
+302,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6618,0.6618,0.76,No Rating
+303,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.25,0.25,0.2,Novice
+304,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2681,0.2681,0.32,No Rating
+305,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3406,0.3406,0.36,Advanced Beginner
+306,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5399,0.5399,0.56,Competent
+307,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3877,0.3877,0.44,Advanced Beginner
+308,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3261,0.3261,0.36,Advanced Beginner
+309,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1787,0.1787,0.24,Novice
+310,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1848,0.1848,0.12,Novice
+311,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2053,0.2053,0.24,Novice
+312,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4444,0.4444,0.44,Advanced Beginner
+313,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.3949,0.3949,0.52,No Rating
+314,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5616,0.5616,0.56,Competent
+315,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4094,0.4094,0.52,No Rating
+316,BNCH-Java-Jr-Java Jr Dev Test-grades,0.8,0.6534,0.6534,0.8,No Rating
+317,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5688,0.5688,0.6,Competent
+318,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3382,0.3382,0.32,Advanced Beginner
+319,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3152,0.3152,0.36,Advanced Beginner
+320,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6751,0.6751,0.72,No Rating
+321,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3877,0.3877,0.48,Advanced Beginner
+322,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5133,0.5133,0.56,Competent
+323,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.2911,0.2911,0.4,No Rating
+324,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.0882,0.0882,0.16,No Rating
+325,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6522,0.6522,0.64,Competent
+326,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6232,0.6232,0.68,Competent
+327,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.4674,0.4674,0.56,No Rating
+328,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3768,0.3768,0.44,Advanced Beginner
+329,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3623,0.3623,0.4,Advanced Beginner
+330,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4553,0.4553,0.44,Advanced Beginner
+331,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.4493,0.4493,0.56,No Rating
+332,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.308,0.308,0.36,Advanced Beginner
+333,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1449,0.1449,0.24,Novice
+334,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3249,0.3249,0.44,Advanced Beginner
+335,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3007,0.3007,0.32,Advanced Beginner
+336,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2101,0.2101,0.2,Novice
+337,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2536,0.2536,0.28,Novice
+338,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3925,0.3925,0.4,Advanced Beginner
+339,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3877,0.3877,0.4,Advanced Beginner
+340,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5254,0.5254,0.56,Competent
+341,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3297,0.3297,0.4,Advanced Beginner
+342,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+343,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+344,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3937,0.3937,0.44,Advanced Beginner
+345,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1981,0.1981,0.2,Novice
+346,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.407,0.407,0.4,Advanced Beginner
+347,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1316,0.1316,0.24,Novice
+348,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2911,0.2911,0.36,No Rating
+349,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4143,0.4143,0.48,Advanced Beginner
+350,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3949,0.3949,0.44,Advanced Beginner
+351,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.215,0.215,0.2,Novice
+352,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5797,0.5797,0.64,Competent
+353,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3285,0.3285,0.36,Advanced Beginner
+354,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3345,0.3345,0.36,Advanced Beginner
+355,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2258,0.2258,0.28,Novice
+356,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5,0.5,0.52,Competent
+357,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6667,0.6667,0.76,No Rating
+358,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6594,0.6594,0.72,No Rating
+359,BNCH-Java-Jr-Java Jr Dev Test-grades,0.8,0.6582,0.6582,0.8,No Rating
+360,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5713,0.5713,0.52,Competent
+361,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4746,0.4746,0.44,Advanced Beginner
+362,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6365,0.6365,0.72,No Rating
+363,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6111,0.6111,0.64,Competent
+364,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.535,0.535,0.56,Competent
+365,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6739,0.6739,0.76,No Rating
+366,BNCH-Java-Jr-Java Jr Dev Test-grades,0.8,0.7935,0.7935,0.8,Proficient
+367,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4239,0.4239,0.44,Advanced Beginner
+368,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5072,0.5072,0.64,Competent
+369,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5797,0.5797,0.56,Competent
+370,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3478,0.3478,0.36,Advanced Beginner
+371,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.587,0.587,0.68,Competent
+372,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6425,0.6425,0.68,Competent
+373,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5616,0.5616,0.52,Competent
+374,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6401,0.6401,0.72,No Rating
+375,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5652,0.5652,0.6,Competent
+376,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5362,0.5362,0.52,Competent
+377,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5906,0.5906,0.6,Competent
+378,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.622,0.622,0.72,No Rating
+379,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.5036,0.5036,0.48,No Rating
+380,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6582,0.6582,0.72,No Rating
+381,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5411,0.5411,0.64,Competent
+382,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5133,0.5133,0.6,Competent
+383,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0725,0.0725,0.04,No Rating
+384,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5459,0.5459,0.6,Competent
+385,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.6232,0.6232,0.6,Competent
+386,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5217,0.5217,0.52,Competent
+387,BNCH-Java-Jr-Java Jr Dev Test-grades,0.84,0.7995,0.7995,0.84,Proficient
+388,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5266,0.5266,0.56,Competent
+389,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3901,0.3901,0.36,Advanced Beginner
+390,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6739,0.6739,0.72,No Rating
+391,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5966,0.5966,0.56,Competent
+392,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.7174,0.7174,0.72,Proficient
+393,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5471,0.5471,0.56,Competent
+394,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3406,0.3406,0.44,Advanced Beginner
+395,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5471,0.5471,0.6,Competent
+396,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6522,0.6522,0.68,Competent
+397,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5181,0.5181,0.56,Competent
+398,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6836,0.6836,0.72,No Rating
+399,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5362,0.5362,0.6,Competent
+400,BNCH-Java-Jr-Java Jr Dev Test-grades,0.8,0.814,0.814,0.8,Proficient
+401,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.75,0.75,0.72,Proficient
+402,BNCH-Java-Jr-Java Jr Dev Test-grades,0.88,0.8031,0.8031,0.88,Proficient
+403,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.4855,0.4855,0.56,No Rating
+404,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.6425,0.6425,0.6,Competent
+405,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.215,0.215,0.2,Novice
+406,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5374,0.5374,0.64,Competent
+407,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6099,0.6099,0.64,Competent
+408,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.564,0.564,0.68,Competent
+409,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.7464,0.7464,0.76,Proficient
+410,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6377,0.6377,0.76,No Rating
+411,BNCH-Java-Jr-Java Jr Dev Test-grades,0.8,0.6389,0.6389,0.8,No Rating
+412,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4203,0.4203,0.44,Advanced Beginner
+413,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.558,0.558,0.44,No Rating
+414,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3901,0.3901,0.36,Advanced Beginner
+415,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2633,0.2633,0.28,Novice
+416,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5507,0.5507,0.6,Competent
+417,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6365,0.6365,0.64,Competent
+418,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5725,0.5725,0.52,Competent
+419,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0435,0.0435,0.04,No Rating
+420,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5749,0.5749,0.64,Competent
+421,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.5906,0.5906,0.68,Competent
+422,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3454,0.3454,0.4,Advanced Beginner
+423,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1715,0.1715,0.24,Novice
+424,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5362,0.5362,0.6,Competent
+425,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3829,0.3829,0.44,Advanced Beginner
+426,BNCH-Java-Jr-Java Jr Dev Test-grades,0.84,0.8007,0.8007,0.84,Proficient
+427,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6667,0.6667,0.68,Competent
+428,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6087,0.6087,0.64,Competent
+429,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5737,0.5737,0.56,Competent
+430,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.2391,0.2391,0.4,No Rating
+431,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6087,0.6087,0.68,Competent
+432,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6836,0.6836,0.76,No Rating
+433,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.5954,0.5954,0.68,Competent
+434,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3007,0.3007,0.44,Advanced Beginner
+435,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.07,0.07,0.12,No Rating
+436,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.6316,0.6316,0.6,Competent
+437,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3949,0.3949,0.36,Advanced Beginner
+438,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0072,0.0072,0.0,No Rating
+439,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2778,0.2778,0.32,No Rating
+440,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1739,0.1739,0.24,Novice
+441,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3949,0.3949,0.44,Advanced Beginner
+442,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.0519,0.0519,0.16,No Rating
+443,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5157,0.5157,0.56,Competent
+444,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2585,0.2585,0.32,No Rating
+445,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0024,0.0024,0.0,No Rating
+446,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6703,0.6703,0.72,No Rating
+447,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4457,0.4457,0.44,Advanced Beginner
+448,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3816,0.3816,0.44,Advanced Beginner
+449,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4783,0.4783,0.44,Advanced Beginner
+450,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0036,0.0036,0.04,No Rating
+451,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3478,0.3478,0.4,Advanced Beginner
+452,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4964,0.4964,0.44,Advanced Beginner
+453,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2041,0.2041,0.36,No Rating
+454,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6425,0.6425,0.76,No Rating
+455,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.5254,0.5254,0.68,Competent
+456,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1812,0.1812,0.2,Novice
+457,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3478,0.3478,0.4,Advanced Beginner
+458,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+459,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5676,0.5676,0.6,Competent
+460,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.2415,0.2415,0.12,Novice
+461,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.3841,0.3841,0.52,No Rating
+462,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3043,0.3043,0.32,Advanced Beginner
+463,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6425,0.6425,0.64,Competent
+464,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6184,0.6184,0.72,No Rating
+465,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5761,0.5761,0.64,Competent
+466,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0145,0.0145,0.04,No Rating
+467,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1449,0.1449,0.2,Novice
+468,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2222,0.2222,0.2,Novice
+469,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5483,0.5483,0.64,Competent
+470,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2512,0.2512,0.2,Novice
+471,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2645,0.2645,0.32,No Rating
+472,BNCH-Java-Jr-Java Jr Dev Test-grades,0.8,0.7367,0.7367,0.8,Proficient
+473,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2826,0.2826,0.28,Novice
+474,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4179,0.4179,0.52,No Rating
+475,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2017,0.2017,0.2,Novice
+476,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1401,0.1401,0.16,Novice
+477,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1594,0.1594,0.2,Novice
+478,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.7077,0.7077,0.64,No Rating
+479,BNCH-Java-Jr-Java Jr Dev Test-grades,0.84,0.7089,0.7089,0.84,Proficient
+480,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5797,0.5797,0.56,Competent
+481,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4239,0.4239,0.48,Advanced Beginner
+482,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.4783,0.4783,0.56,No Rating
+483,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6606,0.6606,0.68,Competent
+484,BNCH-Java-Jr-Java Jr Dev Test-grades,0.88,0.8188,0.8188,0.88,Proficient
+485,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5785,0.5785,0.64,Competent
+486,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3611,0.3611,0.4,Advanced Beginner
+487,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1486,0.1486,0.2,Novice
+488,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1316,0.1316,0.16,Novice
+489,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.5181,0.5181,0.48,No Rating
+490,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2415,0.2415,0.28,Novice
+491,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2488,0.2488,0.24,Novice
+492,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.5423,0.5423,0.48,No Rating
+493,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2911,0.2911,0.32,No Rating
+494,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+495,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.0906,0.0906,0.16,No Rating
+496,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3297,0.3297,0.32,Advanced Beginner
+497,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.3563,0.3563,0.28,No Rating
+498,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4565,0.4565,0.48,Advanced Beginner
+499,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.1449,0.1449,0.08,No Rating
+500,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3007,0.3007,0.32,Advanced Beginner
+501,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6123,0.6123,0.64,Competent
+502,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6063,0.6063,0.64,Competent
+503,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.6341,0.6341,0.52,Competent
+504,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3647,0.3647,0.32,Advanced Beginner
+505,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6111,0.6111,0.68,Competent
+506,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3007,0.3007,0.4,Advanced Beginner
+507,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4601,0.4601,0.4,Advanced Beginner
+508,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5374,0.5374,0.64,Competent
+509,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6196,0.6196,0.68,Competent
+510,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5157,0.5157,0.56,Competent
+511,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4529,0.4529,0.44,Advanced Beginner
+512,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2464,0.2464,0.2,Novice
+513,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5181,0.5181,0.52,Competent
+514,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.529,0.529,0.56,Competent
+515,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2053,0.2053,0.24,Novice
+516,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.349,0.349,0.4,Advanced Beginner
+517,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3152,0.3152,0.32,Advanced Beginner
+518,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5664,0.5664,0.64,Competent
+519,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1123,0.1123,0.2,Novice
+520,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.6039,0.6039,0.52,Competent
+521,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6449,0.6449,0.68,Competent
+522,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5568,0.5568,0.56,Competent
+523,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4601,0.4601,0.44,Advanced Beginner
+524,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2101,0.2101,0.28,Novice
+525,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6727,0.6727,0.76,No Rating
+526,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3478,0.3478,0.4,Advanced Beginner
+527,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6196,0.6196,0.68,Competent
+528,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6703,0.6703,0.72,No Rating
+529,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5688,0.5688,0.56,Competent
+530,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.4396,0.4396,0.36,Advanced Beginner
+531,BNCH-Java-Jr-Java Jr Dev Test-grades,0.8,0.7681,0.7681,0.8,Proficient
+532,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5857,0.5857,0.52,Competent
+533,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3623,0.3623,0.44,Advanced Beginner
+534,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5072,0.5072,0.6,Competent
+535,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.43,0.43,0.44,Advanced Beginner
+536,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5725,0.5725,0.56,Competent
+537,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.337,0.337,0.32,Advanced Beginner
+538,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4034,0.4034,0.4,Advanced Beginner
+539,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.2826,0.2826,0.4,No Rating
+540,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1304,0.1304,0.16,Novice
+541,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1268,0.1268,0.16,Novice
+542,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3043,0.3043,0.32,Advanced Beginner
+543,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6884,0.6884,0.72,No Rating
+544,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.3007,0.3007,0.24,No Rating
+545,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5749,0.5749,0.56,Competent
+546,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+547,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3841,0.3841,0.48,Advanced Beginner
+548,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2307,0.2307,0.2,Novice
+549,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.0604,0.0604,0.08,No Rating
+550,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5821,0.5821,0.52,Competent
+551,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1377,0.1377,0.16,Novice
+552,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3056,0.3056,0.36,Advanced Beginner
+553,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5483,0.5483,0.56,Competent
+554,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6329,0.6329,0.68,Competent
+555,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4565,0.4565,0.4,Advanced Beginner
+556,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1787,0.1787,0.12,Novice
+557,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3986,0.3986,0.48,Advanced Beginner
+558,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.378,0.378,0.4,Advanced Beginner
+559,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.337,0.337,0.44,Advanced Beginner
+560,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.7162,0.7162,0.72,Proficient
+561,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6159,0.6159,0.64,Competent
+562,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5338,0.5338,0.6,Competent
+563,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1184,0.1184,0.12,Novice
+564,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.57,0.57,0.6,Competent
+565,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1703,0.1703,0.24,Novice
+566,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3865,0.3865,0.44,Advanced Beginner
+567,BNCH-Java-Jr-Java Jr Dev Test-grades,0.8,0.6111,0.6111,0.8,No Rating
+568,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2488,0.2488,0.28,Novice
+569,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0072,0.0072,0.0,No Rating
+570,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2766,0.2766,0.2,Novice
+571,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+572,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1775,0.1775,0.2,Novice
+573,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2754,0.2754,0.32,No Rating
+574,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1812,0.1812,0.24,Novice
+575,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1486,0.1486,0.24,Novice
+576,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3188,0.3188,0.32,Advanced Beginner
+577,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2295,0.2295,0.2,Novice
+578,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3043,0.3043,0.36,Advanced Beginner
+579,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.3587,0.3587,0.24,No Rating
+580,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3285,0.3285,0.48,Advanced Beginner
+581,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6546,0.6546,0.76,No Rating
+582,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1522,0.1522,0.16,Novice
+583,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.628,0.628,0.68,Competent
+584,BNCH-Java-Jr-Java Jr Dev Test-grades,0.8,0.7101,0.7101,0.8,Proficient
+585,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.7114,0.7114,0.76,Proficient
+586,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3225,0.3225,0.4,Advanced Beginner
+587,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1763,0.1763,0.24,Novice
+588,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4481,0.4481,0.44,Advanced Beginner
+589,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+590,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5761,0.5761,0.64,Competent
+591,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4094,0.4094,0.44,Advanced Beginner
+592,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.5121,0.5121,0.44,No Rating
+593,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+594,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2186,0.2186,0.28,Novice
+595,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4928,0.4928,0.48,Advanced Beginner
+596,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.622,0.622,0.68,Competent
+597,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.3804,0.3804,0.52,No Rating
+598,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1812,0.1812,0.16,Novice
+599,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.3225,0.3225,0.28,No Rating
+600,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3261,0.3261,0.44,Advanced Beginner
+601,BNCH-Java-Jr-Java Jr Dev Test-grades,0.84,0.7101,0.7101,0.84,Proficient
+602,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3937,0.3937,0.48,Advanced Beginner
+603,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3913,0.3913,0.4,Advanced Beginner
+604,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2029,0.2029,0.24,Novice
+605,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3792,0.3792,0.44,Advanced Beginner
+606,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5616,0.5616,0.52,Competent
+607,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4082,0.4082,0.52,No Rating
+608,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2814,0.2814,0.28,Novice
+609,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2899,0.2899,0.32,No Rating
+610,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4287,0.4287,0.52,No Rating
+611,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6135,0.6135,0.64,Competent
+612,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6908,0.6908,0.76,No Rating
+613,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5447,0.5447,0.52,Competent
+614,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4227,0.4227,0.4,Advanced Beginner
+615,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+616,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5906,0.5906,0.64,Competent
+617,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6679,0.6679,0.68,Competent
+618,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6159,0.6159,0.68,Competent
+619,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5435,0.5435,0.6,Competent
+620,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+621,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2681,0.2681,0.32,No Rating
+622,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3225,0.3225,0.4,Advanced Beginner
+623,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4348,0.4348,0.48,Advanced Beginner
+624,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4215,0.4215,0.44,Advanced Beginner
+625,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3116,0.3116,0.44,Advanced Beginner
+626,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3213,0.3213,0.36,Advanced Beginner
+627,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.192,0.192,0.24,Novice
+628,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.2246,0.2246,0.12,Novice
+629,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2246,0.2246,0.24,Novice
+630,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1787,0.1787,0.16,Novice
+631,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1304,0.1304,0.24,Novice
+632,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.163,0.163,0.24,Novice
+633,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.3297,0.3297,0.28,No Rating
+634,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0229,0.0229,0.04,No Rating
+635,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.058,0.058,0.04,No Rating
+636,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1582,0.1582,0.16,Novice
+637,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3007,0.3007,0.32,Advanced Beginner
+638,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2778,0.2778,0.32,No Rating
+639,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.1957,0.1957,0.28,Novice
+640,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1558,0.1558,0.12,Novice
+641,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2041,0.2041,0.2,Novice
+642,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.0169,0.0169,0.08,No Rating
+643,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2669,0.2669,0.24,Novice
+644,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2428,0.2428,0.28,Novice
+645,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2222,0.2222,0.28,Novice
+646,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0676,0.0676,0.04,No Rating
+647,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4674,0.4674,0.48,Advanced Beginner
+648,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1486,0.1486,0.24,Novice
+649,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1413,0.1413,0.16,Novice
+650,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1232,0.1232,0.2,Novice
+651,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3213,0.3213,0.4,Advanced Beginner
+652,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2198,0.2198,0.2,Novice
+653,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1087,0.1087,0.16,Novice
+654,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.372,0.372,0.28,No Rating
+655,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1993,0.1993,0.24,Novice
+656,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2524,0.2524,0.24,Novice
+657,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1727,0.1727,0.12,Novice
+658,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.1848,0.1848,0.28,Novice
+659,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2826,0.2826,0.32,No Rating
+660,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.0942,0.0942,0.12,No Rating
+661,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2089,0.2089,0.2,Novice
+662,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.2609,0.2609,0.16,Novice
+663,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2681,0.2681,0.36,No Rating
+664,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2754,0.2754,0.28,Novice
+665,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1775,0.1775,0.2,Novice
+666,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3659,0.3659,0.48,Advanced Beginner
+667,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1812,0.1812,0.24,Novice
+668,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.0773,0.0773,0.12,No Rating
+669,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6051,0.6051,0.68,Competent
+670,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2838,0.2838,0.36,No Rating
+671,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3418,0.3418,0.4,Advanced Beginner
+672,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1667,0.1667,0.12,Novice
+673,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3478,0.3478,0.32,Advanced Beginner
+674,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2319,0.2319,0.32,No Rating
+675,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1014,0.1014,0.12,Novice
+676,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3804,0.3804,0.4,Advanced Beginner
+677,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3865,0.3865,0.36,Advanced Beginner
+678,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.0604,0.0604,0.08,No Rating
+679,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.0809,0.0809,0.08,No Rating
+680,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1123,0.1123,0.2,Novice
+681,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0894,0.0894,0.04,No Rating
+682,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2536,0.2536,0.32,No Rating
+683,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.2162,0.2162,0.08,No Rating
+684,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+685,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.506,0.506,0.64,Competent
+686,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1546,0.1546,0.16,Novice
+687,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3357,0.3357,0.44,Advanced Beginner
+688,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+689,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4457,0.4457,0.52,No Rating
+690,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+691,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4928,0.4928,0.48,Advanced Beginner
+692,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.2101,0.2101,0.16,Novice
+693,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2307,0.2307,0.32,No Rating
+694,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3841,0.3841,0.36,Advanced Beginner
+695,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6002,0.6002,0.68,Competent
+696,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6739,0.6739,0.68,Competent
+697,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6002,0.6002,0.68,Competent
+698,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6365,0.6365,0.68,Competent
+699,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4831,0.4831,0.52,No Rating
+700,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6546,0.6546,0.68,Competent
+701,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+702,BNCH-Java-Jr-Java Jr Dev Test-grades,0.76,0.6594,0.6594,0.76,No Rating
+703,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.3382,0.3382,0.28,No Rating
+704,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2138,0.2138,0.2,Novice
+705,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2029,0.2029,0.2,Novice
+706,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.471,0.471,0.56,No Rating
+707,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1498,0.1498,0.2,Novice
+708,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3659,0.3659,0.44,Advanced Beginner
+709,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.2053,0.2053,0.16,Novice
+710,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2114,0.2114,0.28,Novice
+711,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2754,0.2754,0.36,No Rating
+712,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1775,0.1775,0.2,Novice
+713,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.314,0.314,0.36,Advanced Beginner
+714,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.4167,0.4167,0.4,Advanced Beginner
+715,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2186,0.2186,0.32,No Rating
+716,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4058,0.4058,0.48,Advanced Beginner
+717,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1763,0.1763,0.2,Novice
+718,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5761,0.5761,0.6,Competent
+719,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1775,0.1775,0.16,Novice
+720,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2367,0.2367,0.28,Novice
+721,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2645,0.2645,0.28,Novice
+722,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2041,0.2041,0.2,Novice
+723,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1594,0.1594,0.12,Novice
+724,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2512,0.2512,0.24,Novice
+725,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.0785,0.0785,0.16,No Rating
+726,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.0954,0.0954,0.16,No Rating
+727,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2295,0.2295,0.32,No Rating
+728,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.2705,0.2705,0.4,No Rating
+729,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0471,0.0471,0.04,No Rating
+730,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.2838,0.2838,0.4,No Rating
+731,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3961,0.3961,0.48,Advanced Beginner
+732,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2971,0.2971,0.28,Novice
+733,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1135,0.1135,0.16,Novice
+734,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.0217,0.0217,0.08,No Rating
+735,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1703,0.1703,0.24,Novice
+736,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2488,0.2488,0.32,No Rating
+737,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4698,0.4698,0.52,No Rating
+738,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2415,0.2415,0.24,Novice
+739,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3478,0.3478,0.36,Advanced Beginner
+740,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3732,0.3732,0.44,Advanced Beginner
+741,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2657,0.2657,0.28,Novice
+742,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1389,0.1389,0.12,Novice
+743,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1884,0.1884,0.2,Novice
+744,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2693,0.2693,0.24,Novice
+745,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2403,0.2403,0.28,Novice
+746,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3853,0.3853,0.32,Advanced Beginner
+747,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2609,0.2609,0.32,No Rating
+748,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2005,0.2005,0.24,Novice
+749,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3056,0.3056,0.36,Advanced Beginner
+750,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1606,0.1606,0.2,Novice
+751,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.1981,0.1981,0.28,Novice
+752,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2899,0.2899,0.36,No Rating
+753,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1522,0.1522,0.2,Novice
+754,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.0966,0.0966,0.16,No Rating
+755,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6606,0.6606,0.72,No Rating
+756,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3647,0.3647,0.32,Advanced Beginner
+757,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2114,0.2114,0.24,Novice
+758,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4058,0.4058,0.44,Advanced Beginner
+759,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1353,0.1353,0.12,Novice
+760,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1703,0.1703,0.24,Novice
+761,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.2911,0.2911,0.44,No Rating
+762,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2331,0.2331,0.2,Novice
+763,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3321,0.3321,0.4,Advanced Beginner
+764,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3539,0.3539,0.36,Advanced Beginner
+765,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.192,0.192,0.16,Novice
+766,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1147,0.1147,0.2,Novice
+767,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2379,0.2379,0.28,Novice
+768,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.0688,0.0688,0.08,No Rating
+769,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1739,0.1739,0.2,Novice
+770,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.349,0.349,0.4,Advanced Beginner
+771,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3659,0.3659,0.4,Advanced Beginner
+772,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4058,0.4058,0.48,Advanced Beginner
+773,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2899,0.2899,0.36,No Rating
+774,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1775,0.1775,0.24,Novice
+775,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.122,0.122,0.16,Novice
+776,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.0725,0.0725,0.08,No Rating
+777,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1667,0.1667,0.16,Novice
+778,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2295,0.2295,0.32,No Rating
+779,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2476,0.2476,0.24,Novice
+780,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4481,0.4481,0.48,Advanced Beginner
+781,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.3092,0.3092,0.28,No Rating
+782,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.0821,0.0821,0.16,No Rating
+783,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1848,0.1848,0.2,Novice
+784,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2995,0.2995,0.36,No Rating
+785,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.151,0.151,0.16,Novice
+786,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.1389,0.1389,0.28,Novice
+787,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1099,0.1099,0.16,Novice
+788,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2959,0.2959,0.32,No Rating
+789,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2174,0.2174,0.32,No Rating
+790,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3237,0.3237,0.36,Advanced Beginner
+791,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3213,0.3213,0.32,Advanced Beginner
+792,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1957,0.1957,0.24,Novice
+793,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3249,0.3249,0.44,Advanced Beginner
+794,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3623,0.3623,0.36,Advanced Beginner
+795,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1643,0.1643,0.2,Novice
+796,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2645,0.2645,0.28,Novice
+797,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.3756,0.3756,0.48,Advanced Beginner
+798,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1208,0.1208,0.12,Novice
+799,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3104,0.3104,0.32,Advanced Beginner
+800,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4046,0.4046,0.52,No Rating
+801,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3454,0.3454,0.32,Advanced Beginner
+802,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1353,0.1353,0.2,Novice
+803,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+804,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1594,0.1594,0.2,Novice
+805,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1751,0.1751,0.2,Novice
+806,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1123,0.1123,0.16,Novice
+807,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0362,0.0362,0.04,No Rating
+808,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.244,0.244,0.2,Novice
+809,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1667,0.1667,0.24,Novice
+810,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.163,0.163,0.24,Novice
+811,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1232,0.1232,0.2,Novice
+812,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4662,0.4662,0.52,No Rating
+813,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1848,0.1848,0.16,Novice
+814,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0012,0.0012,0.04,No Rating
+815,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1437,0.1437,0.16,Novice
+816,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1787,0.1787,0.2,Novice
+817,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1304,0.1304,0.12,Novice
+818,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+819,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3043,0.3043,0.32,Advanced Beginner
+820,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2258,0.2258,0.28,Novice
+821,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3804,0.3804,0.36,Advanced Beginner
+822,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.192,0.192,0.24,Novice
+823,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+824,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+825,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1655,0.1655,0.24,Novice
+826,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+827,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0072,0.0072,0.04,No Rating
+828,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+829,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.1558,0.1558,0.24,Novice
+830,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6292,0.6292,0.64,Competent
+831,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.0688,0.0688,0.12,No Rating
+832,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.0833,0.0833,0.08,No Rating
+833,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1872,0.1872,0.12,Novice
+834,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.5761,0.5761,0.64,Competent
+835,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2512,0.2512,0.28,Novice
+836,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.2838,0.2838,0.4,No Rating
+837,BNCH-Java-Jr-Java Jr Dev Test-grades,0.08,0.1039,0.1039,0.08,No Rating
+838,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2053,0.2053,0.2,Novice
+839,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.1884,0.1884,0.28,Novice
+840,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3321,0.3321,0.32,Advanced Beginner
+841,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3176,0.3176,0.32,Advanced Beginner
+842,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.57,0.57,0.56,Competent
+843,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.3116,0.3116,0.24,No Rating
+844,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.279,0.279,0.16,Novice
+845,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2669,0.2669,0.28,Novice
+846,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3068,0.3068,0.4,Advanced Beginner
+847,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.3732,0.3732,0.56,No Rating
+848,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2947,0.2947,0.36,No Rating
+849,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4275,0.4275,0.44,Advanced Beginner
+850,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.2971,0.2971,0.4,No Rating
+851,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3152,0.3152,0.32,Advanced Beginner
+852,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2693,0.2693,0.32,No Rating
+853,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.4662,0.4662,0.6,No Rating
+854,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.2488,0.2488,0.36,No Rating
+855,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2319,0.2319,0.28,Novice
+856,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1002,0.1002,0.16,Novice
+857,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4722,0.4722,0.52,No Rating
+858,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6184,0.6184,0.68,Competent
+859,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5604,0.5604,0.56,Competent
+860,BNCH-Java-Jr-Java Jr Dev Test-grades,0.92,0.7971,0.7971,0.92,No Rating
+861,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6147,0.6147,0.72,No Rating
+862,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+863,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.4384,0.4384,0.36,Advanced Beginner
+864,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2899,0.2899,0.32,No Rating
+865,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3877,0.3877,0.4,Advanced Beginner
+866,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4336,0.4336,0.48,Advanced Beginner
+867,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5217,0.5217,0.56,Competent
+868,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.5326,0.5326,0.68,Competent
+869,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3478,0.3478,0.44,Advanced Beginner
+870,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.2681,0.2681,0.4,No Rating
+871,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.471,0.471,0.48,Advanced Beginner
+872,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4251,0.4251,0.48,Advanced Beginner
+873,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.1932,0.1932,0.28,Novice
+874,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.3756,0.3756,0.52,No Rating
+875,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6159,0.6159,0.68,Competent
+876,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3587,0.3587,0.4,Advanced Beginner
+877,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.413,0.413,0.44,Advanced Beginner
+878,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1087,0.1087,0.12,Novice
+879,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3539,0.3539,0.44,Advanced Beginner
+880,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4674,0.4674,0.52,No Rating
+881,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4807,0.4807,0.52,No Rating
+882,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3418,0.3418,0.32,Advanced Beginner
+883,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+884,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3188,0.3188,0.36,Advanced Beginner
+885,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0314,0.0314,0.04,No Rating
+886,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4432,0.4432,0.52,No Rating
+887,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.5435,0.5435,0.6,Competent
+888,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3213,0.3213,0.4,Advanced Beginner
+889,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4517,0.4517,0.44,Advanced Beginner
+890,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1957,0.1957,0.2,Novice
+891,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2693,0.2693,0.24,Novice
+892,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2983,0.2983,0.24,Novice
+893,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2464,0.2464,0.2,Novice
+894,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6377,0.6377,0.72,No Rating
+895,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1594,0.1594,0.2,Novice
+896,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0145,0.0145,0.0,No Rating
+897,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6486,0.6486,0.64,Competent
+898,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4807,0.4807,0.48,Advanced Beginner
+899,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.4529,0.4529,0.56,No Rating
+900,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3225,0.3225,0.4,Advanced Beginner
+901,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6159,0.6159,0.64,Competent
+902,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5169,0.5169,0.56,Competent
+903,BNCH-Java-Jr-Java Jr Dev Test-grades,0.12,0.1316,0.1316,0.12,Novice
+904,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+905,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.4239,0.4239,0.56,No Rating
+906,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3768,0.3768,0.4,Advanced Beginner
+907,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.5,0.5,0.44,Advanced Beginner
+908,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5471,0.5471,0.56,Competent
+909,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6111,0.6111,0.64,Competent
+910,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.2742,0.2742,0.32,No Rating
+911,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6667,0.6667,0.72,No Rating
+912,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.5592,0.5592,0.72,No Rating
+913,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.3297,0.3297,0.44,Advanced Beginner
+914,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6715,0.6715,0.72,No Rating
+915,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.4469,0.4469,0.56,No Rating
+916,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4396,0.4396,0.48,Advanced Beginner
+917,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2729,0.2729,0.28,Novice
+918,BNCH-Java-Jr-Java Jr Dev Test-grades,0.68,0.6715,0.6715,0.68,Competent
+919,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.7452,0.7452,0.72,Proficient
+920,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2162,0.2162,0.2,Novice
+921,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.628,0.628,0.64,Competent
+922,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.029,0.029,0.0,No Rating
+923,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2802,0.2802,0.28,Novice
+924,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0688,0.0688,0.04,No Rating
+925,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.3116,0.3116,0.32,Advanced Beginner
+926,BNCH-Java-Jr-Java Jr Dev Test-grades,0.24,0.2234,0.2234,0.24,Novice
+927,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3394,0.3394,0.36,Advanced Beginner
+928,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+929,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1691,0.1691,0.16,Novice
+930,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4457,0.4457,0.48,Advanced Beginner
+931,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.2886,0.2886,0.2,Novice
+932,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.4843,0.4843,0.52,No Rating
+933,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6208,0.6208,0.64,Competent
+934,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2403,0.2403,0.28,Novice
+935,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,-0.0036,-0.0036,0.0,No Rating
+936,BNCH-Java-Jr-Java Jr Dev Test-grades,0.36,0.3188,0.3188,0.36,Advanced Beginner
+937,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.2391,0.2391,0.16,Novice
+938,BNCH-Java-Jr-Java Jr Dev Test-grades,0.2,0.1812,0.1812,0.2,Novice
+939,BNCH-Java-Jr-Java Jr Dev Test-grades,0.04,0.0145,0.0145,0.04,No Rating
+940,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5761,0.5761,0.56,Competent
+941,BNCH-Java-Jr-Java Jr Dev Test-grades,0.48,0.4058,0.4058,0.48,Advanced Beginner
+942,BNCH-Java-Jr-Java Jr Dev Test-grades,0.64,0.6703,0.6703,0.64,Competent
+943,BNCH-Java-Jr-Java Jr Dev Test-grades,0.28,0.2669,0.2669,0.28,Novice
+944,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.407,0.407,0.4,Advanced Beginner
+945,BNCH-Java-Jr-Java Jr Dev Test-grades,0.44,0.4746,0.4746,0.44,Advanced Beginner
+946,BNCH-Java-Jr-Java Jr Dev Test-grades,0.56,0.5531,0.5531,0.56,Competent
+947,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.6522,0.6522,0.72,No Rating
+948,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+949,BNCH-Java-Jr-Java Jr Dev Test-grades,0.6,0.6111,0.6111,0.6,Competent
+950,BNCH-Java-Jr-Java Jr Dev Test-grades,0.16,0.1594,0.1594,0.16,Novice
+951,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.7005,0.7005,0.72,Proficient
+952,BNCH-Java-Jr-Java Jr Dev Test-grades,0.52,0.5254,0.5254,0.52,Competent
+953,BNCH-Java-Jr-Java Jr Dev Test-grades,0.72,0.7101,0.7101,0.72,Proficient
+954,BNCH-Java-Jr-Java Jr Dev Test-grades,0.0,0.0,0.0,0.0,No Rating
+955,BNCH-Java-Jr-Java Jr Dev Test-grades,0.32,0.4022,0.4022,0.32,Advanced Beginner
+956,BNCH-Java-Jr-Java Jr Dev Test-grades,0.4,0.3901,0.3901,0.4,Advanced Beginner
+957,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7059,0.6064,0.6064,0.7059,No Rating
+958,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4118,0.4136,0.4136,0.4118,Advanced Beginner
+959,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2353,0.1962,0.1962,0.2353,Novice
+960,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5882,0.4795,0.4795,0.5882,No Rating
+961,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5882,0.5121,0.5121,0.5882,Competent
+962,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5882,0.5244,0.5244,0.5882,Competent
+963,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.4049,0.4049,0.5294,No Rating
+964,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4118,0.3749,0.3749,0.4118,Advanced Beginner
+965,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.6471,0.5569,0.5569,0.6471,Competent
+966,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2353,0.259,0.259,0.2353,Novice
+967,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.3529,0.2487,0.2487,0.3529,No Rating
+968,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.47,0.47,0.4706,Advanced Beginner
+969,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4118,0.4331,0.4331,0.4118,Advanced Beginner
+970,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5882,0.6,0.6,0.5882,Competent
+971,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.4577,0.4577,0.4706,Advanced Beginner
+972,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.3529,0.2338,0.2338,0.3529,No Rating
+973,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2353,0.2551,0.2551,0.2353,Novice
+974,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.4723,0.4723,0.5294,No Rating
+975,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.6471,0.5364,0.5364,0.6471,Competent
+976,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.3529,0.4446,0.4446,0.3529,Advanced Beginner
+977,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7059,0.5833,0.5833,0.7059,No Rating
+978,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7647,0.5946,0.5946,0.7647,No Rating
+979,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.4305,0.4305,0.4706,Advanced Beginner
+980,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.3529,0.3556,0.3556,0.3529,Advanced Beginner
+981,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2941,0.2577,0.2577,0.2941,Novice
+982,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4118,0.4203,0.4203,0.4118,Advanced Beginner
+983,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.4559,0.4559,0.5294,No Rating
+984,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.3408,0.3408,0.4706,Advanced Beginner
+985,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.4069,0.4069,0.5294,No Rating
+986,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4118,0.4062,0.4062,0.4118,Advanced Beginner
+987,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.4646,0.4646,0.4706,Advanced Beginner
+988,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.4621,0.4621,0.4706,Advanced Beginner
+989,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7647,0.5241,0.5241,0.7647,No Rating
+990,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7059,0.5459,0.5459,0.7059,No Rating
+991,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7059,0.6567,0.6567,0.7059,No Rating
+992,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2941,0.271,0.271,0.2941,Novice
+993,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5882,0.4792,0.4792,0.5882,No Rating
+994,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.3529,0.4103,0.4103,0.3529,Advanced Beginner
+995,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.3564,0.3564,0.4706,Advanced Beginner
+996,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.3528,0.3528,0.4706,Advanced Beginner
+997,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.3529,0.4005,0.4005,0.3529,Advanced Beginner
+998,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.541,0.541,0.5294,Competent
+999,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7647,0.5815,0.5815,0.7647,No Rating
+1000,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.3492,0.3492,0.4706,Advanced Beginner
+1001,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.6471,0.6008,0.6008,0.6471,Competent
+1002,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7059,0.6133,0.6133,0.7059,No Rating
+1003,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7647,0.7615,0.7615,0.7647,Proficient
+1004,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5882,0.5569,0.5569,0.5882,Competent
+1005,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4118,0.3985,0.3985,0.4118,Advanced Beginner
+1006,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.4979,0.4979,0.4706,Advanced Beginner
+1007,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5882,0.6172,0.6172,0.5882,Competent
+1008,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2941,0.3005,0.3005,0.2941,No Rating
+1009,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7059,0.5462,0.5462,0.7059,No Rating
+1010,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.8824,0.7108,0.7108,0.8824,Proficient
+1011,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7059,0.6308,0.6308,0.7059,No Rating
+1012,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.34,0.34,0.5294,No Rating
+1013,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7647,0.6787,0.6787,0.7647,No Rating
+1014,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.4292,0.4292,0.5294,No Rating
+1015,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7059,0.5785,0.5785,0.7059,No Rating
+1016,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.1765,0.1269,0.1269,0.1765,Novice
+1017,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2941,0.2462,0.2462,0.2941,Novice
+1018,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7647,0.521,0.521,0.7647,No Rating
+1019,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.6471,0.5654,0.5654,0.6471,Competent
+1020,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.53,0.53,0.5294,Competent
+1021,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.4244,0.4244,0.4706,Advanced Beginner
+1022,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.8235,0.75,0.75,0.8235,Proficient
+1023,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.4485,0.4485,0.4706,Advanced Beginner
+1024,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.3774,0.3774,0.5294,No Rating
+1025,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2941,0.2846,0.2846,0.2941,Novice
+1026,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.1176,0.1449,0.1449,0.1176,Novice
+1027,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4118,0.3526,0.3526,0.4118,Advanced Beginner
+1028,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.0,0.0456,0.0456,0.0,No Rating
+1029,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.4762,0.4762,0.4706,Advanced Beginner
+1030,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7059,0.5821,0.5821,0.7059,No Rating
+1031,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.6471,0.4433,0.4433,0.6471,No Rating
+1032,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.1176,0.1577,0.1577,0.1176,Novice
+1033,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.3529,0.2136,0.2136,0.3529,No Rating
+1034,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.6471,0.4356,0.4356,0.6471,No Rating
+1035,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.1176,0.1208,0.1208,0.1176,Novice
+1036,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.6471,0.5269,0.5269,0.6471,Competent
+1037,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.6471,0.4892,0.4892,0.6471,No Rating
+1038,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.3529,0.2846,0.2846,0.3529,No Rating
+1039,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.3529,0.3069,0.3069,0.3529,Advanced Beginner
+1040,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2353,0.1687,0.1687,0.2353,Novice
+1041,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.4974,0.4974,0.4706,Advanced Beginner
+1042,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.7647,0.5864,0.5864,0.7647,No Rating
+1043,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5882,0.58,0.58,0.5882,Competent
+1044,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2353,0.1546,0.1546,0.2353,Novice
+1045,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4118,0.2787,0.2787,0.4118,No Rating
+1046,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5882,0.5459,0.5459,0.5882,Competent
+1047,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.4941,0.4941,0.5294,No Rating
+1048,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.0588,0.0915,0.0915,0.0588,No Rating
+1049,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.0,0.0,0.0,0.0,No Rating
+1050,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2941,0.2346,0.2346,0.2941,Novice
+1051,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.401,0.401,0.5294,No Rating
+1052,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4118,0.371,0.371,0.4118,Advanced Beginner
+1053,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2353,0.2628,0.2628,0.2353,Novice
+1054,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.1176,0.1505,0.1505,0.1176,Novice
+1055,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.4179,0.4179,0.5294,No Rating
+1056,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.1176,0.0985,0.0985,0.1176,No Rating
+1057,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2353,0.3456,0.3456,0.2353,No Rating
+1058,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.1176,0.1005,0.1005,0.1176,Novice
+1059,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.4103,0.4103,0.5294,No Rating
+1060,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.1176,0.1841,0.1841,0.1176,Novice
+1061,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.1176,0.0641,0.0641,0.1176,No Rating
+1062,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4706,0.3851,0.3851,0.4706,Advanced Beginner
+1063,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.1765,0.1762,0.1762,0.1765,Novice
+1064,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.5294,0.5251,0.5251,0.5294,Competent
+1065,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.4118,0.379,0.379,0.4118,Advanced Beginner
+1066,Oracle_Refresher_Post_Assessment-SQL_PLSQL_MCQs_Coding-grades,0.2353,0.2621,0.2621,0.2353,Novice
+1067,Selenium AT_1-Automation Testing-grades,0.0,0.0,0.0,0.0,No Rating
+1068,Selenium AT_1-Automation Testing-grades,0.625,0.58,0.58,0.625,Competent
+1069,Selenium AT_1-Automation Testing-grades,0.25,0.19,0.19,0.25,Novice
+1070,Selenium AT_1-Automation Testing-grades,0.75,0.6217,0.6217,0.75,No Rating
+1071,Selenium AT_1-Automation Testing-grades,0.375,0.415,0.415,0.375,Advanced Beginner
+1072,Selenium AT_1-Automation Testing-grades,0.125,0.1833,0.1833,0.125,Novice
+1073,Selenium AT_1-Automation Testing-grades,0.375,0.3883,0.3883,0.375,Advanced Beginner
+1074,Selenium AT_1-Automation Testing-grades,0.75,0.5767,0.5767,0.75,No Rating
+1075,Selenium AT_1-Automation Testing-grades,0.75,0.58,0.58,0.75,No Rating
+1076,Selenium AT_1-Automation Testing-grades,0.875,0.585,0.585,0.875,No Rating
+1077,Selenium AT_1-Automation Testing-grades,0.75,0.6,0.6,0.75,No Rating
+1078,Selenium AT_1-Automation Testing-grades,0.375,0.4233,0.4233,0.375,Advanced Beginner
+1079,Selenium AT_1-Automation Testing-grades,0.0,0.0,0.0,0.0,No Rating
+1080,Selenium AT_1-Automation Testing-grades,0.125,0.2233,0.2233,0.125,Novice
+1081,Selenium AT_1-Automation Testing-grades,0.75,0.495,0.495,0.75,No Rating
+1082,Selenium AT_1-Automation Testing-grades,0.875,0.7817,0.7817,0.875,Proficient
+1083,Selenium AT_1-Automation Testing-grades,0.75,0.6467,0.6467,0.75,No Rating
+1084,Selenium AT_1-Automation Testing-grades,0.5,0.4483,0.4483,0.5,Advanced Beginner
+1085,Selenium AT_1-Automation Testing-grades,0.875,0.6583,0.6583,0.875,No Rating
+1086,Selenium AT_1-Automation Testing-grades,0.75,0.5733,0.5733,0.75,No Rating
+1087,Selenium AT_1-Automation Testing-grades,0.5,0.3,0.3,0.5,Advanced Beginner
+1088,Selenium AT_1-Automation Testing-grades,0.375,0.405,0.405,0.375,Advanced Beginner
+1089,Selenium AT_1-Automation Testing-grades,0.875,0.665,0.665,0.875,No Rating
+1090,Selenium AT_1-Automation Testing-grades,1.0,0.66,0.66,1.0,No Rating
+1091,Selenium AT_1-Automation Testing-grades,0.75,0.5,0.5,0.75,No Rating
+1092,Selenium AT_1-Automation Testing-grades,0.75,0.5967,0.5967,0.75,No Rating
+1093,Selenium AT_1-Automation Testing-grades,0.75,0.555,0.555,0.75,No Rating
+1094,Selenium AT_1-Automation Testing-grades,0.375,0.3167,0.3167,0.375,Advanced Beginner
+1095,Selenium AT_1-Automation Testing-grades,0.75,0.73,0.73,0.75,Proficient
+1096,Selenium AT_1-Automation Testing-grades,0.625,0.5917,0.5917,0.625,Competent
+1097,Selenium AT_1-Automation Testing-grades,0.75,0.6167,0.6167,0.75,No Rating
+1098,Selenium AT_1-Automation Testing-grades,0.5,0.33,0.33,0.5,Advanced Beginner
+1099,Selenium AT_1-Automation Testing-grades,0.625,0.4133,0.4133,0.625,No Rating
+1100,Selenium AT_1-Automation Testing-grades,0.625,0.505,0.505,0.625,Competent
+1101,Selenium AT_1-Automation Testing-grades,0.25,0.3117,0.3117,0.25,No Rating
+1102,Selenium AT_1-Automation Testing-grades,1.0,0.775,0.775,1.0,No Rating
+1103,Selenium AT_1-Automation Testing-grades,0.0,0.0,0.0,0.0,No Rating
+1104,Selenium AT_1-Automation Testing-grades,0.75,0.695,0.695,0.75,No Rating
+1105,Selenium AT_1-Automation Testing-grades,0.625,0.5033,0.5033,0.625,Competent
+1106,Selenium AT_1-Automation Testing-grades,0.625,0.49,0.49,0.625,No Rating
+1107,Selenium AT_1-Automation Testing-grades,1.0,0.7333,0.7333,1.0,No Rating
+1108,Selenium AT_1-Automation Testing-grades,0.375,0.435,0.435,0.375,Advanced Beginner
+1109,Selenium AT_1-Automation Testing-grades,0.375,0.415,0.415,0.375,Advanced Beginner
+1110,Selenium AT_1-Automation Testing-grades,1.0,0.7483,0.7483,1.0,No Rating
+1111,Selenium AT_1-Automation Testing-grades,0.625,0.4633,0.4633,0.625,No Rating
+1112,Selenium AT_1-Automation Testing-grades,0.5,0.485,0.485,0.5,Advanced Beginner
+1113,Selenium AT_1-Automation Testing-grades,0.75,0.5083,0.5083,0.75,No Rating
+1114,Selenium AT_1-Automation Testing-grades,0.75,0.575,0.575,0.75,No Rating
+1115,Selenium AT_1-Automation Testing-grades,0.875,0.645,0.645,0.875,No Rating
+1116,Selenium AT_1-Automation Testing-grades,0.375,0.38,0.38,0.375,Advanced Beginner
+1117,Selenium AT_1-Automation Testing-grades,0.25,0.2117,0.2117,0.25,Novice
+1118,Selenium AT_1-Automation Testing-grades,0.25,0.3317,0.3317,0.25,No Rating
+1119,Selenium AT_1-Automation Testing-grades,1.0,0.6517,0.6517,1.0,No Rating
+1120,Selenium AT_1-Automation Testing-grades,0.625,0.49,0.49,0.625,No Rating
+1121,Selenium AT_1-Automation Testing-grades,0.75,0.59,0.59,0.75,No Rating
+1122,Selenium AT_1-Automation Testing-grades,0.25,0.2617,0.2617,0.25,Novice
+1123,Selenium AT_1-Automation Testing-grades,0.875,0.5883,0.5883,0.875,No Rating
+1124,Selenium AT_1-Automation Testing-grades,0.5,0.43,0.43,0.5,Advanced Beginner
+1125,Selenium AT_1-Automation Testing-grades,0.75,0.455,0.455,0.75,No Rating
+1126,Selenium AT_1-Automation Testing-grades,0.875,0.6833,0.6833,0.875,No Rating
+1127,Selenium AT_1-Automation Testing-grades,0.375,0.405,0.405,0.375,Advanced Beginner
+1128,Selenium AT_1-Automation Testing-grades,0.625,0.4417,0.4417,0.625,No Rating
+1129,Selenium AT_1-Automation Testing-grades,0.5,0.4483,0.4483,0.5,Advanced Beginner
+1130,Selenium AT_1-Automation Testing-grades,0.5,0.3517,0.3517,0.5,Advanced Beginner
+1131,Selenium AT_1-Automation Testing-grades,0.75,0.4783,0.4783,0.75,No Rating
+1132,Selenium AT_1-Automation Testing-grades,0.5,0.4333,0.4333,0.5,Advanced Beginner
+1133,Selenium AT_1-Automation Testing-grades,0.75,0.58,0.58,0.75,No Rating
+1134,Selenium AT_1-Automation Testing-grades,0.625,0.5833,0.5833,0.625,Competent
+1135,Selenium AT_1-Automation Testing-grades,0.375,0.3617,0.3617,0.375,Advanced Beginner
+1136,Selenium AT_1-Automation Testing-grades,0.125,0.225,0.225,0.125,Novice
+1137,Selenium AT_1-Automation Testing-grades,0.375,0.225,0.225,0.375,No Rating
+1138,Selenium AT_1-Automation Testing-grades,0.375,0.285,0.285,0.375,No Rating
+1139,Selenium AT_1-Automation Testing-grades,0.0,0.23,0.23,0.0,No Rating
+1140,Selenium AT_1-Automation Testing-grades,0.625,0.51,0.51,0.625,Competent
+1141,Selenium AT_1-Automation Testing-grades,0.125,0.2117,0.2117,0.125,Novice
+1142,Selenium AT_1-Automation Testing-grades,0.5,0.395,0.395,0.5,Advanced Beginner
+1143,Selenium AT_1-Automation Testing-grades,0.0,0.0,0.0,0.0,No Rating
+1144,Selenium AT_1-Automation Testing-grades,0.375,0.25,0.25,0.375,No Rating
+1145,Selenium AT_1-Automation Testing-grades,0.125,0.04,0.04,0.125,No Rating
+1146,Selenium AT_1-Automation Testing-grades,0.625,0.42,0.42,0.625,No Rating
+1147,Selenium AT_1-Automation Testing-grades,0.375,0.235,0.235,0.375,No Rating
+1148,Selenium AT_1-Automation Testing-grades,0.125,0.14,0.14,0.125,Novice
+1149,Selenium AT_1-Automation Testing-grades,0.0,0.1617,0.1617,0.0,No Rating
+1150,Selenium AT_1-Automation Testing-grades,0.25,0.16,0.16,0.25,Novice
+1151,Selenium AT_1-Automation Testing-grades,0.25,0.1583,0.1583,0.25,Novice
+1152,Selenium AT_1-Automation Testing-grades,0.375,0.4217,0.4217,0.375,Advanced Beginner
+1153,Selenium AT_1-Automation Testing-grades,0.375,0.3633,0.3633,0.375,Advanced Beginner
+1154,Selenium AT_1-Automation Testing-grades,0.125,0.26,0.26,0.125,Novice
+1155,Selenium AT_1-Automation Testing-grades,0.125,0.085,0.085,0.125,No Rating
+1156,Selenium AT_1-Automation Testing-grades,0.125,0.255,0.255,0.125,Novice
+1157,Selenium AT_1-Automation Testing-grades,0.625,0.4733,0.4733,0.625,No Rating
+1158,Selenium AT_1-Automation Testing-grades,0.25,0.39,0.39,0.25,No Rating
+1159,Selenium AT_1-Automation Testing-grades,0.875,0.65,0.65,0.875,No Rating
+1160,Selenium AT_1-Automation Testing-grades,0.125,0.32,0.32,0.125,No Rating
+1161,Selenium AT_1-Automation Testing-grades,0.375,0.385,0.385,0.375,Advanced Beginner
+1162,Selenium AT_1-Automation Testing-grades,0.25,0.375,0.375,0.25,No Rating
+1163,Selenium AT_1-Automation Testing-grades,0.5,0.4767,0.4767,0.5,Advanced Beginner
+1164,Selenium AT_1-Automation Testing-grades,0.5,0.4267,0.4267,0.5,Advanced Beginner
+1165,Selenium AT_1-Automation Testing-grades,0.375,0.29,0.29,0.375,No Rating
+1166,Selenium AT_1-Automation Testing-grades,0.5,0.3483,0.3483,0.5,Advanced Beginner
+1167,Selenium AT_1-Automation Testing-grades,0.75,0.5067,0.5067,0.75,No Rating
+1168,Selenium AT_1-Automation Testing-grades,0.0,0.0917,0.0917,0.0,No Rating
+1169,Selenium AT_1-Automation Testing-grades,0.25,0.215,0.215,0.25,Novice
+1170,Selenium AT_1-Automation Testing-grades,0.75,0.6917,0.6917,0.75,No Rating
+1171,Selenium AT_1-Automation Testing-grades,0.25,0.2583,0.2583,0.25,Novice
+1172,Selenium AT_1-Automation Testing-grades,0.25,0.24,0.24,0.25,Novice
+1173,Selenium AT_1-Automation Testing-grades,0.5,0.39,0.39,0.5,Advanced Beginner
+1174,Selenium AT_1-Automation Testing-grades,0.875,0.6433,0.6433,0.875,No Rating
+1175,Selenium AT_1-Automation Testing-grades,0.0,0.0,0.0,0.0,No Rating
+1176,Selenium AT_1-Automation Testing-grades,0.375,0.3217,0.3217,0.375,Advanced Beginner
+1177,Selenium AT_1-Automation Testing-grades,0.5,0.5017,0.5017,0.5,Competent
+1178,Selenium AT_1-Automation Testing-grades,0.375,0.395,0.395,0.375,Advanced Beginner
+1179,Selenium AT_1-Automation Testing-grades,0.375,0.3483,0.3483,0.375,Advanced Beginner
+1180,Selenium AT_1-Automation Testing-grades,0.625,0.405,0.405,0.625,No Rating
+1181,Selenium AT_1-Automation Testing-grades,0.25,0.135,0.135,0.25,Novice
+1182,Selenium AT_1-Automation Testing-grades,1.0,0.695,0.695,1.0,No Rating
+1183,Selenium AT_1-Automation Testing-grades,0.75,0.49,0.49,0.75,No Rating
+1184,Selenium AT_1-Automation Testing-grades,0.375,0.345,0.345,0.375,Advanced Beginner
+1185,Selenium AT_1-Automation Testing-grades,0.375,0.345,0.345,0.375,Advanced Beginner
+1186,Selenium AT_1-Automation Testing-grades,0.75,0.525,0.525,0.75,No Rating
+1187,Selenium AT_1-Automation Testing-grades,0.75,0.49,0.49,0.75,No Rating
+1188,Selenium AT_1-Automation Testing-grades,0.25,0.23,0.23,0.25,Novice
+1189,Selenium AT_1-Automation Testing-grades,0.625,0.52,0.52,0.625,Competent
+1190,Selenium AT_1-Automation Testing-grades,0.75,0.55,0.55,0.75,No Rating
+1191,Selenium AT_1-Automation Testing-grades,0.25,0.36,0.36,0.25,No Rating
+1192,Selenium AT_1-Automation Testing-grades,0.5,0.4617,0.4617,0.5,Advanced Beginner
+1193,Selenium AT_1-Automation Testing-grades,0.75,0.525,0.525,0.75,No Rating
+1194,Selenium AT_1-Automation Testing-grades,0.0,0.015,0.015,0.0,No Rating
+1195,Selenium AT_1-Automation Testing-grades,0.5,0.4167,0.4167,0.5,Advanced Beginner
