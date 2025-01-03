@@ -1,3 +1,4 @@
+# MYSQL Database 
 use db_7885
 
 # CREATE table customer - id auto increment, name, age, address, city, state, country, phone, email
@@ -49,4 +50,12 @@ INSERT INTO transaction (account_id, type, amount, remarks) VALUES (2, 'credit',
 COMMIT;
 
 
-# CREATE proeedure - to show total balance of a customer, account type , rank over balance use function to get rank 
+# View to show last 10 transaction for the customer of saving accounts
+CREATE VIEW saving_account_transaction AS
+SELECT c.name, a.account_number, t.type, t.amount, t.remarks
+FROM customer c
+JOIN account a ON c.id = a.customer_id
+JOIN transaction t ON a.id = t.account_id
+WHERE a.account_number LIKE '1%'
+ORDER BY t.id DESC
+LIMIT 10;

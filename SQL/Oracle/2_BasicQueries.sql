@@ -33,14 +33,18 @@ SELECT first_name, UPPER(first_name) FROM hr.employees;
 -- 11. Single Row Functions - Example 2
 SELECT first_name, LENGTH(first_name) FROM hr.employees;
 
--- 12. Single Row Functions - SUBSTR
+-- 12. Single Row Functions - SUBSTR - Polymorphism
 SELECT first_name, SUBSTR(first_name, 1, 3) FROM hr.employees;
+SELECT first_name, SUBSTR(first_name, 3) FROM hr.employees;
 
--- 13. Single Row Functions - INSTR
+-- 13. Single Row Functions - INSTR - Polymorphism
 SELECT first_name, INSTR(first_name, 'a') FROM hr.employees;
+SELECT first_name, INSTR(first_name, 'a', 3) FROM hr.employees;
+SELECT first_name, INSTR(first_name, 'a', 2) FROM hr.employees;
+SELECT first_name, INSTR(first_name, 'a', -1) FROM hr.employees;
 
 -- 14. Single Row Functions - EXTRACT
-SELECT first_name, EXTRACT(YEAR FROM hire_date) FROM hr.employees;
+SELECT first_name, EXTRACT(DAY FROM hire_date) FROM hr.employees;
 
 -- 15. Single Row Functions - CEIL, FLOOR
 SELECT salary, CEIL(salary/1000)*1000 AS ceil_salary, FLOOR(salary/1000)*1000 AS floor_salary FROM hr.employees;
@@ -52,8 +56,11 @@ SELECT salary, TRUNC(salary, -3) AS trunc_salary FROM hr.employees;
 SELECT COUNT(*), SUM(salary), AVG(salary), MIN(salary), MAX(salary) FROM hr.employees;
 
 
-# Mask the other dights and show only last 3 dights of Salary column from employees tables of hr schema
+-- Mask the other dights and show only last 3 dights of Salary column from employees tables of hr schema
 
 SELECT salary, 
        LPAD(SUBSTR(salary, -3), LENGTH(salary), 'X') AS masked_salary 
 FROM hr.employees;
+
+-- Get first 3 month letter from hire_date column of employees table of hr schema
+SELECT FIRST_NAME, TO_CHAR(HIRE_DATE, 'MON') AS MONTH FROM HR.EMPLOYEES;
