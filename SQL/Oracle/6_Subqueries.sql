@@ -1,4 +1,3 @@
-
 # Sub queries - Query with in Query. Types of Sub queries: 
 # Nested Sub Query - Sub query inside another sub query
     # 1. Single Row Sub Query - Returns only one row

@@ -25,6 +25,41 @@ GROUP BY
 
 
 # Example 3: Group By with Having clause to filter the group of rows formed by the Group By clause - using OE schema.
+# Display the name of the product and the number of orders for each product.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SELECT
     name,
     COUNT(oi.order_id) AS "Number of Orders"

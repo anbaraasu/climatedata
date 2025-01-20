@@ -4,9 +4,11 @@
 -- data types
     -- number, varchar, varchar2, char, date, timestamp, decimal
     
+-- scope 
+    -- local, global/public
     l_name varchar(20) := 'John';
     g_company_name varchar2(7) := 'HCLTech';
-    l_salary number(15,2) := 10000.00;
+    l_salary number(15,2) := 9999999999999.99;
 
 -- operators
     -- arithmetic operators - +, -, *, /, %, ** (BEDMAS)

@@ -95,7 +95,7 @@ END;
 --     -- It is a pointer to the result set of a query
 --     -- types of cursor - Implicit Cursor, Explicit Cursor
 --     -- Implicit Cursor - Automatically created by Oracle
---     -- Explicit Cursor - User defined cursor
+--     -- Explicit Cursor - User defined cursor - DECLARE, OPEN, FETCH, CLOSE
 --     -- Cursor Attributes - %FOUND, %NOTFOUND, %ROWCOUNT, %ISOPEN
 --     -- Weak Ref Cursor - Ref Cursor with no return type
 --     -- Strong Ref Cursor - Ref Cursor with return type
@@ -103,7 +103,7 @@ END;
 DECLARE
     CURSOR emp_cur IS
         SELECT * FROM hr.employees;
-    emp_rec employees%ROWTYPE;
+    emp_rec hr.employees%ROWTYPE;
 BEGIN
     OPEN emp_cur;
     LOOP

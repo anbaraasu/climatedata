@@ -9,7 +9,7 @@
 
 --Consider a more complex expression:
 
-SELECT 2 * 3 + 4 / 2 + 10 - 2 FROM dual;
+SELECT 2 * 3 + 4 / 2 + 10 - 2 FROM dual; -- 18 , 16, 
 
 
 /* 
@@ -65,8 +65,8 @@ SELECT COALESCE(commission_pct, 0) FROM hr.employees WHERE employee_id = 100;
 
 -- Dropping columns and setting column UNUSED
 -- You can drop columns from a table using the ALTER TABLE DROP COLUMN statement. You can also set a column to UNUSED using the ALTER TABLE SET UNUSED statement. UNUSED - The UNUSED clause is used to mark a column as unused. The column is not physically removed from the table, but it is no longer accessible to SQL statements.
-
-ALTER TABLE hr.employees DROP COLUMN commission_pct;
+-- to disable the column instead of dropping it, you can use the SET UNUSED clause.
+ALTER TABLE hr.employees DROP COLUMN commission_pct; --(ALTER TABLE EMPLOYEE SET UNUSED (commission_pct);)
 
 ALTER TABLE hr.employees SET UNUSED (commission_pct);
 
