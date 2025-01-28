@@ -28,14 +28,14 @@ END package_name;
 
 -- Demo for persistence of variables in a package (local, public, global)
 
-CREATE OR REPLACE PACKAGE emp_package AS
+CREATE OR REPLACE PACKAGE persistence_demo AS
     PRAGMA SERIALLY_REUSABLE; -- pragma to make the package serially reusable
 	g_counter NUMBER := 3; -- global variable
     PROCEDURE INCREMENT_COUNTER;
-END emp_package;
+END persistence_demo;
 /
 
-CREATE OR REPLACE PACKAGE BODY emp_package AS
+CREATE OR REPLACE PACKAGE BODY persistence_demo AS
     PRAGMA SERIALLY_REUSABLE; -- pragma to make the package serially reusable
     p_counter NUMBER := 2; -- public variable
     PROCEDURE INCREMENT_COUNTER IS
@@ -48,14 +48,14 @@ CREATE OR REPLACE PACKAGE BODY emp_package AS
         DBMS_OUTPUT.PUT_LINE('Public Counter: ' || p_counter);
         DBMS_OUTPUT.PUT_LINE('Local Counter: ' || l_counter);
     END INCREMENT_COUNTER;
-END emp_package;
+END persistence_demo;
 /
 
 -- execute the package
 -- g = 3, p = 2, l = 1, g = g +3, p = p + 2, l = l + 1;
-EXEC emp_package.INCREMENT_COUNTER;
+EXEC persistence_demo.INCREMENT_COUNTER;
 -- g = 6, p = 4, l = 1, g = g +3, p = p + 2, l = l + 1;
-EXEC emp_package.INCREMENT_COUNTER;
+EXEC persistence_demo.INCREMENT_COUNTER;
 -- g = 9, p = 6, l = 1, g = g +3, p = p + 2, l = l + 1;
 EXEC emp_package.INCREMENT_COUNTER;
 

@@ -11,6 +11,7 @@
 -- ON table_name
 -- [FOR EACH ROW]
 -- [WHEN condition]
+-- DECLARE
 -- BEGIN
 --     -- Trigger code
 -- EXCEPTION
@@ -20,7 +21,7 @@
 
 -- Features of Triggers
 -- Data Integrity (complex constraints )
--- Auditing
+-- Auditing (few cols in every tables - createdby, modifiedby, createddate, updatedate or separate table), LOG  (master or important or critical tables.. )
 -- Synchronization (backup)
 -- Data Validation
 -- Complex Security Authorization
@@ -55,9 +56,11 @@ BEGIN
     
     -- Example: Set AGE_GROUP based on AGE
     IF :NEW.AGE < 18 THEN
-        :NEW.AGE_GROUP := 'Child';
+        --:NEW.AGE_GROUP := 'Child';
+        DBMS_OUTPUT.PUT_LINE('Child');
     ELSE
-        :NEW.AGE_GROUP := 'Adult';
+        --:NEW.AGE_GROUP := 'Adult';
+        DBMS_OUTPUT.PUT_LINE('Adult');
     END IF;
     
     -- You can also raise an exception to prevent the insert or update if needed
@@ -69,14 +72,26 @@ BEGIN
 END;
 /
 
--- TEST THE TRIGGER
-INSERT INTO PERSON_DETAILS(ID, NAME, AGE, SALARY) VALUES(1, 'A', 21, 1000);
 
-SELECT * FROM PERSON_DETAILS;
+CREATE SEQUENCE PERSON_DETAILS_SEQ;
+
+DROP TABLE PERSON_DETAILS;
+CREATE TABLE PERSON_DETAILS(ID INT, NAME VARCHAR2(10), AGE INT, AGE_GROUP VARCHAR2(10), SALARY NUMBER(15,2));
+
 
 CREATE TABLE PERSON_AUDIT(ID INT PRIMARY KEY, PERSON_ID INT, OLD_SALARY NUMBER(15,2), NEW_SALARY NUMBER(15,2), ACTION CHAR(1), ACTION_DATE DATE, USER_NAME VARCHAR2(50));
 
-CREATE SEQUENCE PERSON_AUDIT_SEQ;
+
+CREATE OR REPLACE TRIGGER PERSON_DETAILS_ID_SEQ_TRG BEFORE INSERT ON PERSON_DETAILS FOR EACH ROW
+BEGIN
+    SELECT PERSON_DETAILS_SEQ.NEXTVAL INTO :NEW.ID FROM DUAL;
+END;
+/
+
+INSERT INTO PERSON_DETAILS(NAME, AGE, SALARY) VALUES('A', 21, 1000);
+
+SELECT * FROM PERSON_DETAILS;
+
 
 -- Realistic Usecase for AFTER INSERT/UPDATE
 CREATE OR REPLACE TRIGGER trg_person_audit

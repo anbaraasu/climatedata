@@ -1,3 +1,4 @@
+DROP TABLE person;
 CREATE TABLE person (name VARCHAR(20),state VARCHAR(20),city VARCHAR(20));
 
 SELECT * FROM person;

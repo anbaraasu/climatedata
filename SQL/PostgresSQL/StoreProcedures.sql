@@ -80,10 +80,23 @@ INSERT INTO Transactions (AccountID, TransactionType, Amount, TransactionDate) V
 (9, 'Deposit', 900.00, '2023-01-09 18:00:00'),
 (10, 'Withdrawal', 1000.00, '2023-01-10 19:00:00');
 
+
+SELECT JSON_ARRAYAGG(FirstName) FROM Customers;
+
+# Example for ARRAY, ARRAY_AGG, ARRAY_APPEND, ARRAY_CONCAT, ARRAY_LENGTH, ARRAY_PREPEND
+SELECT ARRAY[1, 2, 3] AS arr1, ARRAY[4, 5, 6] AS arr2;
+
+SELECT ARRAY_AGG(FirstName) FROM Customers;
+
+SELECT ARRAY_APPEND(ARRAY[1, 2, 3], 4) AS arr1;
+
+SELECT array_prepend(0, ARRAY[1, 2, 3]) AS arr1;
+
 # Stored Procedures is a set of SQL statements that are stored in the database and can be called by name to perform a specific task. Stored procedures can be used to encapsulate complex logic, improve performance, and enhance security.
 
 # Stored Procedure Demo
 # Use case: Get top 10 transactions for a specific account
+DROP FUNCTION IF EXISTS GenerateMiniTransactions(INT);
 CREATE OR REPLACE FUNCTION GenerateMiniTransactions(account_id INT)
 RETURNS TABLE (
     TransactionID INT,
@@ -102,5 +115,31 @@ END;
 
 $$ LANGUAGE plpgsql;
 
-# Calling the stored procedure
-SELECT * FROM GenerateMiniTransactions(1);
+# Test the function GetMiniTransactions for AccountID 1 and display the results
+
+
+
+
+# Error and Exception Handling: 
+# RAISE EXCEPTION, RAISE NOTICE, RAISE WARNING, RAISE DEBUG, RAISE LOG, RAISE INFO
+# RAISE EXCEPTION: Raises an error and stops the execution of the current transaction block.
+# RAISE NOTICE: Prints a message to the console but does not stop the execution of the current transaction block.
+# RAISE WARNING: Prints a warning message to the console but does not stop the execution of the current transaction block.
+# RAISE DEBUG: Prints a debug message to the console but does not stop the execution of the current transaction block.
+# RAISE LOG: Prints a log message to the console but does not stop the execution of the current transaction block.
+
+# Stored Procedure with Error Handling
+CREATE OR REPLACE FUNCTION UpdateAccountBalance(account_id INT, amount DECIMAL(10, 2))
+RETURNS VOID AS $$
+BEGIN
+    UPDATE Accounts
+    SET Balance = Balance + amount
+    WHERE AccountID = account_id;
+
+    IF NOT FOUND THEN
+        RAISE EXCEPTION 'Account not found with ID %', account_id;
+    ELSE
+        RAISE NOTICE 'Account balance updated for Account ID %', account_id;
+    END IF;
+END;
+$$ LANGUAGE plpgsql;
