@@ -1,4 +1,19 @@
 -- PLSQL Collections (Composite Data Types)
+
+-- Anchor/Reference Data type:
+-- %TYPE - Data type of a variable, column, or parameter
+-- %ROWTYPE - Record type of a table or cursor
+
+DECLARE 
+    emp_id employees.employee_id%TYPE;
+    emp_name employees.first_name%TYPE;
+    emp_sal employees.salary%TYPE;
+BEGIN 
+    SELECT employee_id, first_name, salary INTO emp_id, emp_name, emp_sal 
+    FROM employees WHERE employee_id = 100;
+    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || emp_id || ' Employee Name: ' || emp_name || ' Employee Salary: ' || emp_sal);
+END;
+
 --     -- Collection is a group of elements of same type
 
 --     -- 1. Record
@@ -101,19 +116,19 @@ END;
 --     -- Strong Ref Cursor - Ref Cursor with return type
 
 DECLARE
-    CURSOR emp_cur IS
-        SELECT * FROM hr.employees;
-    emp_rec hr.employees%ROWTYPE;
+    CURSOR emp_cur IS 
+        SELECT * FROM hr.employees; -- DECLARE the cursor
+    emp_rec emp%ROWTYPE;
 BEGIN
-    OPEN emp_cur;
+    OPEN emp_cur; -- Open the cursor
     LOOP
-        FETCH emp_cur INTO emp_rec;
+        FETCH emp_cur INTO emp_rec; -- fetch the cursor record
         EXIT WHEN emp_cur%NOTFOUND;
         DBMS_OUTPUT.PUT_LINE('Employee ID: ' || emp_rec.employee_id);
         DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_rec.first_name);
         DBMS_OUTPUT.PUT_LINE('Employee Salary: ' || emp_rec.salary);
     END LOOP;
-    CLOSE emp_cur;
+    CLOSE emp_cur; -- close the cursor.
 END;
 /
 

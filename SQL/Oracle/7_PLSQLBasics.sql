@@ -2,12 +2,12 @@
 -- variables and constant
     -- varname = value;
 -- data types
-    -- number, varchar, varchar2, char, date, timestamp, decimal
+    -- number, int, decimal, varchar, varchar2, char, date, timestamp
     
 -- scope 
     -- local, global/public
     l_name varchar(20) := 'John';
-    g_company_name varchar2(7) := 'HCLTech';
+    g_company_name CONSTANT varchar2(7) := 'HCLTech';
     l_salary number(15,2) := 9999999999999.99;
 
 -- operators
@@ -20,13 +20,13 @@
 -- condn. statements
     -- if-else - if-elsif-else, if-elsif-elsif-else, if-if-else-else(nested if)
     if (num > 0) then
-        if num % 2 == 0 then
+        if MOD(num,2) = 0 then
             DBMS_OUTPUT.PUT_LINE('Even');
         else        
             DBMS_OUTPUT.PUT_LINE('Odd');
         end if;
     else
-        DBMS_OUTPUT.PUT_LINE('Negative');
+        DBMS_OUTPUT.PUT_LINE('Only non zero values are accepted.');
     end if;
 
     -- case
@@ -103,7 +103,7 @@
         i := i - 1;
     end loop;
 
-    -- loop - you decide the exit condition
+    -- loop - you can decide the exit condition
     loop
         DBMS_OUTPUT.PUT_LINE(i);
         i := i + 1;
@@ -115,7 +115,7 @@
     -- continue - skip the current iteration and continue with next iteration
     -- return - return from a function or procedure
     -- goto - jump to a label
-    -- exit - exit from a loop
+    -- exit - exit from a loop/program
 
 -- Demo with all control statements
 DECLARE 

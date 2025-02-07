@@ -52,3 +52,5 @@ tmp/
 *.pyc
 __pycache__/
 venv/
+
+*.zip

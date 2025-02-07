@@ -1,4 +1,4 @@
--- PostgresSQL Database
+-- PostgresSQL Database: https://www.postgresql.org/about/ 
 -- Creating Customers table
 CREATE TABLE Customers (
     CustomerID SERIAL PRIMARY KEY,
@@ -116,7 +116,31 @@ END;
 $$ LANGUAGE plpgsql;
 
 # Test the function GetMiniTransactions for AccountID 1 and display the results
+SELECT * FROM GenerateMiniTransactions(1);
 
+-- GenerateMiniTransactions with error handling
+DROP FUNCTION IF EXISTS GenerateMiniTransactions(INT);
+CREATE OR REPLACE FUNCTION GenerateMiniTransactions(account_id INT)
+RETURNS TABLE (
+    TransactionID INT,
+    TransactionType VARCHAR(50),
+    Amount DECIMAL(10, 2),
+    TransactionDate TIMESTAMP
+) AS $$
+BEGIN
+    IF NOT EXISTS (SELECT 1 FROM Accounts WHERE AccountID = account_id) THEN
+        RAISE EXCEPTION 'Account not found with ID %', account_id;
+    ELSE
+        RETURN QUERY
+        SELECT TransactionID, TransactionType, Amount, TransactionDate
+        FROM Transactions
+        WHERE AccountID = account_id
+        ORDER BY TransactionDate DESC
+        LIMIT 10;
+    END IF;
+END;
+
+$$ LANGUAGE plpgsql;
 
 
 
@@ -143,3 +167,25 @@ BEGIN
     END IF;
 END;
 $$ LANGUAGE plpgsql;
+
+-- CTE
+-- 1. Recursive CTE
+-- 2. Non-Recursive CTE
+
+-- Window Functions
+-- 1. Aggregate Functions - SUM, AVG, COUNT, MIN, MAX
+-- 2. Ranking Functions - ROW_NUMBER, RANK, DENSE_RANK, NTILE
+-- 3. Analytic Functions - LAG, LEAD, FIRST_VALUE, LAST_VALUE
+
+-- SET Operations
+-- 1. UNION
+-- 2. UNION ALL
+-- 3. INTERSECT
+-- 4. EXCEPT
+
+-- EXCEPT demo
+SELECT first_name FROM employees
+EXCEPT
+SELECT first_name FROM employees WHERE employee_id IN (1, 2, 3);
+
+
