@@ -1,4 +1,4 @@
-aining_db.employees;
+
 CREATE TABLE employees (
     employee_id SERIAL PRIMARY KEY,
     first_name VARCHAR(50),
@@ -126,3 +126,4 @@ JOIN
 ON
   tbl1.id = tbl2.id;
 ----------------------------------------------------------
+

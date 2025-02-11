@@ -5,47 +5,61 @@
 --     -- User-defined Exceptions
 
 -- Predefined Exceptions:
---     -- NO_DATA_FOUND
---     -- TOO_MANY_ROWS
---     -- INVALID_CURSOR
---     -- ZERO_DIVIDE
---     -- DUP_VAL_ON_INDEX
---     -- LOGIN_DENIED
+--     -- NO_DATA_FOUND - error code: 100
+--     -- TOO_MANY_ROWS - error code: 1422
+--     -- INVALID_CURSOR - error code: 1001
+--     -- ZERO_DIVIDE - error code: 1476
+--     -- DUP_VAL_ON_INDEX - error code: 1
+--     -- LOGIN_DENIED - error code: 1017
 
 -- Demo on Predefined Exceptions
 
-DECLARE
+CREATE OR REPLACE PROCEDURE GET_EMP_SAL (p_dept_id INT) AS
     emp_sal NUMBER;
 BEGIN
-    SELECT salary INTO emp_sal FROM hr.employees WHERE employee_id = 1;
+    SELECT salary INTO emp_sal FROM emp WHERE department_id = p_dept_id;
     DBMS_OUTPUT.PUT_LINE('Employee Salary: ' || emp_sal);
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('Employee not found for ID:1');
+        DBMS_OUTPUT.PUT_LINE('Employee not found for Dept ID:' || p_dept_id);
     WHEN TOO_MANY_ROWS THEN
-        DBMS_OUTPUT.PUT_LINE('More than one employee found');
+        DBMS_OUTPUT.PUT_LINE('More than one employee found');    
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error Occured:' || SQLCODE || ' msg:' || SQLERRM);
 END;
+/
+
+EXEC GET_EMP_SAL(4);
+
 
 -- User-defined Exceptions: User-defined exceptions are defined by the user and raised explicitly in the PLSQL block.
 -- EXCEPTION, RAISE or RAISE_APPLICATION_ERROR, PRAGMA EXCEPTION_INIT
 
-DECLARE
+CREATE OR REPLACE PROCEDURE APPLY_LONG_TERM_BONUS(emp_id INT)
+    emp_term NUMBER;
     emp_sal NUMBER;
-    emp_id NUMBER := 1; 
-    emp_not_found EXCEPTION;
+    emp_no_bonus_long_term EXCEPTION;
 BEGIN
-    SELECT salary INTO emp_sal FROM hr.employees WHERE employee_id = emp_id;
-    DBMS_OUTPUT.PUT_LINE('Employee Salary: ' || emp_sal);
+    SELECT INT((SYSDATE - hire_date)/365), salary INTO emp_term, emp_sal FROM emp WHERE employee_id = emp_id;
+    IF (emp_term < 10) THEN
+        RAISE emp_no_bonus_long_term;
+    ELSE
+        emp_sal := emp_sal + 10000;
+    END IF;
+    DBMS_OUTPUT.PUT_LINE('Employee Salary with bonus: ' || emp_sal);
 EXCEPTION
     WHEN NO_DATA_FOUND THEN
-        RAISE emp_not_found;
+        DBMS_OUTPUT.PUT_LINE('No employee found');
     WHEN TOO_MANY_ROWS THEN
         DBMS_OUTPUT.PUT_LINE('More than one employee found');
-    WHEN emp_not_found THEN
-        DBMS_OUTPUT.PUT_LINE('Employee not found');
+    WHEN emp_no_bonus_long_term THEN
+        DBMS_OUTPUT.PUT_LINE('Employee is not a long term employee');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error occurred:' || sqlerrm || ' Error code: ' || sqlcode);
-END;
+END APPLY_LONG_TERM_BONUS;
+/
+
+EXEC APPLY_LONG_TERM_BONUS(120);
 
 DECLARE
     emp_sal NUMBER;
@@ -96,7 +110,6 @@ END;
 DECLARE
     emp_sal NUMBER;
     emp_id NUMBER := 1; 
-    emp_low_sal EXCEPTION;
 BEGIN
     SELECT salary INTO emp_sal FROM hr.employees WHERE employee_id = emp_id;
     IF emp_sal < 10000 THEN

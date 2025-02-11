@@ -205,15 +205,15 @@ BEGIN
         	DBMS_OUTPUT.PUT_LINE(CHR(9) || 'Product Name: ' || prd_rec.PRODUCT_NAME);
     	END LOOP;
     END LOOP;
-END;
+END DISPLAY_CUST_DETAILS;
 /
 
-EXEC DISPLAY_CUST_DETAILS('M');
-EXEC DISPLAY_CUST_DETAILS('F');
 
  
- -- Procedure with Weak Type Cursor demo, flag parameter in proc will decide which table either hr.employees or hr.department to display the data
- CREATE OR REPLACE PROCEDURE weak_type_cursor_demo(flag boolean) AS
+ CREATE TABLE DEPT AS SELECT * FROM HR.DEPARTMENTS;
+
+-- Procedure with Weak Type Cursor demo, flag parameter in proc will decide which table either hr.employees or hr.department to display the data
+ CREATE OR REPLACE PROCEDURE weak_type_cursor_demo(flag boolean DEFAULT true) AS
     TYPE emp_cur IS REF CURSOR;
     cur_rec emp_cur;
     emp_rec1 emp%ROWTYPE;
@@ -225,8 +225,8 @@ BEGIN
         LOOP
             FETCH cur_rec INTO emp_rec1;
             EXIT WHEN cur_rec%NOTFOUND;
-            DBMS_OUTPUT.PUT_LINE('Employee ID: ' || emp_rec1.id);
-            DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_rec1.full_name);
+            DBMS_OUTPUT.PUT_LINE('Employee ID: ' || emp_rec1.employee_id);
+            DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_rec1.first_name);
             DBMS_OUTPUT.PUT_LINE('Employee Salary: ' || emp_rec1.salary);
         END LOOP;
     ELSE
@@ -235,11 +235,16 @@ BEGIN
         LOOP
             FETCH cur_rec INTO dept_rec1;
             EXIT WHEN cur_rec%NOTFOUND;
-            DBMS_OUTPUT.PUT_LINE('Dept ID: ' || dept_rec1.id);
-            DBMS_OUTPUT.PUT_LINE('Dept Name: ' || dept_rec1.name);
+            DBMS_OUTPUT.PUT_LINE('Dept ID: ' || dept_rec1.department_id);
+            DBMS_OUTPUT.PUT_LINE('Dept Name: ' || dept_rec1.department_name);
         END LOOP;
     END IF;
         CLOSE cur_rec;
-END;
+END weak_type_cursor_demo;
 /
 
+EXEC weak_type_cursor_demo(true);
+EXEC weak_type_cursor_demo(false);
+
+
+EXEC weak_type_cursor_demo;

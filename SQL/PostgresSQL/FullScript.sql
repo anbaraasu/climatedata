@@ -67,7 +67,7 @@ CREATE TABLE projects (
 -- Create a table for "employee_projects" (many-to-many relationship)
 DROP TABLE IF EXISTS employee_projects;
 CREATE TABLE employee_projects (
-    employee_id INT REFERENCES employees(employee_id),
+    employee_id INT ,
     project_id INT REFERENCES projects(project_id),
     PRIMARY KEY (employee_id, project_id),
     hours_worked INT
