@@ -5,6 +5,7 @@ DECLARE
     COMPANY_NAME VARCHAR2(7) := 'HCLTECH';
 BEGIN
     DECLARE
+        --local
         l_name VARCHAR2(10) := 'A';
         l_age INT := 21;
     BEGIN
@@ -13,6 +14,8 @@ BEGIN
         DBMS_OUTPUT.PUT_LINE(CHR(13) || ' Age:' || CHR(13) || l_age);
     END;
 END;
+
+
 
 -- PROCEDURE - NESTED PROCEDURE
 

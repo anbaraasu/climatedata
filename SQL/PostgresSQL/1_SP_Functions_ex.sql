@@ -289,3 +289,9 @@ SELECT get_stacked_diagnostics_example();
 -- Total Hours Worked: 220
 --(Table and sample data are available in SP_Functions_ex.sql file).. 
 
+
+
+-- COUNT OF INDEXES in oracle database schema
+SELECT COUNT(*) FROM user_indexes;
+
+
