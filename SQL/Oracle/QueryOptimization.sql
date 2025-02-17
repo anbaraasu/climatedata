@@ -1,10 +1,11 @@
 /*
     Oracle SQL Query Optimization Strategy: 
+    
     1. Use of Indexes
-    2. Use of CTE
-    3. Use of JOINS
-    4. Hints
-    5. Table Partitioning
+    2. Table Partitioning
+    3. Use of CTE
+    4. Use of JOINS
+    5. Hints    
 
     Explain plan: Used to display the execution plan for a SQL statement without executing it.
 
@@ -31,16 +32,33 @@ DROP TABLE IF EXISTS leave_types;
 DROP TABLE IF EXISTS holidays;
 
 
-
+-- with out partioning
 CREATE TABLE employees (
     employee_id INT PRIMARY KEY,
-    first_name VARCHAR(100),
+    first_name VARCHAR(100) UNIQUE,
     last_name VARCHAR(100),
     dept_name VARCHAR(100),
     mgr_id INT REFERENCES employees(employee_id),
     gender CHAR(1), -- M, F, O
     age INT
 );
+
+-- employee with partition on mgr_id 
+-- CREATE TABLE employees (
+--     employee_id INT PRIMARY KEY,
+--     first_name VARCHAR(100) UNIQUE,
+--     last_name VARCHAR(100),
+--     dept_name VARCHAR(100),
+--     mgr_id INT REFERENCES employees(employee_id),
+--     gender CHAR(1), -- M, F, O
+--     age INT
+-- ) PARTITION BY RANGE (mgr_id) (
+--     PARTITION p0 VALUES LESS THAN (2),
+--     PARTITION p1 VALUES LESS THAN (4),
+--     PARTITION p_null VALUES LESS THAN (MAXVALUE) -- Partition for NULL values
+-- );
+
+
 
 -- Create a table for "leave_types"
 
@@ -82,23 +100,32 @@ CREATE TABLE leave_balance (
 
 -- insert data for employees
 INSERT INTO employees (employee_id, first_name, last_name, dept_name, mgr_id, gender, age) VALUES
-(1, 'John', 'Doe', 'HR', NULL, 'M', 30),
-(2, 'Jane', 'Doe', 'IT', 1, 'F', 25),
-(3, 'Alice', 'Smith', 'HR', 1, 'F', 28),
-(4, 'Bob', 'Johnson', 'IT', 2, 'M', 35),
-(5, 'Eve', 'Williams', 'HR', 1, 'F', 32),
-(6, 'Mike', 'Brown', 'IT', 2, 'M', 40),
-(7, 'Sarah', 'Lee', 'HR', 1, 'F', 29),
-(8, 'David', 'Wilson', 'IT', 2, 'M', 33),
-(9, 'Karen', 'Anderson', 'HR', 1, 'F', 27),
+(1, 'John', 'Doe', 'HR', NULL, 'M', 30);
+INSERT INTO employees (employee_id, first_name, last_name, dept_name, mgr_id, gender, age) VALUES
+(2, 'Jane', 'Doe', 'IT', 1, 'F', 25);
+INSERT INTO employees (employee_id, first_name, last_name, dept_name, mgr_id, gender, age) VALUES
+(3, 'Alice', 'Smith', 'HR', 1, 'F', 28);
+INSERT INTO employees (employee_id, first_name, last_name, dept_name, mgr_id, gender, age) VALUES
+(4, 'Bob', 'Johnson', 'IT', 2, 'M', 35);
+INSERT INTO employees (employee_id, first_name, last_name, dept_name, mgr_id, gender, age) VALUES
+(5, 'Eve', 'Williams', 'HR', 1, 'F', 32);
+INSERT INTO employees (employee_id, first_name, last_name, dept_name, mgr_id, gender, age) VALUES
+(6, 'Mike', 'Brown', 'IT', 2, 'M', 40);
+INSERT INTO employees (employee_id, first_name, last_name, dept_name, mgr_id, gender, age) VALUES
+(7, 'Sarah', 'Lee', 'HR', 1, 'F', 29);
+INSERT INTO employees (employee_id, first_name, last_name, dept_name, mgr_id, gender, age) VALUES
+(8, 'David', 'Wilson', 'IT', 2, 'M', 33);
+INSERT INTO employees (employee_id, first_name, last_name, dept_name, mgr_id, gender, age) VALUES
+(9, 'Karen', 'Anderson', 'HR', 1, 'F', 27);
+INSERT INTO employees (employee_id, first_name, last_name, dept_name, mgr_id, gender, age) VALUES
 (10, 'Tom', 'Thomas', 'IT', 2, 'M', 31);
 
 -- insert data for leave_types
 INSERT INTO leave_types (leave_type_id, leave_type) VALUES
-(1, 'Annual Leave'),
-(2, 'Resticted Leave'),
-(3, 'Maternity Leave'),
-(4, 'Paternity Leave');
+(1, 'Annual Leave');
+INSERT INTO leave_types (leave_type_id, leave_type) VALUES(2, 'Resticted Leave');
+INSERT INTO leave_types (leave_type_id, leave_type) VALUES(3, 'Maternity Leave');
+INSERT INTO leave_types (leave_type_id, leave_type) VALUES(4, 'Paternity Leave');
 
 -- insert data for holidays
 INSERT INTO holidays (holiday_id, holiday_date, holiday_name) VALUES
@@ -114,10 +141,10 @@ INSERT INTO leave_balance (leave_balance_id, leave_type_id, max_leaves) VALUES
 
 -- insert data for leave_requests
 INSERT INTO leave_requests (leave_request_id, employee_id, start_date, end_date, leave_type_id, reason, leave_status, approved_id) VALUES
-(1, 2, SYSDATE - 4, SYSDATE - 4, 1, 'Sick Leave', 2, 1),
-(2, 4, SYSDATE - 4, SYSDATE - 4, 1, 'Sick Leave', 1, NULL),
-(3, 6, SYSDATE - 4, SYSDATE - 4, 1, 'Sick Leave', 1, NULL),
-(5, 10, SYSDATE - 4, SYSDATE - 4, 1, 'Sick Leave', 2, 2);
+(1, 2, SYSDATE - 4, SYSDATE - 4, 1, 'Sick Leave', 2, 1);
+INSERT INTO leave_requests (leave_request_id, employee_id, start_date, end_date, leave_type_id, reason, leave_status, approved_id) VALUES(2, 4, SYSDATE - 4, SYSDATE - 4, 1, 'Sick Leave', 1, NULL);
+INSERT INTO leave_requests (leave_request_id, employee_id, start_date, end_date, leave_type_id, reason, leave_status, approved_id) VALUES(3, 6, SYSDATE - 4, SYSDATE - 4, 1, 'Sick Leave', 1, NULL);
+INSERT INTO leave_requests (leave_request_id, employee_id, start_date, end_date, leave_type_id, reason, leave_status, approved_id) VALUES(5, 10, SYSDATE - 4, SYSDATE - 4, 1, 'Sick Leave', 2, 2);
 
 INSERT INTO leave_requests (leave_request_id, employee_id, start_date, end_date, leave_type_id, reason, leave_status, approved_id) VALUES
 (4, 2, SYSDATE - 2, SYSDATE - 2, 1, 'Restricted Leave', 2, 1);
@@ -130,6 +157,16 @@ BEGIN
     END LOOP;
 END;
 
+SELECT 
+    e.first_name, leave_type, COUNT(lr.leave_request_id) AS no_of_leave_days
+FROM
+    leave_requests lr
+JOIN
+    employees e ON e.employee_id = lr.employee_id
+JOIN
+    leave_types lt ON lr.leave_type_id = lt.leave_type_id
+GROUP BY
+    e.first_name, leave_type;
 
 
 -- Find employee name, leave type, max_leaves, approved_leaves, leave_balance for each employee
@@ -138,6 +175,161 @@ END;
 -- With Index: 0.02 Sec (4 rows)
 -- Without indexes Execution Time: 0.021 sec (37 rows)
 -- With Index: 0.003 Sec (37 rows)
+
+WITH employee_leaves AS (
+    SELECT 
+        e.first_name || ' ' || e.last_name AS full_name, 
+        lr.leave_type_id, 
+        COUNT(lr.leave_request_id) AS approved_leaves
+    FROM
+        employees e
+    JOIN
+        leave_requests lr ON e.employee_id = lr.employee_id
+    JOIN
+        leave_types lt ON lr.leave_type_id = lt.leave_type_id
+    GROUP BY
+        e.first_name, e.last_name, lr.leave_type_id
+)
+SELECT 
+    full_name, 
+    lb.leave_type_id, 
+    SUM(lb.max_leaves) AS max_leaves, 
+    SUM(approved_leaves), 
+    SUM(lb.max_leaves) - SUM(approved_leaves) AS leave_balance
+FROM 
+    employee_leaves el
+JOIN 
+    leave_balance lb ON lb.leave_type_id = el.leave_type_id
+GROUP BY 
+    full_name, lb.leave_type_id;
+
+-- CREATE INDEX ON leave_type_id in leave_requests and leave_balance tables
+CREATE INDEX leave_requests_leave_type_id_idx ON leave_requests(leave_type_id);
+CREATE INDEX leave_balance_leave_type_id_idx ON leave_balance(leave_type_id);
+
+-- CREATE INDEX ON employee_id in leave_requests table
+CREATE INDEX leave_requests_employee_id_idx ON leave_requests(employee_id);
+
+DROP INDEX  leave_requests_leave_type_id_idx;
+DROP INDEX  leave_balance_leave_type_id_idx;
+DROP INDEX  leave_requests_employee_id_idx;
+
+-- EXPLAIN PLAN <SET STATEMENT_ID = 'TIM'> FOR <QUERY>
+-- SET AUTOTRACE ON
+-- SET AUTOTRACE TRACEONLY
+
+DROP TABLE PLAN_TABLE;
+create table PLAN_TABLE ( 
+        statement_id       varchar2(255), 
+        plan_id            number, 
+        timestamp          date, 
+        remarks            varchar2(4000), 
+        operation          varchar2(100), 
+        options            varchar2(255), 
+        object_node        varchar2(128), 
+        object_owner       varchar2(100), 
+        object_name        varchar2(100), 
+        object_alias       varchar2(65), 
+        object_instance    numeric, 
+        object_type        varchar2(100), 
+        optimizer          varchar2(255), 
+        search_columns     number, 
+        id                 numeric, 
+        parent_id          numeric, 
+        depth              numeric, 
+        position           numeric, 
+        cost               numeric, 
+        cardinality        numeric, 
+        bytes              numeric, 
+        other_tag          varchar2(255), 
+        partition_start    varchar2(255), 
+        partition_stop     varchar2(255), 
+        partition_id       numeric, 
+        other              long, 
+        distribution       varchar2(100), 
+        cpu_cost           numeric, 
+        io_cost            numeric, 
+        temp_space         numeric, 
+        access_predicates  varchar2(4000), 
+        filter_predicates  varchar2(4000), 
+        projection         varchar2(4000), 
+        time               numeric, 
+        qblock_name        varchar2(100), 
+        other_xml          clob 
+);
+
+delete from plan_table;
+
+EXPLAIN PLAN   
+    SET STATEMENT_ID = 'GETLEAVEBAL'  
+    FOR  SELECT 
+    full_name, lb.leave_type_id, SUM(lb.max_leaves) max_leaves, SUM(approved_leaves), 
+    SUM(lb.max_leaves) - SUM(approved_leaves) AS leave_balance
+FROM (SELECT 
+    e.first_name || ' ' || e.last_name full_name, lr.leave_type_id, COUNT(lr.leave_request_id) AS approved_leaves
+FROM
+    employees e
+JOIN
+    leave_requests lr ON e.employee_id = lr.employee_id
+JOIN
+    leave_types lt ON lr.leave_type_id = lt.leave_type_id
+GROUP BY
+    e.first_name, e.last_name, lr.leave_type_id) el
+JOIN 
+    LEAVE_BALANCE lb ON lb.leave_type_id = el.leave_type_id
+GROUP BY full_name, lb.leave_type_id;
+
+
+SELECT LPAD('............................',2*(LEVEL-1))||operation operation, options,   
+object_name, position   
+    FROM plan_table   
+    START WITH id = 0 AND statement_id = 'GETLEAVEBAL'  
+    CONNECT BY PRIOR id = parent_id AND statement_id = 'GETLEAVEBAL';
+
+
+-- Use of CTE
+-- Common Table Expressions (CTE) are temporary result sets that are defined within the execution scope of a single SELECT, INSERT, UPDATE, DELETE, or CREATE VIEW statement.
+
+
+
+-- Hints: Used to provide information to the optimizer on how to execute the SQL statement
+-- Syntax: /*+ HINT */
+
+-- Sample Hints: 
+-- /*+ INDEX(table_name index_name) */
+-- /*+ FULL(table_name) */
+-- /*+ ORDERED */
+-- /*+ LEADING(table_name) */
+-- /*+ USE_MERGE(table_name) */
+-- /*+ USE_HASH(table_name) */
+
+-- hints to not to use index
+-- /*+ NO_INDEX(table_name index_name) */
+
+
+
+
+-- Display first name, no of leave days 
+-- Time: 0.01 sec where leave_request is leading
+-- Time: 0.01 sec where employee is leading
+-- Time: 0.003 second with index with employee as leading
+-- Time: 0.016 second with index with leave_requests as leading
+SELECT 
+    e.first_name, leave_type, COUNT(lr.leave_request_id) AS no_of_leave_days
+FROM
+    leave_requests lr
+JOIN
+    employees e ON e.employee_id = lr.employee_id
+JOIN
+    leave_types lt ON lr.leave_type_id = lt.leave_type_id
+GROUP BY
+    e.first_name, leave_type;
+
+
+-- time taken: -0.011 seconds index
+-- WITH  CTE: - 0.017 second
+-- WITH CTE w/o index: 0.013 sec (37 rows)
+-- Without indexes Execution Time: 0.021 sec (37 rows)
 
 SELECT 
     full_name, lb.leave_type_id, SUM(lb.max_leaves) max_leaves, SUM(approved_leaves), 
@@ -156,12 +348,81 @@ JOIN
     LEAVE_BALANCE lb ON lb.leave_type_id = el.leave_type_id
 GROUP BY full_name, lb.leave_type_id;
 
--- CREATE INDEX ON leave_type_id in leave_requests and leave_balance tables
-CREATE INDEX leave_requests_leave_type_id_idx ON leave_requests(leave_type_id);
-CREATE INDEX leave_balance_leave_type_id_idx ON leave_balance(leave_type_id);
 
--- CREATE INDEX ON employee_id in leave_requests table
-CREATE INDEX leave_requests_employee_id_idx ON leave_requests(employee_id);
+WITH employee_leaves AS (
+    SELECT 
+        e.first_name || ' ' || e.last_name AS full_name, 
+        lr.leave_type_id, 
+        COUNT(lr.leave_request_id) AS approved_leaves
+    FROM
+        employees e
+    JOIN
+        leave_requests lr ON e.employee_id = lr.employee_id
+    JOIN
+        leave_types lt ON lr.leave_type_id = lt.leave_type_id
+    GROUP BY
+        e.first_name, e.last_name, lr.leave_type_id
+)
+SELECT 
+    full_name, 
+    lb.leave_type_id, 
+    SUM(lb.max_leaves) AS max_leaves, 
+    SUM(approved_leaves), 
+    SUM(lb.max_leaves) - SUM(approved_leaves) AS leave_balance
+FROM 
+    employee_leaves el
+JOIN 
+    leave_balance lb ON lb.leave_type_id = el.leave_type_id
+GROUP BY 
+    full_name, lb.leave_type_id;
 
 
--- Assignment: 
+-- display all the Table Partitions for the given table "employees"
+SELECT 
+    table_name, partition_name, high_value
+FROM
+    user_tab_partitions
+WHERE
+    table_name = 'EMPLOYEES';
+
+-- list all the views in dba
+SELECT 
+    view_name
+FROM
+    dba_views;
+
+-- Meta tables/views
+user_tab_partitions
+all_views
+all_tables
+all_objects
+dba_objects
+user_objects
+user_indexes
+user_views
+user_tables
+user_tab_columns
+
+-- constraints meta tables/views
+user_constraints
+
+
+
+SELECT /*+ NO_INDEX(leave_balance, leave_balance_leave_type_id_idx) */
+    full_name, lb.leave_type_id, SUM(lb.max_leaves) max_leaves, SUM(approved_leaves), 
+    SUM(lb.max_leaves) - SUM(approved_leaves) AS leave_balance
+FROM (SELECT 
+    e.first_name || ' ' || e.last_name full_name, lr.leave_type_id, COUNT(lr.leave_request_id) AS approved_leaves
+FROM
+    employees e
+JOIN
+    leave_requests lr ON e.employee_id = lr.employee_id
+JOIN
+    leave_types lt ON lr.leave_type_id = lt.leave_type_id
+GROUP BY
+    e.first_name, e.last_name, lr.leave_type_id) el
+JOIN 
+    LEAVE_BALANCE lb ON lb.leave_type_id = el.leave_type_id
+GROUP BY full_name, lb.leave_type_id;
+
+

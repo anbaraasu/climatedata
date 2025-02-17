@@ -72,6 +72,7 @@ WHERE p.project_id = 1;
 -- Use merge join to display all employee names and their project details
 
 SET enable_mergejoin = on;
+SET enable_hashjoin = ON;
 
 EXPLAIN ANALYZE
 SELECT 

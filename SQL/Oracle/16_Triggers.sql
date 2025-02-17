@@ -34,12 +34,13 @@
 -- Triggers cannot be defined on system tables.
 -- Triggers cannot be defined on temporary tables.
 
+DROP TABLE PERSON_DETAILS;
 CREATE TABLE PERSON_DETAILS(ID INT, NAME VARCHAR2(10), AGE INT, AGE_GROUP VARCHAR2(10), SALARY NUMBER(15,2));
 
 SELECT * FROM PERSON_DETAILS;
 
 -- Trigger Demo for using BEFORE INSERT or UPDATE 
-CREATE OR REPLACE TRIGGER trg_before_insert_update
+CREATE OR REPLACE TRIGGER person_age_group_trg
 BEFORE INSERT OR UPDATE OF AGE
 ON PERSON_DETAILS 
 FOR EACH ROW
@@ -69,7 +70,7 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20001, 'Age cannot be negative');
     END IF;
     DBMS_OUTPUT.PUT_LINE('Trigger fired..');
-END;
+END person_age_group_trg;
 /
 
 

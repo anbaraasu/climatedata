@@ -29,17 +29,16 @@ END package_name;
 -- Demo for persistence of variables in a package (local, public, global)
 
 CREATE OR REPLACE PACKAGE persistence_demo AS
-    PRAGMA SERIALLY_REUSABLE; -- pragma to make the package serially reusable
+    PRAGMA SERIALLY_REUSABLE; -- pragma to make the package stateless
 	g_counter NUMBER := 3; -- global variable
     PROCEDURE INCREMENT_COUNTER;
 END persistence_demo;
 /
 
 CREATE OR REPLACE PACKAGE BODY persistence_demo AS
-    PRAGMA SERIALLY_REUSABLE; -- pragma to make the package serially reusable
     p_counter NUMBER := 2; -- public variable
     PROCEDURE INCREMENT_COUNTER IS
-    l_counter NUMBER := 1; -- local variable
+        l_counter NUMBER := 1; -- local variable
     BEGIN
         g_counter := g_counter + 3;
         p_counter := p_counter + 2;
@@ -52,16 +51,19 @@ END persistence_demo;
 /
 
 -- execute the package
--- g = 3, p = 2, l = 1, g = g +3, p = p + 2, l = l + 1;
+-- g = 3, p = 2, l = 1, g = g +3, p = p + 2, l = l + 1; -- output g: 6, p = 4, l = 2
 EXEC persistence_demo.INCREMENT_COUNTER;
--- g = 6, p = 4, l = 1, g = g +3, p = p + 2, l = l + 1;
+-- g = 6, p = 4, l = 1, g = g +3, p = p + 2, l = l + 1; -- output g: 9, p = 6, l = 2
 EXEC persistence_demo.INCREMENT_COUNTER;
--- g = 9, p = 6, l = 1, g = g +3, p = p + 2, l = l + 1;
-EXEC emp_package.INCREMENT_COUNTER;
+-- g = 9, p = 6, l = 1, g = g +3, p = p + 2, l = l + 1; -- output g: 12, p = 8, l = 2
+EXEC persistence_demo.INCREMENT_COUNTER;
 
 
 
 -- Overloading - Overloading is a feature in PLSQL that allows you to define multiple subprograms with the same name but different parameters. It is a technique to define multiple subprograms with the same name but different parameters.
+
+SELECT TO_CHAR(123456,'999999,99,99,999.00') FROM DUAL;
+SELECT TO_CHAR(SYSDATE, 'MON') FROM DUAL;
 
 -- Demo for overloading
 CREATE OR REPLACE PACKAGE emp_package AS
@@ -74,22 +76,26 @@ CREATE OR REPLACE PACKAGE BODY emp_package AS
     l_emp_name VARCHAR2(500);
     PROCEDURE GET_EMPLOYEE_DETAILS(p_emp_id IN NUMBER) IS    
     BEGIN
-        SELECT first_name || ' ' || last_name INTO l_emp_name FROM hr.employees WHERE employee_id = p_emp_id;
+        DBMS_OUTPUT.PUT_LINE('Emp details based upon id:' || p_emp_id);
+        SELECT first_name || ' ' || last_name INTO l_emp_name FROM EMP WHERE employee_id = p_emp_id;
         DBMS_OUTPUT.PUT_LINE('Employee full Name: ' || l_emp_name);
     END GET_EMPLOYEE_DETAILS;
     
     PROCEDURE GET_EMPLOYEE_DETAILS(p_emp_name IN VARCHAR2) IS
     BEGIN
-        FOR i in (SELECT first_name || ' ' || last_name INTO l_emp_name FROM hr.employees 
+        DBMS_OUTPUT.PUT_LINE('Emp details based upon name:' || p_emp_name);
+        FOR i in (SELECT first_name || ' ' || last_name full_name FROM EMP 
         WHERE first_name = p_emp_name) LOOP
-            DBMS_OUTPUT.PUT_LINE('Employee full Name: ' || l_emp_name);
+            DBMS_OUTPUT.PUT_LINE('Employee full Name: ' || i.full_name);
         END LOOP;
     END GET_EMPLOYEE_DETAILS;
 END emp_package;
 /
 
 EXEC emp_package.GET_EMPLOYEE_DETAILS(110);
-EXEC emp_package.GET_EMPLOYEE_DETAILS('Adam');
+EXEC emp_package.GET_EMPLOYEE_DETAILS('John');
+
+
 
 -- Demo for public and private package 
 CREATE OR REPLACE PACKAGE emp_package AS

@@ -13,9 +13,10 @@
 
 DROP TABLE LEAVE_DETAILS;
 DROP TABLE EMPLOYEE_DETAILS;
+DROP TABLE HOLIDAY;
 DROP SEQUENCE EMP_ID_SEQ ;
 DROP SEQUENCE LEAVE_ID_SEQ;
-
+DROP SEQUENCE HOLIDAY_ID_SEQ;
 /*EMPLOYEE_DETAILS with constraints
 	ID (PK), ENAME (NN), MGR_ID (FK - REF ID), GENDER(NN, CK), AGE (CK > 18), MOBILE (INT/VARCHAR - CK ()) , EMAILID (CK ), SALARY (CK > 0, NN)
 	1   A      NULL,  
@@ -39,6 +40,7 @@ CREATE TABLE EMPLOYEE_DETAILS (
 );
 
 
+
 /*LEAVE_DETAILS
 	ID, EMP_ID, START_DATE, END_DATE, TYPE, REASON, 			STATUS,  APPROVED_ID
 */
@@ -59,8 +61,19 @@ CREATE TABLE LEAVE_DETAILS(
     CONSTRAINT LEAVE_END_DATE_CK CHECK (END_DATE >= START_DATE)
 );
 
+-- SELECT * FROM LEAVE_DETAILS;
+
+-- HOLIDAY - ID, Date, Comments
+CREATE TABLE HOLIDAY(
+    ID NUMBER,
+    HOLIDAY_DATE DATE,
+    COMMENTS VARCHAR2(100),
+    CONSTRAINT HOLIDAY_ID_PK PRIMARY KEY (ID)
+);
+
 CREATE SEQUENCE EMP_ID_SEQ START WITH 57000000;
 CREATE SEQUENCE LEAVE_ID_SEQ START WITH 100000;
+CREATE SEQUENCE HOLIDAY_ID_SEQ;
 
 -- INDEX 
 CREATE INDEX LEAVE_DETAILS_STATUS_IDX ON LEAVE_DETAILS(STATUS);
@@ -83,6 +96,12 @@ VALUES (LEAVE_ID_SEQ.NEXTVAL, 57000001, TO_DATE('2025-01-01', 'YYYY-MM-DD'), TO_
 INSERT INTO LEAVE_DETAILS (ID, EMP_ID, START_DATE, END_DATE, TYPE, REASON, STATUS, APPROVED_ID)
 VALUES (LEAVE_ID_SEQ.NEXTVAL, 57000003, TO_DATE('2025-01-01', 'YYYY-MM-DD'), TO_DATE('2025-01-02', 'YYYY-MM-DD'), 'PL', 'Sick Leave', 1, NULL);
 COMMIT;
+
+
+-- Data for holiday table
+INSERT INTO HOLIDAY VALUES(HOLIDAY_ID_SEQ.NEXTVAL, TO_DATE('2025-02-17', 'YYYY-MM-DD'), 'Study Holiday');
+
+-- SELECT * FROM HOLIDAY;
 
 -- View to get the leave details of all employees
 -- View without index: 0.01 seconds
@@ -112,32 +131,6 @@ ORDER BY EMP_ID;
 
 -- SELECT * FROM EMP_LEAVE_VIEW;
 
-DECLARE 
-    l_menu_options INT := 2;
-BEGIN
-    DBMS_OUTPUT.PUT_LINE('##############################################################');
-    DBMS_OUTPUT.PUT_LINE(CHR(9) || CHR(9) || 'WECOME TO EMP LEAVE PORTAL');
-    DBMS_OUTPUT.PUT_LINE('##############################################################');
-    DBMS_OUTPUT.PUT_LINE(CHR(9) || CHR(9) || '*****GET WELL SOON********');
-    DBMS_OUTPUT.PUT_LINE('##############################################################');
-    IF (l_menu_options = 1 ) THEN 
-        DBMS_OUTPUT.PUT_LINE('You have selected menu option: List all the applied leaves');
-        DBMS_OUTPUT.PUT_LINE('##############################################################');
-        DBMS_OUTPUT.PUT_LINE('Emp Name' || CHR(9) || 'Status' || CHR(9)|| CHR(9) || 'MGR Name');
-        FOR leave_view IN (SELECT * FROM EMP_LEAVE_VIEW WHERE STATUS IS NOT NULL) LOOP
-            DBMS_OUTPUT.PUT_LINE(leave_view.EMP_NAME || CHR(9) || CHR(9) || leave_view.STATUS || CHR(9) || leave_view.MGR_NAME);
-        END LOOP;
-    END IF;
-    IF (l_menu_options = 2 ) THEN 
-        DBMS_OUTPUT.PUT_LINE('You have selected menu option: List all the emp and leaves details');
-        DBMS_OUTPUT.PUT_LINE('##############################################################');
-        DBMS_OUTPUT.PUT_LINE('Emp Name' || CHR(9) || 'Status' || CHR(9) || CHR(9)|| 'MGR Name');
-        FOR leave_view IN (SELECT * FROM EMP_LEAVE_VIEW ) LOOP
-            DBMS_OUTPUT.PUT_LINE(leave_view.EMP_NAME || CHR(9) || CHR(9) || leave_view.STATUS || CHR(9) || leave_view.MGR_NAME);
-        END LOOP;
-    END IF;
-    DBMS_OUTPUT.PUT_LINE('##############################################################');
-END;
 
 -- FUNCTION To find number of days leave applied
 CREATE OR REPLACE FUNCTION calculate_leave_days(p_end_date IN DATE, p_start_date IN DATE) RETURN NUMBER IS
@@ -181,14 +174,16 @@ END AUTO_ACTION_LEAVE;
 CREATE OR REPLACE PACKAGE EMP_LEAVE_PKG AS
     FUNCTION calculate_leave_days(p_end_date IN DATE, p_start_date IN DATE) RETURN NUMBER;
     PROCEDURE AUTO_ACTION_LEAVE;
+    PROCEDURE APPLY_LEAVE(p_emp_id INT, p_start_date DATE, p_end_date DATE, p_reason VARCHAR2);
 END EMP_LEAVE_PKG;
+/
 
 CREATE OR REPLACE PACKAGE BODY EMP_LEAVE_PKG AS 
     FUNCTION calculate_leave_days(p_end_date IN DATE, p_start_date IN DATE) RETURN NUMBER IS
     BEGIN 
         RETURN (p_end_date - p_start_date) + 1;
     END calculate_leave_days;
-    /
+    
     
     --  PROCEDURE AUTO ACTION: 
     -- Approve IF no of leave days is less than or equal  3 days and  leave start date is less than 5 days from current date. 
@@ -212,5 +207,73 @@ CREATE OR REPLACE PACKAGE BODY EMP_LEAVE_PKG AS
             DBMS_OUTPUT.PUT_LINE('ERROR: ' || SQLERRM);
         ROLLBACK;
     END AUTO_ACTION_LEAVE;
+    
+    PROCEDURE APPLY_LEAVE(p_emp_id INT, p_start_date DATE, p_end_date DATE, p_reason VARCHAR2) AS
+    BEGIN
+        INSERT INTO LEAVE_DETAILS (ID, EMP_ID, START_DATE, END_DATE, TYPE, REASON, STATUS, APPROVED_ID)
+        VALUES (LEAVE_ID_SEQ.NEXTVAL, p_emp_id, p_start_date, p_end_date, 'AL', p_reason, 1, NULL);
+        COMMIT;
+    EXCEPTION
+        WHEN OTHERS THEN
+            DBMS_OUTPUT.PUT_LINE('ERROR: ' || SQLERRM);
+            ROLLBACK;
+    END APPLY_LEAVE;
 END EMP_LEAVE_PKG;
 /
+
+-- trigger to check before insert whether start date and end date are in holiday list
+CREATE OR REPLACE TRIGGER leave_holiday_check_trg 
+BEFORE INSERT ON LEAVE_DETAILS
+FOR EACH ROW
+DECLARE
+    l_holiday_count INT := 0;
+BEGIN 
+    SELECT COUNT(*) INTO l_holiday_count 
+    FROM HOLIDAY 
+    WHERE TRUNC(HOLIDAY_DATE) BETWEEN TRUNC(:NEW.START_DATE) AND TRUNC(:NEW.END_DATE);
+    
+    IF (l_holiday_count > 0) THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Leave dates are in holiday list');
+    END IF;
+END leave_holiday_check_trg;
+/
+
+-- all apply leave proc
+EXEC EMP_LEAVE_PKG.APPLY_LEAVE(57000000,SYSDATE, SYSDATE, 'Sick');
+
+-- insert leave for 57000000 for today'date 
+--INSERT INTO LEAVE_DETAILS (ID, EMP_ID, START_DATE, END_DATE, TYPE, REASON, STATUS, APPROVED_ID)
+--VALUES (LEAVE_ID_SEQ.NEXTVAL, 57000000, SYSDATE, SYSDATE, 'AL', 'Sick Leave', 1, NULL);
+
+
+
+DECLARE 
+    l_menu_options INT := &menu_options;
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('##############################################################');
+    DBMS_OUTPUT.PUT_LINE(CHR(9) || CHR(9) || 'WECOME TO EMP LEAVE PORTAL');
+    DBMS_OUTPUT.PUT_LINE('##############################################################');
+    DBMS_OUTPUT.PUT_LINE(CHR(9) || CHR(9) || '*****GET WELL SOON********');
+    DBMS_OUTPUT.PUT_LINE('##############################################################');
+    CASE 
+        WHEN l_menu_options = 1 THEN
+            DBMS_OUTPUT.PUT_LINE('You have selected menu option: List all the applied leaves');
+            DBMS_OUTPUT.PUT_LINE('##############################################################');
+            DBMS_OUTPUT.PUT_LINE('Emp Name' || CHR(9) || 'Status' || CHR(9)|| CHR(9) || 'MGR Name');
+            FOR leave_view IN (SELECT * FROM EMP_LEAVE_VIEW WHERE STATUS IS NOT NULL) LOOP
+                DBMS_OUTPUT.PUT_LINE(leave_view.EMP_NAME || CHR(9) || CHR(9) || leave_view.STATUS || CHR(9) || leave_view.MGR_NAME);
+            END LOOP;
+        WHEN l_menu_options = 2 THEN
+            DBMS_OUTPUT.PUT_LINE('You have selected menu option: List all the emp and leaves details');
+            DBMS_OUTPUT.PUT_LINE('##############################################################');
+            DBMS_OUTPUT.PUT_LINE('Emp Name' || CHR(9) || 'Status' || CHR(9) || CHR(9)|| 'MGR Name');
+            FOR leave_view IN (SELECT * FROM EMP_LEAVE_VIEW ) LOOP
+                DBMS_OUTPUT.PUT_LINE(leave_view.EMP_NAME || CHR(9) || CHR(9) || leave_view.STATUS || CHR(9) || leave_view.MGR_NAME);
+            END LOOP;
+        WHEN l_menu_options = 3 THEN
+            DBMS_OUTPUT.PUT_LINE('You have selected menu option: Apply Leave');
+            DBMS_OUTPUT.PUT_LINE('##############################################################');
+            EMP_LEAVE_PKG.APPLY_LEAVE(57000000,SYSDATE, SYSDATE, 'Sick');
+    END CASE;
+    DBMS_OUTPUT.PUT_LINE('##############################################################');
+END;
