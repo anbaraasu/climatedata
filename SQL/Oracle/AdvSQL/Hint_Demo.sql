@@ -1,0 +1,118 @@
+/*
+EMPLOYEES_SQ {
+        NUMBER employee_id PK
+        VARCHAR2 first_name
+        VARCHAR2 last_name
+        NUMBER department_id FK
+        DATE hire_date
+        NUMBER salary
+        NUMBER manager_id
+    }
+    DEPARTMENTS_SQ {
+        NUMBER department_id PK
+        VARCHAR2 department_name
+        VARCHAR2 location
+    }
+    PROJECTS_SQ {
+        NUMBER project_id PK
+        VARCHAR2 project_name
+    }
+    EMPLOYEES_SQ {
+        NUMBER project_id FK
+        NUMBER hours_worked
+    }
+  */
+
+DROP TABLE EMPLOYEES_SQ;
+DROP TABLE DEPARTMENTS_SQ;
+DROP TABLE PROJECTS_SQ;
+
+CREATE TABLE DEPARTMENTS_SQ (
+    department_id NUMBER PRIMARY KEY,
+    department_name VARCHAR2(50),
+    location VARCHAR2(50)
+);
+
+CREATE TABLE PROJECTS_SQ (
+    project_id NUMBER PRIMARY KEY,
+    project_name VARCHAR2(50)
+);
+
+CREATE TABLE EMPLOYEES_SQ (
+    employee_id NUMBER PRIMARY KEY,
+    first_name VARCHAR2(50),
+    last_name VARCHAR2(50),
+    department_id NUMBER REFERENCES DEPARTMENTS_SQ(department_id),
+    hire_date DATE,
+    salary NUMBER,
+    manager_id NUMBER,
+    project_id NUMBER REFERENCES PROJECTS_SQ(project_id)
+);
+
+-- Data for DEPARTMENTS_SQ
+INSERT INTO DEPARTMENTS_SQ VALUES (10, 'ACCOUNTING', 'NEW YORK');
+INSERT INTO DEPARTMENTS_SQ VALUES (20, 'RESEARCH', 'DALLAS');
+INSERT INTO DEPARTMENTS_SQ VALUES (30, 'SALES', 'CHICAGO');
+INSERT INTO DEPARTMENTS_SQ VALUES (40, 'OPERATIONS', 'BOSTON');
+INSERT INTO DEPARTMENTS_SQ VALUES (50, 'MARKETING', 'LOS ANGELES');
+INSERT INTO DEPARTMENTS_SQ VALUES (60, 'HUMAN RESOURCES', 'SAN FRANCISCO');
+INSERT INTO DEPARTMENTS_SQ VALUES (70, 'IT', 'SEATTLE');
+INSERT INTO DEPARTMENTS_SQ VALUES (80, 'LEGAL', 'DENVER');
+INSERT INTO DEPARTMENTS_SQ VALUES (90, 'ADMINISTRATION', 'MIAMI');
+INSERT INTO DEPARTMENTS_SQ VALUES (100, 'ENGINEERING', 'HOUSTON');
+
+-- Data for PROJECTS_SQ
+INSERT INTO PROJECTS_SQ VALUES (1, 'Google Search');
+INSERT INTO PROJECTS_SQ VALUES (2, 'Google Maps');
+INSERT INTO PROJECTS_SQ VALUES (3, 'Google Drive');
+INSERT INTO PROJECTS_SQ VALUES (4, 'Google Docs');
+INSERT INTO PROJECTS_SQ VALUES (5, 'Google Sheets');
+
+-- Data for EMPLOYEES_SQ
+INSERT INTO EMPLOYEES_SQ VALUES (1, 'John', 'Doe', 10, TO_DATE('01-JAN-2010', 'DD-MON-YYYY'), 100000, NULL, 1);
+INSERT INTO EMPLOYEES_SQ VALUES (2, 'Jane', 'Doe', 10, TO_DATE('01-JAN-2011', 'DD-MON-YYYY'), 90000, 1, 1);
+INSERT INTO EMPLOYEES_SQ VALUES (3, 'Jim', 'Doe', 10, TO_DATE('01-JAN-2012', 'DD-MON-YYYY'), 80000, 1, 1);
+INSERT INTO EMPLOYEES_SQ VALUES (4, 'Jill', 'Doe', 10, TO_DATE('01-JAN-2013', 'DD-MON-YYYY'), 70000, 2, 1);
+
+INSERT INTO EMPLOYEES_SQ VALUES (5, 'Jack', 'Smith', 20, TO_DATE('01-JAN-2014', 'DD-MON-YYYY'), 60000, NULL, 2);
+
+INSERT INTO EMPLOYEES_SQ VALUES (6, 'John', 'Smith', 30, TO_DATE('01-JAN-2015', 'DD-MON-YYYY'), 50000, NULL, 3);
+INSERT INTO EMPLOYEES_SQ VALUES (7, 'Jane', 'Smith', 30, TO_DATE('01-JAN-2016', 'DD-MON-YYYY'), 40000, 6, 3);
+
+INSERT INTO EMPLOYEES_SQ VALUES (8, 'Jim', 'Smith', 40, TO_DATE('01-JAN-2017', 'DD-MON-YYYY'), 30000, NULL, 4);
+
+INSERT INTO EMPLOYEES_SQ VALUES (9, 'Jill', 'Smith', 50, TO_DATE('01-JAN-2018', 'DD-MON-YYYY'), 20000, NULL, 5);
+INSERT INTO EMPLOYEES_SQ VALUES (10, 'Jack', 'Smith', 50, TO_DATE('01-JAN-2019', 'DD-MON-YYYY'), 10000, 9, 5);
+COMMIT;
+
+-- cluster index on project_id of emp table
+CREATE INDEX EMPLOYEES_SQ_IDX ON EMPLOYEES_SQ(project_id);
+
+
+-- find projects where more than one employee works
+--without index: 0.013 sec 
+--with index: 0.013 sec
+-- force index: 0.006 sec (1 records)
+SELECT /*+ INDEX(EMPLOYEES_SQ,employee_id) */ project_name, COUNT(employee_id) AS num_employees
+FROM EMPLOYEES_SQ E
+JOIN PROJECTS_SQ P
+ON E.project_id = P.project_id
+GROUP BY project_name
+HAVING COUNT(employee_id) > 1;
+
+-- list index name, column, table from user index table
+SELECT INDEX_NAME, COLUMN_NAME, TABLE_NAME
+FROM USER_IND_COLUMNS
+WHERE TABLE_NAME = 'EMPLOYEES_SQ';
+
+
+-- hint to not to use index SYS_C00354383
+--EXECUTE time: 0.007 seconds
+SELECT /*+ NO_INDEX(EMPLOYEES_SQ, SYS_C00354383) */ 
+    project_name, COUNT(employee_id) AS num_employees
+FROM EMPLOYEES_SQ E
+JOIN PROJECTS_SQ P
+ON E.project_id = P.project_id
+WHERE E.EMPLOYEE_ID BETWEEN 1 AND 5
+GROUP BY project_name
+HAVING COUNT(employee_id) > 1;

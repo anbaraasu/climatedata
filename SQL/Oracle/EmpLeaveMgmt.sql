@@ -202,6 +202,7 @@ CREATE OR REPLACE PACKAGE BODY EMP_LEAVE_PKG AS
         END LOOP;
     EXCEPTION
         WHEN NO_DATA_FOUND THEN 
+            INSERT INTO ERROR_LOG VALUES(ERROR_LOG_SEQ.NEXTVAL, 'No action to be taken all the leaves are approved and within SLA', SYSDATE, 'AUTO_ACTION_LEAVE');
             DBMS_OUTPUT.PUT_LINE('No action to be taken all the leaves are approved and within SLA' );
         WHEN OTHERS THEN
             DBMS_OUTPUT.PUT_LINE('ERROR: ' || SQLERRM);
@@ -215,6 +216,7 @@ CREATE OR REPLACE PACKAGE BODY EMP_LEAVE_PKG AS
         COMMIT;
     EXCEPTION
         WHEN OTHERS THEN
+            INSERT INTO ERROR_LOG VALUES(ERROR_LOG_SEQ.NEXTVAL, SQLERRM, SYSDATE, 'APPLY_LEAVE');
             DBMS_OUTPUT.PUT_LINE('ERROR: ' || SQLERRM);
             ROLLBACK;
     END APPLY_LEAVE;
@@ -233,6 +235,7 @@ BEGIN
     WHERE TRUNC(HOLIDAY_DATE) BETWEEN TRUNC(:NEW.START_DATE) AND TRUNC(:NEW.END_DATE);
     
     IF (l_holiday_count > 0) THEN
+        INSERT INTO ERROR_LOG VALUES(ERROR_LOG_SEQ.NEXTVAL, 'Leave dates are in holiday list', SYSDATE, 'leave_holiday_check_trg');
         RAISE_APPLICATION_ERROR(-20001, 'Leave dates are in holiday list');
     END IF;
 END leave_holiday_check_trg;
@@ -277,3 +280,17 @@ BEGIN
     END CASE;
     DBMS_OUTPUT.PUT_LINE('##############################################################');
 END;
+
+
+-- Seq for error log pk
+DROP SEQUENCE ERROR_LOG_SEQ;
+CREATE SEQUENCE ERROR_LOG_SEQ;
+-- ERROR LOG table
+DROP TABLE ERROR_LOG;
+CREATE TABLE ERROR_LOG(
+    ID NUMBER PRIMARY KEY,
+    ERROR_MESSAGE VARCHAR2(4000),
+    ERROR_DATE DATE,
+    PRG_NAME VARCHAR2(50)
+);
+

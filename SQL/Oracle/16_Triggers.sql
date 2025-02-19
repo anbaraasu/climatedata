@@ -148,3 +148,140 @@ SELECT * FROM PERSON_AUDIT;
 
 SELECT * FROM PERSON_DETAILS;
 
+-- iTime table - id (pk), emp_name, week_num, hours_worked, createdby, modifiedby, createddate, updatedate
+DROP TABLE ITime;
+CREATE TABLE iTime(
+    id INT PRIMARY KEY, 
+    emp_name VARCHAR2(50), 
+    week_num INT, 
+    hours_worked INT, 
+    approved_emp_name VARCHAR2(50),
+    createdby VARCHAR2(50),
+    modifiedby VARCHAR2(50), 
+    createddate DATE, 
+    updatedate DATE);
+
+-- trigger to update createdby, modifiedby, createddate, updatedate
+CREATE OR REPLACE TRIGGER iTime_trg
+BEFORE INSERT OR UPDATE 
+ON iTime
+FOR EACH ROW
+BEGIN
+    IF INSERTING THEN
+        :NEW.CREATEDBY := USER;
+        :NEW.CREATEDDATE := SYSDATE;
+    END IF;
+    
+    IF UPDATING THEN
+        :NEW.MODIFIEDBY := USER;
+        :NEW.UPDATEDATE := SYSDATE;
+    END IF;
+END iTime_trg;
+/
+SELECT * FROM iTime;
+-- TEST
+INSERT INTO iTime(ID, EMP_NAME, WEEK_NUM, HOURS_WORKED) VALUES(1, 'A', 1, 40);
+SELECT * FROM iTime;
+UPDATE iTime SET approved_emp_name = 'B' WHERE ID = 1;
+SELECT * FROM iTime;
+
+-- seq for itime audit pk 
+DROP SEQUENCE ITime_AUDIT_SEQ;
+CREATE SEQUENCE ITime_AUDIT_SEQ;
+
+-- itime Audit Table 
+DROP TABLE ITime_AUDIT;
+CREATE TABLE ITime_AUDIT(
+    id INT PRIMARY KEY, 
+    emp_name VARCHAR2(50), 
+    old_hours_worked INT,
+    new_hours_worked INT,
+    action CHAR(1),
+    action_date DATE,
+    user_name VARCHAR2(50)
+);
+
+-- trigger for itime audit 
+CREATE OR REPLACE TRIGGER iTime_audit_trg
+AFTER INSERT OR UPDATE OR DELETE
+ON iTime
+FOR EACH ROW
+DECLARE
+    AUDIT_REC ITime_AUDIT%ROWTYPE;
+BEGIN
+    AUDIT_REC.EMP_NAME := :NEW.EMP_NAME;
+    AUDIT_REC.ACTION_DATE := SYSDATE;
+    AUDIT_REC.USER_NAME := USER;
+    AUDIT_REC.ID := ITime_AUDIT_SEQ.nextval;
+    IF INSERTING THEN
+        AUDIT_REC.ACTION := 'I';
+        AUDIT_REC.new_hours_worked := :NEW.hours_worked;
+    ELSIF UPDATING THEN
+        AUDIT_REC.old_hours_worked := :OLD.hours_worked;
+        AUDIT_REC.new_hours_worked := :NEW.hours_worked;
+        AUDIT_REC.ACTION := 'U';
+    ELSE -- DELETING
+        AUDIT_REC.old_hours_worked := :OLD.hours_worked;
+        AUDIT_REC.EMP_NAME := :OLD.EMP_NAME;
+        AUDIT_REC.ACTION := 'D';
+    END IF;
+    
+    INSERT INTO ITime_AUDIT VALUES AUDIT_REC;
+END iTime_audit_trg;   
+/
+
+TRUNCATE TABLE ITime;
+TRUNCATE TABLE ITime_AUDIT;
+
+SELECT * FROM ITime_AUDIT ORDER BY ACTION_DATE DESC;
+-- TEST
+INSERT INTO iTime(ID, EMP_NAME, WEEK_NUM, HOURS_WORKED) VALUES(1, 'A', 1, 40);
+INSERT INTO iTime(ID, EMP_NAME, WEEK_NUM, HOURS_WORKED) VALUES(2, 'B', 1, 40);
+SELECT * FROM ITime_AUDIT ORDER BY ACTION_DATE DESC;
+UPDATE iTime SET approved_emp_name = 'B' WHERE ID = 1;
+SELECT * FROM ITime_AUDIT ORDER BY ACTION_DATE DESC;
+DELETE FROM iTime;
+SELECT * FROM ITime_AUDIT ORDER BY ACTION_DATE DESC;
+
+
+-- itime backup table
+DROP TABLE ITime_BACKUP;
+CREATE TABLE ITime_BACKUP AS SELECT * FROM ITime WHERE 1 = 2;
+
+-- trigger for itime backup
+-- trigger for itime backup
+CREATE OR REPLACE TRIGGER iTime_backup_trg
+AFTER INSERT OR UPDATE OR DELETE
+ON iTime
+FOR EACH ROW
+BEGIN
+    IF INSERTING THEN
+        INSERT INTO ITime_BACKUP 
+        VALUES (:NEW.id, :NEW.emp_name, :NEW.week_num, :NEW.hours_worked, :NEW.approved_emp_name, :NEW.createdby, :NEW.modifiedby, :NEW.createddate, :NEW.updatedate);
+    ELSIF UPDATING THEN
+        UPDATE ITime_BACKUP SET emp_name = :NEW.emp_name, 
+        week_num = :NEW.week_num, 
+        hours_worked = :NEW.hours_worked, 
+        approved_emp_name = :NEW.approved_emp_name, 
+        createdby = :NEW.createdby, 
+        modifiedby = :NEW.modifiedby, 
+        createddate = :NEW.createddate, 
+        updatedate = :NEW.updatedate WHERE id = :NEW.id;
+    END IF;
+END iTime_backup_trg;
+/
+
+TRUNCATE TABLE ITime;
+TRUNCATE TABLE ITime_AUDIT;
+
+SELECT * FROM ITime_AUDIT ORDER BY ACTION_DATE DESC;
+-- TEST
+INSERT INTO iTime(ID, EMP_NAME, WEEK_NUM, HOURS_WORKED) VALUES(1, 'A', 1, 40);
+INSERT INTO iTime(ID, EMP_NAME, WEEK_NUM, HOURS_WORKED) VALUES(2, 'B', 1, 40);
+SELECT * FROM ITime_AUDIT ORDER BY ACTION_DATE DESC;
+UPDATE iTime SET approved_emp_name = 'B' WHERE ID = 1;
+SELECT * FROM ITime_AUDIT ORDER BY ACTION_DATE DESC;
+DELETE FROM iTime;
+SELECT * FROM ITime_AUDIT ORDER BY ACTION_DATE DESC;
+
+SELECT * FROM ITIME_BACKUP;

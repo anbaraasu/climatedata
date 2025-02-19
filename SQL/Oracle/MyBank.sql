@@ -59,3 +59,36 @@ JOIN transaction t ON a.id = t.account_id
 WHERE a.account_number LIKE '1%'
 ORDER BY t.id DESC
 LIMIT 10;
+
+
+-- Oracle Pl/SQL create a procedure to dislay top 10 accounts and use a functions to calculate the balance
+CREATE OR REPLACE PROCEDURE top_accounts
+IS
+    CURSOR c1 IS
+    SELECT c.name, a.account_number, a.balance
+    FROM customer c
+    JOIN account a ON c.id = a.customer_id
+    ORDER BY a.balance DESC
+    LIMIT 10;
+BEGIN
+    FOR r1 IN c1
+    LOOP
+        DBMS_OUTPUT.PUT_LINE(r1.name || ' ' || r1.account_number || ' ' || r1.balance);
+    END LOOP;
+END;
+/
+
+-- Oracle Pl/SQL create a function to calculate the balance
+CREATE OR REPLACE FUNCTION calculate_balance(account_id IN INT)
+RETURN DECIMAL
+IS
+    total_balance DECIMAL;
+BEGIN
+    SELECT SUM(amount) INTO total_balance
+    FROM transaction
+    WHERE account_id = account_id;
+    RETURN total_balance;
+END;
+/
+
+
