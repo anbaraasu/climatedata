@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 # Load data
 data = pd.read_csv('case_study_data.csv')

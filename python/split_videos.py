@@ -1,6 +1,6 @@
 import os
 
-def split_file(file_path, chunk_size=75*1024*1024):
+def split_file(file_path, chunk_size=25*1024*1024):
     file_size = os.path.getsize(file_path)
     with open(file_path, 'rb') as f:
         chunk_num = 0
@@ -15,8 +15,8 @@ def split_file(file_path, chunk_size=75*1024*1024):
                 chunk_file.write(chunk)
             chunk_num += 1
 
-# Get the current directory
-current_dir = os.getcwd()
+# Get the current directory # os.getcwd()
+current_dir = r"C:\Users\anbarasuv\Downloads\Learning Carnival Recordings - Dec'24"
 
 # Get all mp4 files in the current directory
 mp4_files = [f for f in os.listdir(current_dir) if f.endswith('.mp4')]

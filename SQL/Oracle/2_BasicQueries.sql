@@ -27,6 +27,22 @@ SELECT first_name || ' ' || last_name AS full_name, salary FROM hr.employees ORD
 -- 9. Display the full name and salary for all employees order by salary in descending order and first name in ascending order
 SELECT first_name || ' ' || last_name AS full_name, salary FROM hr.employees ORDER BY salary DESC, first_name;
 
+
+-- ORDER BY 
+-- 1. final step in the SQL execution
+-- 2. we have other columns (not in select) can also be used
+-- 3. ASC, DESC order types. ASC is default
+-- 4. we have multiple columns (256)
+
+
+-- Relationsl operators - >,<,>=,<=,=,!= 
+-- Logical Operators - AND, OR, NOT
+-- IS NULL, IFNULL, NVL 
+
+SELECT FIRST_NAME FROM HR.EMPLOYEES WHERE ROWNUM < 6;
+SELECT FIRST_NAME FROM HR.EMPLOYEES FETCH FIRST 5 ROWS ONLY;
+
+
 -- 10. Single Row Functions - Example 1
 SELECT first_name, UPPER(first_name) FROM hr.employees;
 
@@ -38,16 +54,23 @@ SELECT first_name, SUBSTR(first_name, 1, 3) FROM hr.employees;
 SELECT first_name, SUBSTR(first_name, 3) FROM hr.employees;
 
 -- 13. Single Row Functions - INSTR - Polymorphism
-SELECT first_name, INSTR(first_name, 'a') FROM hr.employees;
-SELECT first_name, INSTR(first_name, 'a', 3) FROM hr.employees;
-SELECT first_name, INSTR(first_name, 'a', 2) FROM hr.employees;
-SELECT first_name, INSTR(first_name, 'a', -1) FROM hr.employees;
+-- find the first occurrence of e
+SELECT INSTR('HCL Technologies','e') FROM DUAL;
+-- find the occurrence of e starting from 7 position
+SELECT INSTR('HCL Technologies','e',7) FROM DUAL;
+-- find the second occurence from 1st position onwards
+SELECT INSTR('HCL Technologies','e',1,2) FROM DUAL;
+-- find the last occurence 
+SELECT INSTR('HCL Technologies','o',-1) FROM DUAL;
+
+SELECT TO_CHAR(123456,'9,99,999.00') FROM DUAL;
+SELECT TO_CHAR(123456,'MONTH'), SYSDATE FROM DUAL;
 
 -- 14. Single Row Functions - EXTRACT
 SELECT first_name, EXTRACT(DAY FROM hire_date) FROM hr.employees;
 
 -- 15. Single Row Functions - CEIL, FLOOR
-SELECT salary, CEIL(salary/1000)*1000 AS ceil_salary, FLOOR(salary/1000)*1000 AS floor_salary FROM hr.employees;
+SELECT salary, CEIL(salary/1000)*1000 AS ceil_salary, FLOOR(salary/1000)*1000 AS floor_salary, ROUND(salary/1000)*1000 AS rounded_salary  FROM hr.employees;
 
 -- 16. Single Row Functions - TRUNC
 SELECT salary, TRUNC(salary, -3) AS trunc_salary FROM hr.employees;
