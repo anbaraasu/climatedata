@@ -9,7 +9,7 @@
 
 --Consider a more complex expression:
 
-SELECT 2 * 3 + 4 / 2 + 10 - 2 FROM dual; -- 18 , 16, 
+SELECT 2 * 3 + 4 / 2 + 10 - 2 FROM dual; 
 
 
 /* 
@@ -51,6 +51,11 @@ SELECT first_name, last_name FROM hr.employees WHERE employee_id = &emp_id;
 -- You can perform arithmetic with date data in Oracle SQL. For example, you can add or subtract days from a date, or calculate the difference between two dates.
 
 SELECT hire_date, hire_date + 7 AS "Hire Date + 7 Days" FROM hr.employees WHERE employee_id = 100;
+
+-- date format  in where condition hire_date = '2023-10-01'
+DEFINE FETCH_DT = '2013-03-15';
+SELECT FIRST_NAME, LAST_NAME, HIRE_DATE FROM hr.employees WHERE hire_date >= TO_DATE('&FETCH_DT', 'YYYY-MM-DD');
+
 
 -- Applying the NVL, NULLIF, and COALESCE functions to data
 -- The NVL, NULLIF, and COALESCE functions are used to handle NULL values in SQL. The NVL function returns a specified value if the input value is NULL. The NULLIF function returns NULL if the two input values are equal. The COALESCE function returns the first non-NULL value in a list of values.

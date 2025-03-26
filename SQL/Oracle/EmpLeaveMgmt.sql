@@ -1,296 +1,205 @@
 /*
 #######################################################################################
-# PROJECT NAME: EMPLOYEE LEAVE MGMT SYSTEM
+# ORACLE PROJECT NAME: EMPLOYEE LEAVE MGMT SYSTEM
 # SQUAD: ELM SQUAD
-#  
-# MEMBERS: ANBU
-# NORMALIZATION LEVEL: 3NF
 #
+# MEMBERS: ANBU, BABU, CATHERINE
+# NORMALIZATION LEVEL: 3NF
+# This project will help the employees to raise their leaves as per their leave calender
+# Manager can approve/reject/referback their reportee's leaves
+#
+# TABLE CREATION SCRIPT
 #######################################################################################
 */
 
--- all drop 
+/*
+Employee
+	columns			constraints
+	***********		************
+	id 				pk
+	first_name 		not null
+	last_name
+	age				>=18 <=58
+	gender			CHAR(1) - 'M', 'F', 'O'  = 1 * 4 4,00,000 + 6,00,000 = 10,00,000 = 2,00,000
+	dept
+	doj 			<= today(), DEFAULT SYSDATE
+	mgr_id			fk
 
-DROP TABLE LEAVE_DETAILS;
-DROP TABLE EMPLOYEE_DETAILS;
+Holidays
+	id				pk SERIALLY AUTO INCREMENT
+	name			not null
+	holiday_date
+	holiday_type	CHAR(1) - CH, RH
+
+Leave
+	id 				PK
+	emp_id			FK
+	leave_type_id	FK
+	start_date		DEFAULT SYSDATE
+	end_date		DEFAULT SYSDATE
+	approver_id 	FK
+	status 			pending, approved, rejected, referback
+	reason
+
+
+	//duration = end_date - start_date
+
+LeaveTypes
+	id
+	leave_type - SL, RH, PL,  ML, CL, MY
+	MAX_DAYS 	 62,  4,  10, 300, 62, 2
+
+*/
+-- drop tables
+DROP TABLE LEAVE;
+DROP TABLE LEAVETYPE;
+DROP TABLE EMPLOYEE;
 DROP TABLE HOLIDAY;
-DROP SEQUENCE EMP_ID_SEQ ;
-DROP SEQUENCE LEAVE_ID_SEQ;
-DROP SEQUENCE HOLIDAY_ID_SEQ;
-/*EMPLOYEE_DETAILS with constraints
-	ID (PK), ENAME (NN), MGR_ID (FK - REF ID), GENDER(NN, CK), AGE (CK > 18), MOBILE (INT/VARCHAR - CK ()) , EMAILID (CK ), SALARY (CK > 0, NN)
-	1   A      NULL,  
-	2,  B,     1
-*/
--- Developed by Anbu to store emp details.
-CREATE TABLE EMPLOYEE_DETAILS (
-    ID NUMBER ,
-    ENAME VARCHAR2(100) NOT NULL,
-    MGR_ID NUMBER,
+
+-- Developed by Anbu to store employee details
+CREATE TABLE EMPLOYEE (
+    ID NUMBER,
+    FIRST_NAME VARCHAR2(50) NOT NULL,
+    LAST_NAME VARCHAR2(50),
+    AGE NUMBER ,
+    MOBILE_NUMBER VARCHAR2(15) ,
     GENDER CHAR(1),
-    AGE INT,
-    MOBILE VARCHAR2(10),
-    SALARY NUMBER(10,2),
-    CONSTRAINT EMP_ID_PK PRIMARY KEY (ID),
-    CONSTRAINT EMP_MGR_FK FOREIGN KEY (MGR_ID) REFERENCES EMPLOYEE_DETAILS(ID),
-    CONSTRAINT EMP_GENDER_CK CHECK (GENDER IN ('M','F','O')),
-    CONSTRAINT EMP_AGE_CK CHECK (AGE > 18 AND AGE < 58),
-    CONSTRAINT EMP_MOBILE_CK CHECK (LENGTH(MOBILE) = 10),
-    CONSTRAINT EMP_SALARY_CK CHECK (SALARY > 0)
+    DEPT_NAME VARCHAR2(50) NOT NULL,
+    DOJ DATE DEFAULT SYSDATE,
+    MGR_ID NUMBER,
+    CONSTRAINT EMPLOYEE_ID_PK PRIMARY KEY(ID),
+    CONSTRAINT EMPLOYEE_MOBILE_UQ UNIQUE(MOBILE_NUMBER),
+    CONSTRAINT EMPLOYEE_AGE_CK CHECK (AGE >= 18 AND AGE <= 58),
+    CONSTRAINT EMPLOYEE_MOBILE_CK CHECK (LENGTH(MOBILE_NUMBER) = 13),
+    CONSTRAINT EMPLOYEE_GENDER_CK CHECK (GENDER IN ('M', 'F', 'O')),
+    CONSTRAINT EMPLOYEE_MGR_FK FOREIGN KEY (MGR_ID) REFERENCES EMPLOYEE(ID)
 );
 
+CREATE SEQUENCE EMPLOYEE_ID_SEQ
+START WITH 5000000
+INCREMENT BY 1;
 
 
-/*LEAVE_DETAILS
-	ID, EMP_ID, START_DATE, END_DATE, TYPE, REASON, 			STATUS,  APPROVED_ID
-*/
+-- Data for employee
+INSERT INTO EMPLOYEE (ID, FIRST_NAME, LAST_NAME, AGE, MOBILE_NUMBER, GENDER, DEPT_NAME, DOJ, MGR_ID)
+VALUES (1, 'Anbu', 'Kumar', 30, '+911234567890', 'M', 'IT', TO_DATE('2022-01-01', 'YYYY-MM-DD'), NULL);
 
--- Developed by Anbu to store leave details.
-CREATE TABLE LEAVE_DETAILS(
-    ID NUMBER,
-    EMP_ID NUMBER,
-    START_DATE DATE,
-    END_DATE DATE,
-    TYPE CHAR(2),
-    REASON VARCHAR2(100),
-    STATUS INT,
-    APPROVED_ID NUMBER,
-    CONSTRAINT LEAVE_ID_PK PRIMARY KEY (ID),
-    CONSTRAINT LEAVE_EMP_FK FOREIGN KEY (EMP_ID) REFERENCES EMPLOYEE_DETAILS(ID),
-    CONSTRAINT LEAVE_APPROVED_FK FOREIGN KEY (APPROVED_ID) REFERENCES EMPLOYEE_DETAILS(ID),
-    CONSTRAINT LEAVE_END_DATE_CK CHECK (END_DATE >= START_DATE)
-);
+INSERT INTO EMPLOYEE (ID, FIRST_NAME, LAST_NAME, AGE, MOBILE_NUMBER, GENDER, DEPT_NAME, DOJ, MGR_ID)
+VALUES (2, 'Babu', 'Raja', 35, '+910987654321', 'M', 'HR', TO_DATE('2022-02-01', 'YYYY-MM-DD'), 1);
 
--- SELECT * FROM LEAVE_DETAILS;
+INSERT INTO EMPLOYEE (ID, FIRST_NAME, LAST_NAME, AGE, MOBILE_NUMBER, GENDER, DEPT_NAME, DOJ, MGR_ID)
+VALUES (3, 'Catherine', 'Smith', 28, '+911122334455', 'F', 'Finance', TO_DATE('2022-03-01', 'YYYY-MM-DD'), 1);
 
--- HOLIDAY - ID, Date, Comments
-CREATE TABLE HOLIDAY(
-    ID NUMBER,
+COMMIT;
+
+-- Developed by Anbu to store holidays
+CREATE TABLE HOLIDAY (
+    ID NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+    NAME VARCHAR2(50) NOT NULL,
     HOLIDAY_DATE DATE,
-    COMMENTS VARCHAR2(100),
-    CONSTRAINT HOLIDAY_ID_PK PRIMARY KEY (ID)
+    HOLIDAY_TYPE CHAR(2),
+    CONSTRAINT HOLIDAY_ID_PK PRIMARY KEY(ID),
+    CONSTRAINT HOLIDAY_NAME_CK CHECK (NAME IS NOT NULL),
+    CONSTRAINT HOLIDAY_DATE_CK CHECK (HOLIDAY_DATE IS NOT NULL),
+    CONSTRAINT HOLIDAY_TYPE_CK CHECK (HOLIDAY_TYPE IN ('CH', 'RH'))
 );
 
-CREATE SEQUENCE EMP_ID_SEQ START WITH 57000000;
-CREATE SEQUENCE LEAVE_ID_SEQ START WITH 100000;
-CREATE SEQUENCE HOLIDAY_ID_SEQ;
+-- Data for holidays
+INSERT INTO HOLIDAY (NAME, HOLIDAY_DATE, HOLIDAY_TYPE)
+VALUES ('New Year', TO_DATE('2025-01-01', 'YYYY-MM-DD'), 'CH'),
+('Republic Day', TO_DATE('2025-01-26', 'YYYY-MM-DD'), 'CH'),
+('Independence Day', TO_DATE('2025-08-15', 'YYYY-MM-DD'), 'CH'),
+('Ramzan',TO_DATE('2025-03-31','YYYY-MM-DD'),'RH');
 
--- INDEX 
-CREATE INDEX LEAVE_DETAILS_STATUS_IDX ON LEAVE_DETAILS(STATUS);
-CREATE INDEX LEAVE_DETAILS_EMP_IDX ON LEAVE_DETAILS(EMP_ID);
-
--- Data for Emp table
-INSERT INTO EMPLOYEE_DETAILS (ID, ENAME, MGR_ID, GENDER, AGE, SALARY, MOBILE) 
-VALUES (EMP_ID_SEQ.NEXTVAL, 'A', NULL, 'M', 31, 10000, '9876543210');
-INSERT INTO EMPLOYEE_DETAILS (ID, ENAME, MGR_ID, GENDER, AGE, SALARY, MOBILE) 
-VALUES(EMP_ID_SEQ.NEXTVAL, 'B', 57000000, 'F', 26, 10000, '9876543210');
-INSERT INTO EMPLOYEE_DETAILS (ID, ENAME, MGR_ID, GENDER, AGE, SALARY, MOBILE) 
-VALUES(EMP_ID_SEQ.NEXTVAL, 'C', 57000000, 'M', 21, 10000, '9876543210');
-INSERT INTO EMPLOYEE_DETAILS (ID, ENAME, MGR_ID, GENDER, AGE, SALARY, MOBILE) 
-VALUES(EMP_ID_SEQ.NEXTVAL, 'D', 57000001, 'F', 21, 10000, '9876543210');
-COMMIT; 
-
--- Data for Leave Table 
-INSERT INTO LEAVE_DETAILS (ID, EMP_ID, START_DATE, END_DATE, TYPE, REASON, STATUS, APPROVED_ID)
-VALUES (LEAVE_ID_SEQ.NEXTVAL, 57000001, TO_DATE('2025-01-01', 'YYYY-MM-DD'), TO_DATE('2025-01-02', 'YYYY-MM-DD'), 'PL', 'Sick Leave', 2, 57000000);
-INSERT INTO LEAVE_DETAILS (ID, EMP_ID, START_DATE, END_DATE, TYPE, REASON, STATUS, APPROVED_ID)
-VALUES (LEAVE_ID_SEQ.NEXTVAL, 57000003, TO_DATE('2025-01-01', 'YYYY-MM-DD'), TO_DATE('2025-01-02', 'YYYY-MM-DD'), 'PL', 'Sick Leave', 1, NULL);
 COMMIT;
 
 
--- Data for holiday table
-INSERT INTO HOLIDAY VALUES(HOLIDAY_ID_SEQ.NEXTVAL, TO_DATE('2025-02-17', 'YYYY-MM-DD'), 'Study Holiday');
-
--- SELECT * FROM HOLIDAY;
-
--- View to get the leave details of all employees
--- View without index: 0.01 seconds
--- View with index: 0.001 seconds
-CREATE OR REPLACE VIEW EMP_LEAVE_VIEW AS
-SELECT 
-    E.ID AS EMP_ID,
-    E.ENAME AS EMP_NAME,
-    L.START_DATE,
-    L.END_DATE,
-    calculate_leave_days(L.END_DATE , L.START_DATE )  NO_OF_LEAVES_DAYS,
-    L.TYPE,
-    L.REASON,
-    CASE WHEN L.STATUS = 1 THEN 'PENDING' 
-        WHEN L.STATUS = 2 THEN 'APPROVED' 
-        WHEN L.STATUS = 3 THEN 'REJECTED' 
-        ELSE 'Not Applied' 
-    END AS STATUS,
-    M.ENAME AS MGR_NAME
-FROM
-    EMPLOYEE_DETAILS E
-LEFT JOIN
-    LEAVE_DETAILS L ON E.ID = L.EMP_ID
-LEFT JOIN
-    EMPLOYEE_DETAILS M ON L.APPROVED_ID = M.ID
-ORDER BY EMP_ID;
-
--- SELECT * FROM EMP_LEAVE_VIEW;
-
-
--- FUNCTION To find number of days leave applied
-CREATE OR REPLACE FUNCTION calculate_leave_days(p_end_date IN DATE, p_start_date IN DATE) RETURN NUMBER IS
-BEGIN 
-    RETURN (p_end_date - p_start_date) + 1;
-END calculate_leave_days;
-/
-
-
---  PROCEDURE AUTO ACTION: 
--- Approve IF no of leave days is less than or equal  3 days and  leave start date is less than 5 days from current date. 
--- Reject IF no of leave days is greater than 3 days and  leave start date is less than 5 days from current date. 
-CREATE OR REPLACE PROCEDURE AUTO_ACTION_LEAVE AS
-    CURSOR LEAVE_CUR IS SELECT * FROM LEAVE_DETAILS WHERE STATUS = 1 AND START_DATE <= SYSDATE + 5;
-BEGIN 
-    FOR leave_rec IN LEAVE_CUR LOOP
-        IF (calculate_leave_days(leave_rec.END_DATE, leave_rec.START_DATE) <= 3) THEN
-            UPDATE LEAVE_DETAILS SET STATUS = 2, APPROVED_ID = 57000000 WHERE ID = leave_rec.ID;
-            COMMIT;
-        ELSE
-            UPDATE LEAVE_DETAILS SET STATUS = 3, APPROVED_ID = 57000000 WHERE ID = leave_rec.ID;
-            COMMIT;
-        END IF;
-    END LOOP;
-EXCEPTION
-    WHEN NO_DATA_FOUND THEN 
-        DBMS_OUTPUT.PUT_LINE('No action to be taken all the leaves are approved and within SLA' );
-    WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('ERROR: ' || SQLERRM);
-    ROLLBACK;
-END AUTO_ACTION_LEAVE;
-/
-
---SELECT * FROM LEAVE_DETAILS WHERE STATUS = 1 AND START_DATE <= SYSDATE + 5;
---EXEC AUTO_ACTION_LEAVE;
---SELECT * FROM LEAVE_DETAILS WHERE STATUS = 1 AND START_DATE <= SYSDATE + 5;
-
-
-
-
-CREATE OR REPLACE PACKAGE EMP_LEAVE_PKG AS
-    FUNCTION calculate_leave_days(p_end_date IN DATE, p_start_date IN DATE) RETURN NUMBER;
-    PROCEDURE AUTO_ACTION_LEAVE;
-    PROCEDURE APPLY_LEAVE(p_emp_id INT, p_start_date DATE, p_end_date DATE, p_reason VARCHAR2);
-END EMP_LEAVE_PKG;
-/
-
-CREATE OR REPLACE PACKAGE BODY EMP_LEAVE_PKG AS 
-    FUNCTION calculate_leave_days(p_end_date IN DATE, p_start_date IN DATE) RETURN NUMBER IS
-    BEGIN 
-        RETURN (p_end_date - p_start_date) + 1;
-    END calculate_leave_days;
-    
-    
-    --  PROCEDURE AUTO ACTION: 
-    -- Approve IF no of leave days is less than or equal  3 days and  leave start date is less than 5 days from current date. 
-    -- Reject IF no of leave days is greater than 3 days and  leave start date is less than 5 days from current date. 
-    PROCEDURE AUTO_ACTION_LEAVE AS
-        CURSOR LEAVE_CUR IS SELECT * FROM LEAVE_DETAILS WHERE STATUS = 1 AND START_DATE <= SYSDATE + 5;
-    BEGIN 
-        FOR leave_rec IN LEAVE_CUR LOOP
-            IF (calculate_leave_days(leave_rec.END_DATE, leave_rec.START_DATE) <= 3) THEN
-                UPDATE LEAVE_DETAILS SET STATUS = 2, APPROVED_ID = 57000000 WHERE ID = leave_rec.ID;
-                COMMIT;
-            ELSE
-                UPDATE LEAVE_DETAILS SET STATUS = 3, APPROVED_ID = 57000000 WHERE ID = leave_rec.ID;
-                COMMIT;
-            END IF;
-        END LOOP;
-    EXCEPTION
-        WHEN NO_DATA_FOUND THEN 
-            INSERT INTO ERROR_LOG VALUES(ERROR_LOG_SEQ.NEXTVAL, 'No action to be taken all the leaves are approved and within SLA', SYSDATE, 'AUTO_ACTION_LEAVE');
-            DBMS_OUTPUT.PUT_LINE('No action to be taken all the leaves are approved and within SLA' );
-        WHEN OTHERS THEN
-            DBMS_OUTPUT.PUT_LINE('ERROR: ' || SQLERRM);
-        ROLLBACK;
-    END AUTO_ACTION_LEAVE;
-    
-    PROCEDURE APPLY_LEAVE(p_emp_id INT, p_start_date DATE, p_end_date DATE, p_reason VARCHAR2) AS
-    BEGIN
-        INSERT INTO LEAVE_DETAILS (ID, EMP_ID, START_DATE, END_DATE, TYPE, REASON, STATUS, APPROVED_ID)
-        VALUES (LEAVE_ID_SEQ.NEXTVAL, p_emp_id, p_start_date, p_end_date, 'AL', p_reason, 1, NULL);
-        COMMIT;
-    EXCEPTION
-        WHEN OTHERS THEN
-            INSERT INTO ERROR_LOG VALUES(ERROR_LOG_SEQ.NEXTVAL, SQLERRM, SYSDATE, 'APPLY_LEAVE');
-            DBMS_OUTPUT.PUT_LINE('ERROR: ' || SQLERRM);
-            ROLLBACK;
-    END APPLY_LEAVE;
-END EMP_LEAVE_PKG;
-/
-
--- trigger to check before insert whether start date and end date are in holiday list
-CREATE OR REPLACE TRIGGER leave_holiday_check_trg 
-BEFORE INSERT ON LEAVE_DETAILS
-FOR EACH ROW
-DECLARE
-    l_holiday_count INT := 0;
-BEGIN 
-    SELECT COUNT(*) INTO l_holiday_count 
-    FROM HOLIDAY 
-    WHERE TRUNC(HOLIDAY_DATE) BETWEEN TRUNC(:NEW.START_DATE) AND TRUNC(:NEW.END_DATE);
-    
-    IF (l_holiday_count > 0) THEN
-        INSERT INTO ERROR_LOG VALUES(ERROR_LOG_SEQ.NEXTVAL, 'Leave dates are in holiday list', SYSDATE, 'leave_holiday_check_trg');
-        RAISE_APPLICATION_ERROR(-20001, 'Leave dates are in holiday list');
-    END IF;
-END leave_holiday_check_trg;
-/
-
--- all apply leave proc
-EXEC EMP_LEAVE_PKG.APPLY_LEAVE(57000000,SYSDATE, SYSDATE, 'Sick');
-
--- insert leave for 57000000 for today'date 
---INSERT INTO LEAVE_DETAILS (ID, EMP_ID, START_DATE, END_DATE, TYPE, REASON, STATUS, APPROVED_ID)
---VALUES (LEAVE_ID_SEQ.NEXTVAL, 57000000, SYSDATE, SYSDATE, 'AL', 'Sick Leave', 1, NULL);
-
-
-
-DECLARE 
-    l_menu_options INT := &menu_options;
-BEGIN
-    DBMS_OUTPUT.PUT_LINE('##############################################################');
-    DBMS_OUTPUT.PUT_LINE(CHR(9) || CHR(9) || 'WECOME TO EMP LEAVE PORTAL');
-    DBMS_OUTPUT.PUT_LINE('##############################################################');
-    DBMS_OUTPUT.PUT_LINE(CHR(9) || CHR(9) || '*****GET WELL SOON********');
-    DBMS_OUTPUT.PUT_LINE('##############################################################');
-    CASE 
-        WHEN l_menu_options = 1 THEN
-            DBMS_OUTPUT.PUT_LINE('You have selected menu option: List all the applied leaves');
-            DBMS_OUTPUT.PUT_LINE('##############################################################');
-            DBMS_OUTPUT.PUT_LINE('Emp Name' || CHR(9) || 'Status' || CHR(9)|| CHR(9) || 'MGR Name');
-            FOR leave_view IN (SELECT * FROM EMP_LEAVE_VIEW WHERE STATUS IS NOT NULL) LOOP
-                DBMS_OUTPUT.PUT_LINE(leave_view.EMP_NAME || CHR(9) || CHR(9) || leave_view.STATUS || CHR(9) || leave_view.MGR_NAME);
-            END LOOP;
-        WHEN l_menu_options = 2 THEN
-            DBMS_OUTPUT.PUT_LINE('You have selected menu option: List all the emp and leaves details');
-            DBMS_OUTPUT.PUT_LINE('##############################################################');
-            DBMS_OUTPUT.PUT_LINE('Emp Name' || CHR(9) || 'Status' || CHR(9) || CHR(9)|| 'MGR Name');
-            FOR leave_view IN (SELECT * FROM EMP_LEAVE_VIEW ) LOOP
-                DBMS_OUTPUT.PUT_LINE(leave_view.EMP_NAME || CHR(9) || CHR(9) || leave_view.STATUS || CHR(9) || leave_view.MGR_NAME);
-            END LOOP;
-        WHEN l_menu_options = 3 THEN
-            DBMS_OUTPUT.PUT_LINE('You have selected menu option: Apply Leave');
-            DBMS_OUTPUT.PUT_LINE('##############################################################');
-            EMP_LEAVE_PKG.APPLY_LEAVE(57000000,SYSDATE, SYSDATE, 'Sick');
-    END CASE;
-    DBMS_OUTPUT.PUT_LINE('##############################################################');
-END;
-
-
--- Seq for error log pk
-DROP SEQUENCE ERROR_LOG_SEQ;
-CREATE SEQUENCE ERROR_LOG_SEQ;
--- ERROR LOG table
-DROP TABLE ERROR_LOG;
-CREATE TABLE ERROR_LOG(
-    ID NUMBER PRIMARY KEY,
-    ERROR_MESSAGE VARCHAR2(4000),
-    ERROR_DATE DATE,
-    PRG_NAME VARCHAR2(50)
+-- Developed by Babu to store leave types
+CREATE TABLE LEAVETYPE (
+    ID NUMBER GENERATED ALWAYS as IDENTITY,
+    LEAVE_TYPE VARCHAR2(50) NOT NULL,
+    MAX_DAYS NUMBER NOT NULL,
+    CONSTRAINT LEAVETYPE_ID_PK PRIMARY KEY (ID),
+    CONSTRAINT LEAVETYPE_LEAVE_TYPE_UQ UNIQUE (LEAVE_TYPE)
 );
+
+-- Data for leave types
+INSERT INTO LEAVETYPE (LEAVE_TYPE, MAX_DAYS) VALUES ('SL', 62);
+INSERT INTO LEAVETYPE (LEAVE_TYPE, MAX_DAYS) VALUES ('RH', 4);
+INSERT INTO LEAVETYPE (LEAVE_TYPE, MAX_DAYS) VALUES ('PL', 10);
+INSERT INTO LEAVETYPE (LEAVE_TYPE, MAX_DAYS) VALUES ('ML', 300);
+INSERT INTO LEAVETYPE (LEAVE_TYPE, MAX_DAYS) VALUES ('CL', 62);
+INSERT INTO LEAVETYPE (LEAVE_TYPE, MAX_DAYS) VALUES ('MY', 2);
+
+COMMIT;
+
+-- Developed by Catherine to store leave details
+CREATE TABLE LEAVE (
+    ID NUMBER GENERATED ALWAYS as IDENTITY,
+    EMP_ID NUMBER NOT NULL,
+    LEAVE_TYPE_ID NUMBER NOT NULL,
+    START_DATE DATE DEFAULT SYSDATE,
+    END_DATE DATE DEFAULT SYSDATE,
+    APPROVER_ID NUMBER,
+    STATUS VARCHAR2(20) DEFAULT 'pending',
+    REASON VARCHAR2(255),
+    CONSTRAINT LEAVE_ID_PK PRIMARY KEY (ID),
+    CONSTRAINT LEAVE_EMP_FK FOREIGN KEY (EMP_ID) REFERENCES EMPLOYEE (ID),
+    CONSTRAINT LEAVE_TYPE_FK FOREIGN KEY (LEAVE_TYPE_ID) REFERENCES LEAVETYPE (ID),
+    CONSTRAINT LEAVE_APPROVER_FK FOREIGN KEY (APPROVER_ID) REFERENCES EMPLOYEE (ID)
+);
+
+-- Data for leaves
+INSERT INTO LEAVE (EMP_ID, LEAVE_TYPE_ID, START_DATE, END_DATE, APPROVER_ID, STATUS, REASON)
+VALUES (2, 1, TO_DATE('2024-01-15', 'YYYY-MM-DD'), TO_DATE('2024-01-20', 'YYYY-MM-DD'), NULL, 'pending', 'Personal Work');
+
+INSERT INTO LEAVE (EMP_ID, LEAVE_TYPE_ID, START_DATE, END_DATE, APPROVER_ID, STATUS, REASON)
+VALUES (3, 2, TO_DATE('2024-02-20', 'YYYY-MM-DD'), TO_DATE('2024-02-22', 'YYYY-MM-DD'), 1, 'approved', 'Religious Holiday');
+
+COMMIT;
+
+
+
+-- View to show the max leaves , applied leaves, available leaves for each employee.
+
+CREATE OR REPLACE VIEW employee_leave_summary AS
+SELECT
+    e.id,
+    e.employee_name,
+    LEAVE_TYPE,
+    e.max_days,
+    COALESCE(SUM(CASE WHEN l.EMP_ID IS NOT NULL THEN l.END_DATE - l.START_DATE + 1 ELSE 0 END), 0) AS applied_leaves,
+    max_days - COALESCE(SUM(CASE WHEN l.EMP_ID IS NOT NULL THEN l.END_DATE - l.START_DATE + 1 ELSE 0 END), 0) AS available_leaves
+FROM
+    (SELECT e.id, e.FIRST_NAME || ' ' || e.LAST_NAME AS employee_name, lt.ID AS LEAVE_TYPE_ID, lt.LEAVE_TYPE, max_days
+     FROM employee e
+     CROSS JOIN (SELECT * FROM LEAVETYPE lt WHERE id in (1,2, 6 ) ) lt) e
+LEFT JOIN (select * from leave where status = 'approved') l ON e.LEAVE_TYPE_ID = l.LEAVE_TYPE_ID AND e.id = l.EMP_ID
+GROUP BY
+    e.id, e.employee_name, e.LEAVE_TYPE, e.max_days
+ORDER BY e.id;
+
+--Example query to use the view
+SELECT * FROM employee_leave_summary;
+
+
+
+CREATE OR REPLACE VIEW my_leave_request AS
+SELECT
+    e.first_name || ' ' || e.last_name AS employee_name,
+    lt.leave_type,
+    l.start_date,
+    l.end_date,
+	COALESCE((l.END_DATE - l.START_DATE + 1), 0) AS applied_leaves,
+    l.reason,
+    l.status
+FROM
+    employee e
+JOIN
+    leave l ON e.id = l.emp_id
+JOIN
+    leavetype lt ON l.leave_type_id = lt.id;
+
+select * from MY_LEAVE_REQUEST;
+
 
