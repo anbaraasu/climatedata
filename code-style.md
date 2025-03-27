@@ -1,5 +1,5 @@
 Always use React functional components.
-Always add comments.
+for any language, Always add comments.
 
 In Java, using _ for private fields/members
 

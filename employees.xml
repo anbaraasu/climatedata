@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Employees><Employee><Employee_ID>1</Employee_ID><Name>Alice</Name><Department>HR</Department><Salary>50000</Salary></Employee><Employee><Employee_ID>2</Employee_ID><Name>Bob</Name><Department>IT</Department><Salary>60000</Salary></Employee><Employee><Employee_ID>3</Employee_ID><Name>Charlie</Name><Department>Finance</Department><Salary>55000</Salary></Employee></Employees>

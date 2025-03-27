@@ -1,0 +1,12 @@
+# Sample CSV file for demonstrating data cleanup
+# Column1: Categorical data (e.g., product names)
+# Column2: Numeric data (e.g., sales figures, may contain missing values)
+# Column3: Text data (e.g., descriptions, may need standardization)
+# Column4: Numeric data (e.g., scores, may contain invalid values)
+
+Column1,Column2,Column3,Column4
+Apple,10,HELLO,5
+Banana,,WORLD,-3
+,20,Python,10
+Apple,10,HELLO,5
+Orange,15,Data,8

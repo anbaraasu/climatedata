@@ -1,0 +1,42 @@
+import pandas as pd
+
+# Load the CSV file into a DataFrame
+# Replace 'data.csv' with the path to your CSV file
+csv_file_path = 'data.csv'
+df = pd.read_csv(csv_file_path)
+
+# Display the first few rows of the original data
+print("Original Data:")
+print(df.head())
+
+# Step 1: Handle Missing Values
+# Fill missing values in 'Column1' with a default value
+df['Column1'] = df['Column1'].fillna('Default_Value')  # Replace missing values with 'Default_Value'
+
+# Fill missing numeric values in 'Column2' with the column mean
+df['Column2'] = df['Column2'].fillna(df['Column2'].mean())  # Replace NaN with the mean of 'Column2'
+
+# Step 2: Remove Duplicates
+# Drop duplicate rows from the DataFrame
+df = df.drop_duplicates()
+
+# Step 3: Standardize Data
+# Convert all text in 'Column3' to lowercase for consistency
+df['Column3'] = df['Column3'].str.lower()
+
+# Step 4: Remove Rows with Invalid Data
+# Remove rows where 'Column4' has values less than 0 (invalid data)
+df = df[df['Column4'] >= 0]
+
+# Step 5: Rename Columns for Consistency
+# Rename 'Column1' and 'Column2' to more descriptive names
+df.rename(columns={'Column1': 'Standardized_Column1', 'Column2': 'Standardized_Column2'}, inplace=True)
+
+# Display the cleaned data
+print("\nCleaned Data:")
+print(df.head())
+
+# Save the cleaned data to a new CSV file
+cleaned_csv_file_path = 'cleaned_data.csv'
+df.to_csv(cleaned_csv_file_path, index=False)  # Save the DataFrame to a CSV file without the index
+print(f"\nCleaned data saved to {cleaned_csv_file_path}")
