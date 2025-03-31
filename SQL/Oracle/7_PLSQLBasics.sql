@@ -315,3 +315,23 @@ BEGIN
 END;
 /
 
+
+/*
+Class Room Exercise:
+ 
+Scenario:
+Write a PL/SQL block to processes a list of numbers from 1 to 20. The block should follow these rules:
+Use CONTINUE to skip processing numbers that are divisible by 3.
+Use EXIT to stop the loop completely if the number exceeds 15.
+Use RETURN to exit the procedure immediately if the number is exactly 10
+ 
+Sample output:
+Processing number: 1
+Processing number: 2
+Processing number: 4
+Processing number: 5
+Processing number: 7
+Processing number: 8
+Processing number: 10
+Procedure terminated at number 1
+*/
