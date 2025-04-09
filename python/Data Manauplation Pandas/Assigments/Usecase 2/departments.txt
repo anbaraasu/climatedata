@@ -1,0 +1,14 @@
+# Data for departments.csv
+departments_data = {
+    'DepartmentID': [1, 2, 3, 4],
+    'DepartmentName': ['Engineering', 'Marketing', 'Sales', 'HR'],
+    'ManagerID': [101, 102, 103, 104]
+}
+
+# Convert the data to a DataFrame
+departments_df = pd.DataFrame(departments_data)
+
+# Save the DataFrame to a CSV file
+departments_df.to_csv('departments.csv', index=False)
+
+print("departments.csv has been created.")

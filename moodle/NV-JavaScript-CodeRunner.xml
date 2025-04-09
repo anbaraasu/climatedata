@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+  <question type="coderunner">
+    <name>
+      <text>Write a JavaScript function named sumArray that takes an array of numbers and returns the sum of its elements.</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Write a JavaScript function named sumArray that takes an array of numbers and returns the sum of its elements.]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <coderunnertype>nodejs</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>1</allornothing>
+    <penaltyregime>10, 20, ...</penaltyregime>
+    <precheck>0</precheck>
+    <hidecheck>0</hidecheck>
+    <showsource>0</showsource>
+    <answerboxlines>18</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload><![CDATA[function sumArray(arr) {
+      // Your code here
+    }]]></answerpreload>
+    <validateonsave>1</validateonsave>
+    <testcases>
+      <testcase testtype="0" useasexample="0" hiderestiffail="0" mark="1.0000000">
+        <testcode><![CDATA[console.log(sumArray([1, 2, 3, 4]));]]></testcode>
+        <expected><![CDATA[10]]></expected>
+      </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="0" mark="1.0000000">
+        <testcode><![CDATA[console.log(sumArray([-1, 2, 3, 4]));]]></testcode>
+        <expected><![CDATA[8]]></expected>
+      </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="0" mark="1.0000000">
+        <testcode><![CDATA[console.log(sumArray([-1, 2, -3, -4]));]]></testcode>
+        <expected><![CDATA[-6]]></expected>
+      </testcase>
+    </testcases>
+  </question>
+  <question type="coderunner">
+    <name>
+      <text>Write a JavaScript function named sumArray that takes an array of numbers and returns the sum of its elements.</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[Write a JavaScript function named sumArray that takes an array of numbers and returns the sum of its elements.]]></text>
+    </questiontext>
+    <generalfeedback format="html"><text></text></generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <idnumber></idnumber>
+    <coderunnertype>nodejs</coderunnertype>
+    <prototypetype>0</prototypetype>
+    <allornothing>1</allornothing>
+    <penaltyregime>10, 20, ...</penaltyregime>
+    <precheck>0</precheck>
+    <hidecheck>0</hidecheck>
+    <showsource>0</showsource>
+    <answerboxlines>18</answerboxlines>
+    <answerboxcolumns>100</answerboxcolumns>
+    <answerpreload><![CDATA[function sumArray(arr) {
+      // Your code here
+    }]]></answerpreload>
+    <validateonsave>1</validateonsave>
+    <testcases>
+      <testcase testtype="0" useasexample="0" hiderestiffail="0" mark="1.0000000">
+        <testcode><![CDATA[console.log(sumArray([1, 2, 3, 4]));]]></testcode>
+        <expected><![CDATA[10]]></expected>
+      </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="0" mark="1.0000000">
+        <testcode><![CDATA[console.log(sumArray([-1, 2, 3, 4]));]]></testcode>
+        <expected><![CDATA[8]]></expected>
+      </testcase>
+      <testcase testtype="0" useasexample="0" hiderestiffail="0" mark="1.0000000">
+        <testcode><![CDATA[console.log(sumArray([-1, 2, -3, -4]));]]></testcode>
+        <expected><![CDATA[-6]]></expected>
+      </testcase>
+    </testcases>
+  </question>
+</quiz>

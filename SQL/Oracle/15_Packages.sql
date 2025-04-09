@@ -7,7 +7,7 @@
 --END package_name;
 --/
 
--- Amazon - Customer Registration Package, Order Package, Product Package, Payment Package, Shipping Package, Notification Package, Feedback Package, Review Package, Rating Package, Cart Package, Wishlist Package, Search Package, Recommendation Package, Promotion Package, Discount Package, Invoice Package.
+-- Amazon - Registration Package, Order Package, Product Package, Payment Package, Shipping Package, Notification Package, Feedback Package, Cart Package.
 
 -- SYNTAX : 
 CREATE OR REPLACE PACKAGE package_name AS

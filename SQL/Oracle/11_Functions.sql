@@ -5,7 +5,9 @@
 -- Parameter types - IN, OUT, IN OUT
 
 -- Demo for IN parameter to calculate the pf of an employee
-CREATE OR REPLACE FUNCTION CALCULATE_PF(p_emp_sal IN NUMBER) RETURN NUMBER AS
+-- pf is calculated as 12% of the basic salary. The basic salary is 1/20 of the total salary.
+CREATE OR REPLACE FUNCTION CALCULATE_PF(p_emp_sal IN NUMBER) 
+RETURN NUMBER AS
     pf NUMBER;
 BEGIN
     pf := p_emp_sal / 20 * 0.12;
@@ -55,6 +57,8 @@ BEGIN
     PRINT_COMPANY_NAME;
 	DBMS_OUTPUT.PUT_LINE('Company Name: ' || company_name);
 END;
+
+
 
 -- Recursion - Recursion is a technique in which a function calls itself. It is a powerful technique to solve complex problems. It is used to solve problems that can be broken down into smaller problems of the same type.
 

@@ -1,0 +1,21 @@
+import pandas as pd
+
+# Data for employees.csv
+employees_data = {
+    'EmployeeID': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    'Name': ['John Doe', 'Jane Smith', 'Emily Davis', 'Michael Brown', 'Jessica Wilson',
+             'William Johnson', 'Linda Martinez', 'David Rodriguez', 'James Lee', 'Susan White'],
+    'Age': [28, 34, 45, 50, 29, 31, 42, 36, 39, 26],
+    'Department': [1, 2, 1, 3, 2, 3, 1, 4, 2, 4],
+    'Salary': [75000, 82000, None, 105000, 62000, 93000, 115000, 68000, 72000, None],
+    'DateOfJoining': ['2019-07-15', '2017-03-22', '2010-10-01', '2005-11-12', '2021-08-05',
+                      '2018-06-19', '2006-04-25', '2020-01-14', '2015-09-30', '2023-05-10']
+}
+
+# Convert the data to a DataFrame
+employees_df = pd.DataFrame(employees_data)
+
+# Save the DataFrame to a CSV file
+employees_df.to_csv('employees.csv', index=False)
+
+print("employees.csv has been created.")

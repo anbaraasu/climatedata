@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Definition of the SimpleBean -->
+    <bean id="simpleBean" class="com.example.postprocessor.SimpleBean">
+        <property name="name" value="Example Bean"/>
+    </bean>
+
+    <!-- Definition of the CustomBeanPostProcessor -->
+    <bean id="customBeanPostProcessor" class="com.example.postprocessor.CustomBeanPostProcessor"/>
+    
+</beans>

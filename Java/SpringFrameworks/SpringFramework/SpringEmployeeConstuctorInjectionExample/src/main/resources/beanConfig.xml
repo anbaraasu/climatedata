@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define the Department bean using setter injection -->
+    <bean id="department" class="com.example.constructor.Department">
+        <property name="name" value="Human Resources"/>
+        <property name="location" value="India"/>
+    </bean>
+
+    <!-- Define the Employee bean with constructor injection -->
+    <bean id="employee" class="com.example.constructor.Employee">
+        <constructor-arg value="John Doe"/>
+        <constructor-arg ref="department"/>
+    </bean>
+
+</beans>

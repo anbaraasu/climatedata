@@ -1,0 +1,38 @@
+import pandas as pd
+
+# Data for sales_data.csv
+sales_data = {
+    'date': ['2023-01-01', '2023-01-05', '2023-01-07', '2023-01-08', '2023-02-01', 
+             '2023-02-10', '2023-03-01', '2023-03-05', '2023-03-07', '2023-03-15'],
+    'product': ['Laptop', 'Smartphone', 'Tablet', 'Laptop', 'Laptop', 
+                'Smartphone', 'Tablet', 'Laptop', 'Smartphone', 'Laptop'],
+    'quantity': [2, 1, 3, 1, 1, 2, 4, 2, 3, 1],
+    'price_per_unit': [1200.00, 800.00, 450.00, 1200.00, 1150.00, 
+                       780.00, 440.00, 1180.00, 790.00, 1190.00],
+    'customer_id': [101, 102, 103, 104, 101, 
+                    105, 102, 106, 107, 108],
+    'store': ['Store_A', 'Store_B', 'Store_A', 'Store_C', 'Store_A', 
+              'Store_B', 'Store_C', 'Store_A', 'Store_B', 'Store_C']
+}
+
+# Data for customers.csv
+customers_data = {
+    'customer_id': [101, 102, 103, 104, 105, 106, 107, 108],
+    'first_name': ['John', 'Jane', 'Emily', 'Michael', 'Sarah', 'David', 'Laura', 'James'],
+    'last_name': ['Doe', 'Smith', 'Johnson', 'Brown', 'Davis', 'Wilson', 'Moore', 'Taylor'],
+    'email': ['john.doe@example.com', 'jane.smith@example.com', 'emily.j@example.com', 
+              'michael.b@example.com', 'sarah.d@example.com', 'david.w@example.com', 
+              'laura.m@example.com', 'james.t@example.com'],
+    'gender': ['M', 'F', 'F', 'M', 'F', 'M', 'F', 'M'],
+    'age': [34, 28, 45, 50, 32, 40, 29, 37]
+}
+
+# Convert to DataFrame
+sales_df = pd.DataFrame(sales_data)
+customers_df = pd.DataFrame(customers_data)
+
+# Save to CSV
+sales_df.to_csv('sales_data.csv', index=False)
+customers_df.to_csv('customers.csv', index=False)
+
+print("Data saved to CSV files.")
