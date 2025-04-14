@@ -249,3 +249,24 @@ EXEC weak_type_cursor_demo(false);
 
 
 EXEC weak_type_cursor_demo;
+
+
+CREATE OR REPLACE PROCEDURE MUTI_EMP AS
+    TYPE emp_record IS RECORD (
+        first_name VARCHAR2(100),
+        salary HR_EMP.SALARY%TYPE
+    );
+    TYPE emp_names IS TABLE OF emp_record;
+    emp_name emp_names;
+    emp_rec emp_record;
+BEGIN
+    emp_rec.first_name := 'A';
+    emp_rec.salary := 1;
+    emp_name :=emp_names(emp_rec);
+    FOR i IN 1..emp_name.COUNT LOOP
+        DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_name(i).first_name || ' Sal:' || emp_name(i).salary);
+    END LOOP;
+END;
+/
+
+EXEC MUTI_EMP;

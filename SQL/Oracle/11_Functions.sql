@@ -46,7 +46,7 @@ END;
 --     -- Performance
 
 DECLARE 
-    company_name VARCHAR2(50) := 'HCLTech';
+    company_name VARCHAR2(50) := 'mytech';
     PROCEDURE PRINT_COMPANY_NAME IS
         local_company := 'TEST';
     BEGIN

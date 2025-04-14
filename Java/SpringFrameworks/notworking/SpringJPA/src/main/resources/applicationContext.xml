@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<beans xmlns="http://www.springframework.org/schema/beans"   
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+    xmlns:tx="http://www.springframework.org/schema/tx"   
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+        https://www.springframework.org/schema/beans/spring-beans.xsd   
+        http://www.springframework.org/schema/tx  
+        https://www.springframework.org/schema/tx/spring-tx.xsd">  
+
+    <tx:annotation-driven transaction-manager="jpaTxnManagerBean" proxy-target-class="true"/>  
+
+    <bean id="dataSourceBean" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+        <property name="driverClassName" value="org.h2.Driver"/>  
+        <property name="url" value="jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>  
+        <property name="username" value="sa"/>  
+        <property name="password" value=""/>  
+    </bean>  
+
+    <bean id="hbAdapterBean" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">  
+        <property name="showSql" value="true"/>  
+        <property name="generateDdl" value="true"/>  
+        <property name="databasePlatform" value="org.hibernate.dialect.OracleDialect"/>  
+    </bean>  
+
+    <!-- ✅ Add this LoadTimeWeaver bean -->
+    <bean id="loadTimeWeaver" class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver"/>
+
+    <bean id="emfBean" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">  
+        <property name="dataSource" ref="dataSourceBean"/>  
+        <property name="jpaVendorAdapter" ref="hbAdapterBean"/>  
+        <!-- ✅ Set packages to scan for entities -->
+        <property name="packagesToScan" value="com.javatpoint"/>  
+        <!-- ✅ Inject LoadTimeWeaver to avoid the error -->
+        <property name="loadTimeWeaver" ref="loadTimeWeaver"/>
+    </bean>  
+
+    <bean id="accountsDaoBean" class="com.javatpoint.AccountsDao">  
+        <property name="entityManagerFactory" ref="emfBean"/>  
+    </bean>  
+
+    <bean id="jpaTxnManagerBean" class="org.springframework.orm.jpa.JpaTransactionManager">  
+        <property name="entityManagerFactory" ref="emfBean"/>  
+    </bean>  
+
+</beans>

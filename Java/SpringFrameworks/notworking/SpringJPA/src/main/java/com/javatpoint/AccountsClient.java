@@ -2,11 +2,11 @@ package com.javatpoint;
 
 import java.util.List;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class AccountsClient {
   public static void main(String[] args) {
-    ApplicationContext context = new AnnotationConfigApplicationContext("applicationContext.xml");
+    ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
     AccountsDao accountsDao = context.getBean("accountsDaoBean", AccountsDao.class);
 
     accountsDao.createAccount(15, "Jai Kumar", 41000);

@@ -1,4 +1,4 @@
-
+DROP TABLE DUMMY;
 -- PROC to insert error log
 CREATE TABLE DUMMY(ID INT, NAME VARCHAR2(100));
 
@@ -9,6 +9,10 @@ ALTER VIEW DUMMY_VIEW COMPILE;
 SELECT * FROM USER_OBJECTS WHERE STATUS = 'INVALID';
 
 DROP TABLE DUMMY;
+
+-- Need error details - line, position, message
+SELECT LINE, POSITION, MESSAGE FROM USER_ERRORS WHERE NAME IN 
+(SELECT OBJECT_NAME FROM USER_OBJECTS WHERE STATUS = 'INVALID');
 
 -- PROC to insert record into DUMMY table
 CREATE OR REPLACE PROCEDURE insert_dummy(p_id IN INT, p_name IN VARCHAR2) AS
@@ -31,6 +35,8 @@ EXEC DBMS_UTILITY.compile_schema(USER, FALSE);
 -- find all the invalid objects in the schema
 SELECT * FROM USER_OBJECTS WHERE STATUS = 'INVALID';
 
+-- find the db objects and its dependent objects
+SELECT * FROM USER_DEPENDENCIES ;
 
 -- find the error about the invalid db object
 SELECT * FROM USER_ERRORS WHERE NAME IN 
@@ -46,3 +52,5 @@ SELECT * FROM USER_ERRORS WHERE NAME IN
 -- USER_CONSTRAINTS - contain all the constraints created in the user schema
 -- USER_INDEXES - contain all the indexes created in the user schema
 -- USER_TAB_COLUMNS - contain all the columns created in the user schema
+
+-- ALL_OBJECTS  - contain all the db object created in the user schema and other schema

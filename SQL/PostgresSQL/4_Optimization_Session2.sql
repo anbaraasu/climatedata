@@ -45,15 +45,15 @@ INSERT INTO departments (department_name, location) VALUES
 INSERT INTO departments (department_name, location) VALUES('Admin','New York');
 
 INSERT INTO employees (first_name, last_name, department_id, hire_date, salary, manager_id, email)
-values ('John', 'Doe', 2, '2020-01-01', 10000, 1, 'j@hcl.com')
-, ('Jane', 'Doe', 2, '2020-01-01', 10000, 1, 'jd@hcl.com')
-, ('John', 'Smith', 2, '2020-01-01', 10000, 1, 'js@hcl.com')
-, ('Jane', 'Smith', 2, '2020-01-01', 10000, 1, 'jas@hcl.com')
-, ('Albert', 'Bot', 2, '2020-01-01', 10000, 1, 'ab@hcl.com');
+values ('John', 'Doe', 2, '2020-01-01', 10000, 1, 'j@mytech.com')
+, ('Jane', 'Doe', 2, '2020-01-01', 10000, 1, 'jd@mytech.com')
+, ('John', 'Smith', 2, '2020-01-01', 10000, 1, 'js@mytech.com')
+, ('Jane', 'Smith', 2, '2020-01-01', 10000, 1, 'jas@mytech.com')
+, ('Albert', 'Bot', 2, '2020-01-01', 10000, 1, 'ab@mytech.com');
 
 INSERT INTO employees (first_name, last_name, department_id, hire_date, salary, manager_id, email)
-values ('Bob', 'David', 1, '2020-01-01', 10000, 1, 'db@hcl.com'),
-('David', 'Miller', 1, '2020-01-15', 85000, 2, 'dm@hcl.com');
+values ('Bob', 'David', 1, '2020-01-01', 10000, 1, 'db@mytech.com'),
+('David', 'Miller', 1, '2020-01-15', 85000, 2, 'dm@mytech.com');
 
 SELECT * FROM Employees;
 UPDATE employees SET manager_id = 2 WHERE employee_id = 1;

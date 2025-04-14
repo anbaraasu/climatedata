@@ -2,7 +2,7 @@ import fitz  # PyMuPDF
 import csv
 
 # Open the PDF file
-pdf_document = r"C:\Users\anbarasuv\OneDrive - HCL TECHNOLOGIES LIMITED\D&A\dnapass\gtm-azure-cloud\Microsite\Microsite_SAST_ScanReport.pdf"
+pdf_document = r"C:\Users\mytech\mytech - mytech TECHNOLOGIES LIMITED\D&A\dnapass\gtm-azure-cloud\Microsite\Microsite_SAST_ScanReport.pdf"
 pdf = fitz.open(pdf_document)
 
 # Extract text from each page
@@ -123,7 +123,7 @@ for vulType in vulTypes:
         data.append(record)
 
 # Write the extracted data to a CSV file
-csv_file = r"C:\Users\anbarasuv\OneDrive - HCL TECHNOLOGIES LIMITED\D&A\dnapass\gtm-azure-cloud\Microsite\Microsite_SAST_ScanReport.csv"
+csv_file = r"C:\Users\mytech\mytech - mytech TECHNOLOGIES LIMITED\D&A\dnapass\gtm-azure-cloud\Microsite\Microsite_SAST_ScanReport.csv"
 with open(csv_file, mode='w', newline='') as file:
     writer = csv.DictWriter(file, fieldnames=headers)
     

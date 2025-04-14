@@ -24,7 +24,7 @@ Sub Moodle_XML()
 
     ' Create the folder path based on the active sheet name
     folderPath = ThisWorkbook.Path & "\" & ws.Name
-    folderPath = Replace(folderPath, "https://hclo365-my.sharepoint.com/personal/anbarasuv_hcltech_com/Documents/", "C:\Users\anbarasuv\OneDrive - HCL TECHNOLOGIES LIMITED\")
+    folderPath = Replace(folderPath, "https://mytecho365-my.sharepoint.com/personal/mytech_mytech_com/Documents/", "C:\Users\mytech\mytech - mytech TECHNOLOGIES LIMITED\")
     folderPath = Replace(folderPath, "/", "\")
     
     If Dir(folderPath, vbDirectory) = "" Then

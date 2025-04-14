@@ -7,7 +7,7 @@
 -- scope 
     -- local, global/public
     l_name varchar(20) := 'John';
-    g_company_name CONSTANT varchar2(7) := 'HCLTech';
+    g_company_name CONSTANT varchar2(7) := 'mytech';
     l_salary number(15,2) := 9999999999999.99;
 
 -- operators

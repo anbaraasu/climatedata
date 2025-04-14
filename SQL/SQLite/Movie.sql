@@ -405,6 +405,9 @@ INSERT INTO REVIEWS (review_id, movie_id, rating, review_text) VALUES
 (17, 1, 6, 'A fun but confusing ride.'),
 (18, 2, 10, 'Brilliant executed.');
 
+-- update few existing review with amazing text in the review_text column
+UPDATE REVIEWS SET review_text = 'Amazing movie!' WHERE review_id IN (1, 2, 3);
+
 /*
 You are tasked with generating a list of movies along with the names of the actors who starred in them. Additionally, for each movie, calculate how many reviews have a rating higher than 8. The list should be sorted by the number of high-rated reviews in descending order.
 
@@ -608,3 +611,19 @@ SQLite version 3.45.1 2024-01-30 16:01:20
 Enter ".help" for usage hints.                                                  
 sqlite>                                                                         
 */
+
+-- Write the query to List movies with a rating higher than the average rating of movies released in the same year.
+-- The result should include the movie title, release year, and its rating. The result should be sorted by the release year in ascending order and the rating in descending order.
+SELECT 
+    m.title AS movie_title,
+    m.release_year,
+    r.rating
+FROM MOVIES m
+JOIN REVIEWS r ON m.movie_id = r.movie_id
+WHERE r.rating > (
+    SELECT AVG(r2.rating)
+    FROM MOVIES m2
+    JOIN REVIEWS r2 ON m2.movie_id = r2.movie_id
+    WHERE m2.release_year = m.release_year
+)
+ORDER BY m.release_year ASC, r.rating DESC;

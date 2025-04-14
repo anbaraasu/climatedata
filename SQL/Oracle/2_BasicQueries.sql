@@ -55,13 +55,13 @@ SELECT first_name, SUBSTR(first_name, 3) FROM hr.employees;
 
 -- 13. Single Row Functions - INSTR - Polymorphism
 -- find the first occurrence of e
-SELECT INSTR('HCL Technologies','e') FROM DUAL;
+SELECT INSTR('mytech Technologies','e') FROM DUAL;
 -- find the occurrence of e starting from 7 position
-SELECT INSTR('HCL Technologies','e',7) FROM DUAL;
+SELECT INSTR('mytech Technologies','e',7) FROM DUAL;
 -- find the second occurence from 1st position onwards
-SELECT INSTR('HCL Technologies','e',1,2) FROM DUAL;
+SELECT INSTR('mytech Technologies','e',1,2) FROM DUAL;
 -- find the last occurence 
-SELECT INSTR('HCL Technologies','o',-1) FROM DUAL;
+SELECT INSTR('mytech Technologies','o',-1) FROM DUAL;
 
 SELECT TO_CHAR(123456,'9,99,999.00') FROM DUAL;
 SELECT TO_CHAR(123456,'MONTH'), SYSDATE FROM DUAL;

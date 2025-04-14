@@ -2,7 +2,7 @@
 
 DECLARE
     --global
-    COMPANY_NAME VARCHAR2(7) := 'HCLTECH';
+    COMPANY_NAME VARCHAR2(7) := 'mytech';
 BEGIN
     DECLARE
         --local
