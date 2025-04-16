@@ -1,0 +1,32 @@
+spring:
+  config:
+    import: "optional:configserver:http://config-service:8088"
+    activate:
+      on-profile: docker
+---
+spring:
+  application:
+    name: organization-service
+  config:
+    import: "optional:configserver:http://localhost:8088"
+  cloud:
+    feign:
+      circuitbreaker:
+        enabled: true
+
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        registerHealthIndicator: true
+        slidingWindowSize: 100
+        permittedNumberOfCallsInHalfOpenState: 10
+        minimumNumberOfCalls: 10
+        waitDurationInOpenState: 10000
+        failureRateThreshold: 50
+        eventConsumerBufferSize: 10
+        recordExceptions:
+          - org.springframework.web.client.HttpServerErrorException
+          - java.io.IOException
+        ignoreExceptions:
+          - org.springframework.web.client.HttpClientErrorException

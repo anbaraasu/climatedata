@@ -1,0 +1,41 @@
+# 0 means random port number
+server:
+  port: 0
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
+      
+logging:
+  pattern: 
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%X{traceId:-},%X{spanId:-}] ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+springdoc:
+  packagesToScan: pl.piomin.services.organization
+
+spring:
+  output:
+    ansi:
+      enabled: always
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
+        alphanumeric-ids:
+          enabled: true
+resilience4j:
+  circuitbreaker:
+    instances:
+      EmployeeClientfindByOrganization:
+        minimumNumberOfCalls: 3
+  timelimiter:
+    instances:
+      EmployeeClientfindByOrganization:
+        timeoutDuration: 10s   
+               
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+    
