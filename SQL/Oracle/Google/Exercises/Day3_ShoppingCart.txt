@@ -1,0 +1,12 @@
+1.	If the product description is NULL, replace it with 'No description available':
+2.	To find users who have more than 5 items in their cart:
+3.	To find the year and month when products were created:
+4.	Find users who have more than 3 items in their cart:
+5.	To find the number of products in each category:
+6.	To find the maximum and minimum prices of products in each category:
+7.	To find categories with more than 5 products:
+8.	To get the total price for each category and order the results by the total price:
+9.	To find the distinct categories of products and count how many products are in each category:
+10.	To find the total price of products sold per year (assuming there's a sale_date column) and orders them chronologically.
+11.	To find the total price of products sold per year and filter for years with sales greater than $1000
+12.	To find the total price of products by category and year:

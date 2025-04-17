@@ -1,0 +1,43 @@
+Schema Definition:
+sales Table:
+
+CREATE TABLE sales (
+    sale_id INT PRIMARY KEY,
+    customer_id INT,
+    product_id INT,
+    sale_date DATE,
+    sale_amount DECIMAL(10, 2)
+);
+
+Sample Data for sales Table:
+
+INSERT INTO sales (sale_id, customer_id, product_id, sale_date, sale_amount) VALUES
+(1, 101, 1, TO_DATE('2023-01-10', 'YYYY-MM-DD'), 150.00),
+(2, 102, 2, TO_DATE('2023-01-12', 'YYYY-MM-DD'), 200.00),
+(3, 101, 1, TO_DATE('2023-01-15', 'YYYY-MM-DD'), 100.00),
+(4, 103, 3, TO_DATE('2023-01-20', 'YYYY-MM-DD'), 300.00),
+(5, 101, 2, TO_DATE('2023-02-01', 'YYYY-MM-DD'), 250.00),
+(6, 102, 1, TO_DATE('2023-02-05', 'YYYY-MM-DD'), 175.00),
+(7, 101, 3, TO_DATE('2023-02-10', 'YYYY-MM-DD'), 120.00),
+(8, 104, 2, TO_DATE('2023-02-15', 'YYYY-MM-DD'), 225.00);
+
+
+1. Scenario:  You want to list the sales transactions of each customer and assign a unique sequence number to each sale ordered by sale date.
+
+2. Scenario: You want to rank sales by amount for each customer, where sales with the same amount should get the same rank, but there will be gaps in ranking.
+
+3. Scenario: Ranking sales based on sale amount without gaps for ties.
+
+4. Scenario: You want to compare each sale amount with the next sale amount for the same customer.
+
+5. Scenario: Finding the previous sale amount for each sale.
+
+6. Find the top 3 highest sales for each customer.
+
+7. Scenario: You want to rank the sales for each customer based on sale_amount and find the sales with the same rank across different customers.
+
+8. Scenario: You want to group customers who have the same total sales amount into the same rank.
+
+9. Scenario: Identify customers with the highest and lowest sales.
+
+

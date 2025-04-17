@@ -1,0 +1,14 @@
+Day 4
+1.Find the Products That Have Never Been Purchased
+2.Find Customers Who Have Not Made Any Purchases in the Last 3 Months
+3.Using a Subquery to Find Customers with Orders Greater Than the Average Order Amount
+4.Using a Correlated Subquery to Find Products That Have Never Been Purchased
+5.Using a Subquery to Find the Latest Order for Each Customer
+6.Using a Subquery to Find Orders Placed in the Same Month for a Specific Order 101
+7.Using a Correlated Subquery to Find Orders with Items Purchased More Than Once
+8.Using a Correlated Subquery to Find Orders Placed by Customers Who Have Purchased a Specific Product_id 200
+9.Using a Subquery to Find Products with the Highest and Lowest Prices
+10.Using a Correlated Subquery to Find Products with Sales in the Last 30 Days
+11.	Using a Subquery to Find Orders with a Total Amount Greater Than the Average Order Amount
+12.	Using a Subquery to Find Customers Who Have Placed More Than One Order
+

@@ -1,0 +1,51 @@
+1. Write query to  extracts the price from the product description (if it exists), including the optional dollar sign.
+
+2. Write query to removes all special characters, leaving only alphanumeric characters and spaces in the product descriptions.
+
+3. Write query to extracts the numeric part of the product code from strings like PROD-12345
+
+4. Write query to counts the number of times "wireless" appears in the product_description, case-insensitive 
+
+5. Write query to counts how many times the word "Bluetooth" appears in the product_description, case-insensitive.
+
+CREATE TABLE shopping_cart (
+    cart_id         INT,
+    customer_id     INT,
+    item_name       VARCHAR2(50),
+    quantity        INT,
+    price_per_item  DECIMAL(10, 2),
+    date_added      DATE,
+    PRIMARY KEY (cart_id, item_name, date_added)
+);
+
+-- Inserting data into the shopping_cart table
+INSERT INTO shopping_cart (cart_id, customer_id, item_name, quantity, price_per_item, date_added)
+VALUES (1, 101, 'Laptop', 1, 1000, TO_DATE('2025-02-01', 'YYYY-MM-DD'));
+
+INSERT INTO shopping_cart (cart_id, customer_id, item_name, quantity, price_per_item, date_added)
+VALUES (1, 101, 'Mouse', 2, 25, TO_DATE('2025-02-01', 'YYYY-MM-DD'));
+
+INSERT INTO shopping_cart (cart_id, customer_id, item_name, quantity, price_per_item, date_added)
+VALUES (2, 102, 'Keyboard', 1, 150, TO_DATE('2025-02-02', 'YYYY-MM-DD'));
+
+INSERT INTO shopping_cart (cart_id, customer_id, item_name, quantity, price_per_item, date_added)
+VALUES (2, 102, 'Mouse', 3, 25, TO_DATE('2025-02-02', 'YYYY-MM-DD'));
+
+INSERT INTO shopping_cart (cart_id, customer_id, item_name, quantity, price_per_item, date_added)
+VALUES (3, 103, 'Laptop', 2, 1000, TO_DATE('2025-02-03', 'YYYY-MM-DD'));
+
+INSERT INTO shopping_cart (cart_id, customer_id, item_name, quantity, price_per_item, date_added)
+VALUES (3, 103, 'Mouse', 1, 25, TO_DATE('2025-02-03', 'YYYY-MM-DD'));
+
+INSERT INTO shopping_cart (cart_id, customer_id, item_name, quantity, price_per_item, date_added)
+VALUES (4, 101, 'Keyboard', 1, 150, TO_DATE('2025-02-04', 'YYYY-MM-DD'));
+
+INSERT INTO shopping_cart (cart_id, customer_id, item_name, quantity, price_per_item, date_added)
+VALUES (4, 101, 'Monitor', 1, 300, TO_DATE('2025-02-04', 'YYYY-MM-DD'));
+
+INSERT INTO shopping_cart (cart_id, customer_id, item_name, quantity, price_per_item, date_added)
+VALUES (5, 102, 'Laptop', 1, 1000, TO_DATE('2025-02-05', 'YYYY-MM-DD'));
+
+1. Pivot the shopping cart data to show the total quantity of each item purchased by each customer in a more readable format, where each row represents a customer and each column represents a product.
+
+2.  Calculate the total cart value for each customer, breaking it down by the items they’ve added to their cart. we will calculate the total cart value per customer per item (quantity * price_per_item).

@@ -1,0 +1,40 @@
+1.Write a query to show the branch name,branch city where we have the maximum customers.
+For example the branch B00019 has 3 customers, B00020 has 7 and B00021 has 10. So branch id B00021 is having maximum customers. If B00021 is Koramangla branch Bangalore, Koramangla branch should be displayed along with city name Bangalore.
+In case of multiple records, display the records sorted in ascending order based on branch name.
+
+2.Write a query to display all those account number, deposit, withdrawal where withdrawal is more than deposit amount. Hint: Deposit should include opening balance as well.
+For example A00011 account opened with Opening Balance 1000 and  A00011 deposited 2000 rupees on 2012-12-01 and 3000 rupees on 2012-12-02. The same account i.e A00011 withdrawn 3000 rupees on 2013-01-01 and 7000 rupees on 2013-01-03. So the total deposited amount is 6000 and total withdrawal amount is 10000. So withdrawal amount is more than deposited amount for account number A00011.
+Display the records sorted in ascending order based on account number.
+
+3.Write a query to show the balance amount  for account number that ends with 001. 
+Note: Balance amount includes account opening balance also. Give alias name as Balance_Amount.
+For example A00015 is having an opening balance of 1000. A00015 has deposited 2000 on 2012-06-12 and deposited 3000 on 2012-07-13. The same account has drawn money of 500 on 2012-08-12 , 500 on 2012-09-15, 1000 on 2012-12-17. So balance amount is 4000 i.e (1000 (opening balance)+2000+3000 ) – (500+500+1000).
+
+
+4.Display the customer number, customer's first name, account number and number of transactions  being made by the customers from each account. Give the alias name for number of transactions as Count_Trans. Display the records sorted in ascending order based on customer number and then by account number.
+
+5.Write a query to display the customer’s firstname who have multiple accounts (atleast  2 accounts).  Display the records sorted in ascending order based on customer's firstname.
+
+6.Write a query to display the customer number, firstname, lastname for those client where total loan amount taken is maximum and at least taken from 2 branches. 
+For example the customer C00012 took a loan of 100000 from bank branch with id B00009 and C00012
+Took a loan of 500000 from bank branch with id B00010. So total loan amount for customer C00012 is 
+600000. C00013 took a loan of 100000 from bank branch B00009 and 200000 from bank branch B00011.
+So total loan taken is 300000. So loan taken by C00012 is more then C00013.
+
+7.Write a query to display the customer’s number, customer’s firstname, branch id and loan amount for people who have taken loans..
+Display the records sorted in ascending order based on customer number and then by branch id and then by loan amount.
+
+8.Write a query to display city name and count of branches in that city. Give the count of branches an alias name of Count_Branch.
+Display the records sorted in ascending order based on city name.
+
+9.Write a query to display account id, customer’s firstname, customer’s lastname for the customer’s whose account is Active.
+Display the records sorted in ascending order based on account id /account number.
+
+10.Write a query to display customer’s number, first name and middle name. For the customers who don’t have middle name,  display their last name as middle name. Give the alias name as Middle_Name.  
+Display the records sorted in ascending order based on customer number.
+
+11.Write a query to display the customer number , firstname, customer’s date of birth . Display the records sorted in ascending order of date of birth year and within that sort by firstname in ascending order.
+
+12.Write a query to display the customers firstname, city and account number whose occupation are not into Business, Service or Student.
+Display the records sorted in ascending order based on customer first name and then by account number.
+

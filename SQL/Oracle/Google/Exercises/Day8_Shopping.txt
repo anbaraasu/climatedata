@@ -1,0 +1,74 @@
+Shopping cart
+
+1. Create a Table with JSON Column
+
+CREATE TABLE Shopping_Cart (
+    cart_id NUMBER PRIMARY KEY,
+    customer_id NUMBER,
+    cart_details CLOB CHECK (cart_details IS JSON)
+);
+
+2. Insert Data into the Table
+
+INSERT INTO Shopping_Cart (cart_id, customer_id, cart_details)
+VALUES (1, 101, 
+        '{"items": [{"product_id": 101, "product_name": "Laptop", "price": 1000, "quantity": 1},
+                    {"product_id": 102, "product_name": "Smartphone", "price": 500, "quantity": 2}]}');
+        
+INSERT INTO Shopping_Cart (cart_id, customer_id, cart_details)
+VALUES (2, 102, 
+        '{"items": [{"product_id": 103, "product_name": "Tablet", "price": 300, "quantity": 3},
+                    {"product_id": 104, "product_name": "Headphones", "price": 100, "quantity": 1}]}');
+
+1. Extract the Entire Items Array Using JSON_QUERY
+
+2. Find Carts Containing Items With Price Greater Than 500
+
+3. Find Carts With a Total Quantity Greater Than 3
+
+4. Return a Custom JSON Object with Cart Summary Using JSON_OBJECT
+
+5. Create table
+
+Product system
+
+CREATE TABLE products (
+    product_id NUMBER PRIMARY KEY,
+    product_name VARCHAR2(100),
+    product_category VARCHAR2(50),
+    product_description VARCHAR2(255),
+    product_code VARCHAR2(20),
+    price NUMBER
+);
+
+-- Sample data insertion
+INSERT INTO products (product_id, product_name, product_category, product_description, product_code, price) VALUES
+(1, 'Laptop', 'Electronics', 'High-performance laptop with 16GB RAM, 512GB SSD, and Intel i7 processor.', 'PROD-12345', 999.99),
+(2, 'Smartphone', 'Electronics', 'Latest 5G smartphone with 128GB storage and 6.5-inch display.', 'PROD-67890', 799.49),
+(3, 'Wireless Headphones', 'Electronics', 'Bluetooth-enabled wireless headphones with noise cancellation feature.', 'PROD-11223', 150.00),
+(4, 'Smart Watch', 'Electronics', 'Wearable smartwatch with fitness tracking and heart rate monitor.', 'PROD-33445', 250.00),
+(5, 'Running Shoes', 'Clothing', 'Comfortable running shoes with a breathable mesh upper and cushioned sole.', 'SHOE-12345', 49.99),
+(6, 'Leather Jacket', 'Clothing', 'Stylish leather jacket, perfect for cold weather and casual wear.', 'JACK-67890', 120.00),
+(7, 'Winter Jacket', 'Clothing', 'Insulated jacket for extreme winter conditions with a waterproof exterior.', 'JACK-11223', 199.99),
+(8, 'T-shirt', 'Clothing', 'Cotton t-shirt with custom prints and available in various sizes.', 'TEE-99887', 15.99),
+(9, 'Bluetooth Speaker', 'Electronics', 'Portable Bluetooth speaker with rich sound and waterproof design.', 'PROD-55432', 89.99),
+(10, 'Tablet', 'Electronics', '10-inch tablet with 4GB RAM, 64GB storage, and full HD display.', 'PROD-66554', 329.99),
+(11, 'Gaming Console', 'Electronics', 'Latest gaming console with 1TB storage, supports 4K resolution and VR.', 'GAME-77777', 499.99),
+(12, 'Camera', 'Electronics', 'DSLR camera with 24MP resolution, 4K video recording, and Wi-Fi connectivity.', 'CAM-99888', 749.00),
+(13, 'Backpack', 'Accessories', 'Durable backpack with multiple compartments for laptops, books, and accessories.', 'BAG-11223', 39.99),
+(14, 'Smart Thermostat', 'Home Appliances', 'Wi-Fi enabled smart thermostat that can be controlled remotely via an app.', 'HOM-22334', 119.99),
+(15, 'Electric Kettle', 'Home Appliances', '1.7-liter electric kettle with automatic shut-off and temperature control.', 'HOM-55667', 34.99),
+(16, 'Portable Charger', 'Electronics', 'Compact portable charger with 20,000mAh capacity for fast charging.', 'PROD-99999', 45.99);
+
+1. Write query to return product codes that do not match the format PROD-##### (5 digits after the dash
+
+2. Write query to return products whose name contains the word "headphones" (case-insensitive).
+
+3. Write query returns products that contain both "running" and "shoes" (case-insensitive) in their names.
+
+4. Find the Position of the First Digit in Product Code
+
+5. Find the Position of the Second Occurrence of the Word "Jacket" in the Product Name
+
+
+
