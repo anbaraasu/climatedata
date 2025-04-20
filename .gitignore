@@ -11,6 +11,8 @@
 *.swp
 *.bak
 *.DS_Store
+*.log
+*.gz
 
 # Maven specific
 target/

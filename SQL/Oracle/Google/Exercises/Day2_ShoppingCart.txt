@@ -1,7 +1,6 @@
-/*To create a shopping cart application in Oracle, you'll need to define a schema with appropriate tables for products, users, orders, and the cart itself. Here's an example of how you might structure the tables and their relationships.
-Schema and Table Structure:
-*/
-1.	Users Table: Contains information about customers.
+-- To create a shopping cart application in Oracle, you'll need to define a schema with appropriate tables for products, users, orders, and the cart itself. Here's an example of how you might structure the tables and their relationships.
+-- Schema and Table Structure:
+-- 1. Users Table: Contains information about customers.
 
 CREATE TABLE Users (
     user_id INT PRIMARY KEY,
@@ -62,7 +61,8 @@ INSERT INTO Users (user_id, username, password, email, first_name, last_name, cr
 (4, 'sarah_23', 'hello123', 'sarah23@example.com', 'Sarah', 'Connor', TO_DATE('2025-01-04 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
 (5, 'daveking', 'kingdave5', 'daveking@example.com', 'Dave', 'King', TO_DATE('2025-01-05 09:00:00', 'YYYY-MM-DD HH24:MI:SS')),
 (6, 'emily_77', 'emily789', 'emily77@example.com', 'Emily', 'Clark', TO_DATE('2025-01-06 08:30:00', 'YYYY-MM-DD HH24:MI:SS')),
-(7, 'robert12', 'secure123', 'robert12@example.com', 'Robert', 'Lee', TO_DATE('2025-01-07 10:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+(7, 'robert12', 'secure123', 'robert12@example.com', 'Robert', 'Lee', TO_DATE('2025-01-07 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(8, 'alex_smith', 'alexpass', 'alex.smith@example.com', 'Alex', 'Smith', TO_DATE('2025-01-08 10:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
 -- Insert into Products
 INSERT INTO Products (product_id, product_name, description, price, stock_quantity, created_at) VALUES
@@ -72,17 +72,23 @@ INSERT INTO Products (product_id, product_name, description, price, stock_quanti
 (4, 'Headphones', 'Noise-cancelling headphones', 150.00, 30, TO_DATE('2025-01-03 10:30:00', 'YYYY-MM-DD HH24:MI:SS')),
 (5, 'Tablet', '10-inch Android tablet', 300.00, 20, TO_DATE('2025-01-04 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
 (6, 'Smart Watch', 'Fitness tracking smartwatch', 200.00, 40, TO_DATE('2025-01-05 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(7, 'Bluetooth Speaker', 'Portable Bluetooth speaker', 70.00, 50, TO_DATE('2025-01-06 09:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+(7, 'Bluetooth Speaker', NULL, 70.00, 50, TO_DATE('2025-01-06 09:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(8, 'Smart Glasses', 'Augmented reality smart glasses', 400.00, 12, TO_DATE('2025-01-07 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(9, 'Gaming Console', 'Next-gen gaming console', 500.00, 8, TO_DATE('2025-01-08 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(10, 'Action Camera', 'Waterproof action camera', 250.00, 15, TO_DATE('2025-01-09 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
 -- Insert into ShoppingCart
 INSERT INTO ShoppingCart (cart_id, user_id, product_id, quantity, added_at) VALUES
-(1, 1, 1, 2, TO_DATE('2025-01-15 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(1, 1, 1, 5, TO_DATE('2025-01-15 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
 (2, 1, 2, 1, TO_DATE('2025-01-15 14:05:00', 'YYYY-MM-DD HH24:MI:SS')),
 (3, 2, 3, 3, TO_DATE('2025-01-16 15:00:00', 'YYYY-MM-DD HH24:MI:SS')),
 (4, 3, 4, 2, TO_DATE('2025-01-17 10:30:00', 'YYYY-MM-DD HH24:MI:SS')),
 (5, 4, 5, 1, TO_DATE('2025-01-18 11:15:00', 'YYYY-MM-DD HH24:MI:SS')),
 (6, 5, 6, 1, TO_DATE('2025-01-19 12:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(7, 6, 7, 2, TO_DATE('2025-01-20 14:30:00', 'YYYY-MM-DD HH24:MI:SS'));
+(7, 6, 7, 0, TO_DATE('2025-01-20 14:30:00', 'YYYY-MM-DD HH24:MI:SS')),
+(8, 1, 8, 1, TO_DATE('2025-01-21 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(9, 6, 9, 2, TO_DATE('2025-01-22 15:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(10, 7, 10, 1, TO_DATE('2025-01-23 16:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
 -- Insert into Orders
 INSERT INTO Orders (order_id, user_id, order_date, total_amount, status) VALUES
@@ -92,48 +98,68 @@ INSERT INTO Orders (order_id, user_id, order_date, total_amount, status) VALUES
 (4, 4, TO_DATE('2025-01-19 14:00:00', 'YYYY-MM-DD HH24:MI:SS'), 450.00, 'Pending'),
 (5, 5, TO_DATE('2025-01-20 09:00:00', 'YYYY-MM-DD HH24:MI:SS'), 200.00, 'Pending'),
 (6, 6, TO_DATE('2025-01-21 15:00:00', 'YYYY-MM-DD HH24:MI:SS'), 140.00, 'Pending'),
-(7, 7, TO_DATE('2025-01-22 17:00:00', 'YYYY-MM-DD HH24:MI:SS'), 140.00, 'Pending');
+(7, 7, TO_DATE('2025-01-22 17:00:00', 'YYYY-MM-DD HH24:MI:SS'), 140.00, 'Pending'),
+(8, 1, TO_DATE('2025-01-24 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 400.00, 'Pending'),
+(9, 6, TO_DATE('2025-01-25 11:00:00', 'YYYY-MM-DD HH24:MI:SS'), 1000.00, 'Pending'),
+(10, 7, TO_DATE('2025-01-26 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 250.00, 'Pending');
 
 -- Insert into OrderDetails
 INSERT INTO OrderDetails (order_detail_id, order_id, product_id, quantity, price) VALUES
-(1, 1, 1, 2, 1200.00),
+(1, 1, 1, 5, 1200.00),
 (2, 1, 2, 1, 800.00),
 (3, 2, 3, 3, 50.00),
 (4, 3, 4, 2, 150.00),
 (5, 4, 5, 1, 300.00),
 (6, 5, 6, 1, 200.00),
-(7, 6, 7, 2, 70.00);
+(7, 6, 7, 0, 70.00),
+(8, 8, 8, 1, 400.00),
+(9, 9, 9, 2, 500.00),
+(10, 10, 10, 1, 250.00);
 
 -- SQL Exercises
-1.	if user 1 wants to change the quantity of product_id = 1 (Laptop) from 2 to 5.
-<SQL Solution>
-2.	How to remove product_id = 7 (Bluetooth Speaker) from user 6's cart:
-<SQL Solution>
+-- 1. if user 1 wants to change the quantity of product_id = 1 (Laptop) from 2 to 5.
+-- UPDATE ShoppingCart
+-- 2. How to remove product_id = 7 (Bluetooth Speaker) from user 6's cart:
+DELETE FROM ShoppingCart
+WHERE user_id = 6 AND product_id = 7;
+-- 3. to find all products priced between $100 and $500:
+SELECT * FROM Products
+WHERE price BETWEEN 100 AND 500;
+-- 4. retrieve all products with product_id values 1, 3, and 5:
+SELECT * FROM Products
+WHERE product_id IN (1, 3, 5);
+-- 5. to find all products whose names start with "Smart" (e.g., "Smartphone", "Smart Watch"):
+SELECT * FROM Products
+WHERE product_name LIKE 'Smart%';
+-- 6. create a full name of the product, combining the product_name and description:
+SELECT product_name || ' - ' || description AS full_name
+-- 7. to get the first 3 characters from the product_name:
+SELECT SUBSTR(product_name, 1, 3) AS short_name
+FROM products;
+-- 8. to find products that cost more than $100 and have a stock quantity greater than 10:
+SELECT * FROM Products
+WHERE price > 100 AND stock_quantity > 10;
+-- 9. to find products whose product_name does not start with the letter "A":
+SELECT * FROM Products
+WHERE product_name NOT LIKE 'A%';
+-- 10. to find products with product_id values 2, 4, or 6:
+SELECT * FROM Products
+WHERE product_id IN (2, 4, 6);
+-- 11. to find products where the product_id is not 1, 3, or 5:
+SELECT * FROM Products
+WHERE product_id NOT IN (1, 3, 5);
+-- 12. to find product names where the second character is "a":
+SELECT * FROM Products
+WHERE SUBSTR(product_name, 2, 1) = 'a';
 
-3.	to find all products priced between $100 and $500:
-<SQL Solution>
+-- 9. to find products whose product_name does not start with the letter "A":
+-- <SQL Solution>
 
-4.	retrieve all products with product_id values 1, 3, and 5:
-<SQL Solution>
+-- 10. to find products with product_id values 2, 4, or 6:
+-- <SQL Solution>
 
-5.	to find all products whose names start with "Smart" (e.g., "Smartphone", "Smart Watch"):
-<SQL Solution>
+-- 11. to find products where the product_id is not 1, 3, or 5:
+-- <SQL Solution>
 
-6.	create a full name of the product, combining the product_name and description:
-<SQL Solution>
-7.	to get the first 3 characters from the product_name:
-<SQL Solution>
-8.	to find products that cost more than $100 and have a stock quantity greater than 10:
-<SQL Solution>
-
-9.	to find products whose product_name does not start with the letter "A":
-<SQL Solution>
-
-10.	to find products with product_id values 2, 4, or 6:
-<SQL Solution>
-
-11.	to find products where the product_id is not 1, 3, or 5:
-<SQL Solution>
-
-12.	to find product names where the second character is "a":
-<SQL Solution>
+-- 12. to find product names where the second character is "a":
+-- <SQL Solution>

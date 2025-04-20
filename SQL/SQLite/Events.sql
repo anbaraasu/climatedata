@@ -194,9 +194,8 @@ WHERE s.session_name LIKE '%AI%'
 ORDER BY s.session_start_time DESC;
 
 /*
-Write a SQL query to
-Display the event names and locations for events that have sessions conducted by speakers with "Dr." in their first name.
-Sort the result in descending order of event date.
+Write a SQL query to display the event names and locations for events that have sessions conducted by speakers with "Dr." in their first name.
+Sort the result in descending order of event date, location asecending order.
 */
 
 SELECT e.event_name, e.location
@@ -204,24 +203,21 @@ FROM events e
 JOIN sessions s ON e.event_id = s.event_id
 JOIN speakers sp ON s.speaker_id = sp.speaker_id
 WHERE sp.first_name LIKE 'Dr.%'
-ORDER BY e.event_date DESC;
+ORDER BY e.event_date DESC, e.location ASC;
 
 /*
-Write a SQL query to
-Display the email addresses of participants who registered for sessions on or after '2025-02-01'.
-Sort the result in ascending order of registration date.
+Write a SQL query to display the email addresses of participants, registration date who registered for sessions on or after '2025-02-01'.
+Sort the result in ascending order of registration date, email in descending order.
 */
 
-SELECT DISTINCT p.email
+SELECT DISTINCT p.email, r.registration_date
 FROM participants p
 JOIN registrations r ON p.participant_id = r.participant_id
 WHERE r.registration_date >= '2025-02-01'
-ORDER BY r.registration_date ASC;
+ORDER BY r.registration_date ASC, p.email DESC;
 
 /*
-Write a SQL query to
-Display the session names and their corresponding event names for sessions conducted by speakers with "King" in their last name.
-Sort the result in ascending order of session start time.
+Write a SQL query to display the session names and their corresponding event names for sessions conducted by speakers with "King" in their last name. Sort the result in ascending order of session start time.
 */
 
 SELECT s.session_name, e.event_name
@@ -232,9 +228,7 @@ WHERE sp.last_name = 'King'
 ORDER BY s.session_start_time ASC;
 
 /*
-Write a SQL query to
-Display the first and last names of participants who registered for more than one session.
-Sort the result in descending order of the number of sessions they registered for.
+Write a SQL query to display the event names and descriptions for events that have sessions starting between '09:00:00' and '12:00:00'. Sort the result in ascending order of event name.
 */
 
 SELECT p.first_name, p.last_name, COUNT(r.session_id) AS session_count
@@ -245,21 +239,17 @@ HAVING COUNT(r.session_id) > 1
 ORDER BY session_count DESC;
 
 /*
-Write a SQL query to
-Display the event names and descriptions for events that have sessions starting between '09:00:00' and '12:00:00'.
-Sort the result in ascending order of event name.
+Write a SQL query to display the event names and descriptions for events that have sessions starting between '09:00:00' and '12:00:00'. Sort the result in ascending order of event name.
 */
 
 SELECT DISTINCT e.event_name, e.description
 FROM events e
 JOIN sessions s ON e.event_id = s.event_id
-WHERE TO_CHAR(s.session_start_time, 'HH24:MI:SS') BETWEEN '09:00:00' AND '12:00:00'
+WHERE strftime('%H:%M:%S', s.session_start_time) BETWEEN '09:00:00' AND '12:00:00'
 ORDER BY e.event_name ASC;
 
 /*
-Write a SQL query to
-Display the names of speakers who conducted sessions for events located in "San Francisco".
-Sort the result in ascending order of speaker last name.
+Write a SQL query to display the names of speakers who conducted sessions for events located in "San Francisco". Sort the result in ascending order of speaker last name.
 */
 
 SELECT DISTINCT sp.first_name, sp.last_name
@@ -270,9 +260,7 @@ WHERE e.location = 'San Francisco'
 ORDER BY sp.last_name ASC;
 
 /*
-Write a SQL query to
-Display the session names and their corresponding speaker names for sessions that lasted more than 1 hour.
-Sort the result in descending order of session duration.
+Write a SQL query to display the session names and their corresponding speaker names for sessions that lasted more than 1 hour. Sort the result in descending order of session duration.
 */
 
 SELECT s.session_name, sp.first_name || ' ' || sp.last_name AS speaker_name,
@@ -297,9 +285,7 @@ WHERE sp.first_name = 'Jessica' AND sp.last_name = 'Adams'
 ORDER BY p.first_name ASC;
 
 /*
-Write a SQL query to
-Display the event names and the total number of participants registered for each event.
-Sort the result in descending order of the total number of participants.
+Write a SQL query to display the event names and the total number of participants registered for each event. Sort the result in descending order of the total number of participants.
 */
 
 SELECT e.event_name, COUNT(DISTINCT r.participant_id) AS total_participants
@@ -309,3 +295,14 @@ JOIN registrations r ON s.session_id = r.session_id
 GROUP BY e.event_name
 ORDER BY total_participants DESC;
 
+
+
+/*
+Write a SQL query to display the participant first, last name who are attended from HCLTECH company. Sort the result in ascending order of participant last name.
+*/
+
+SELECT p.first_name, p.last_name
+FROM participants p
+JOIN registrations r ON p.participant_id = r.participant_id
+WHERE p.email LIKE '%hcltech.com%'
+ORDER BY p.last_name ASC;
