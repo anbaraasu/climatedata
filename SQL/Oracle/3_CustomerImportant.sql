@@ -91,3 +91,7 @@ SELECT employee_id, first_name, last_name FROM hr.employees WHERE department_id 
 SELECT * FROM temp_employees;
 
 
+-- In case of simuntaneously DML query, how to prevent  (FOR UPDATE, NO WAIT, SKIP LOCKED)
+-- 1. Use the SELECT FOR UPDATE statement to lock the rows that are being updated.
+-- 2. Use the NOWAIT option to prevent waiting for locks to be released.
+-- 3. Use the SKIP LOCKED option to skip locked rows and continue processing the remaining rows.

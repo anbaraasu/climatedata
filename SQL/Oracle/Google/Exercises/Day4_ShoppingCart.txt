@@ -1,14 +1,189 @@
-Day 4
-1.Find the Products That Have Never Been Purchased
-2.Find Customers Who Have Not Made Any Purchases in the Last 3 Months
-3.Using a Subquery to Find Customers with Orders Greater Than the Average Order Amount
-4.Using a Correlated Subquery to Find Products That Have Never Been Purchased
-5.Using a Subquery to Find the Latest Order for Each Customer
-6.Using a Subquery to Find Orders Placed in the Same Month for a Specific Order 101
-7.Using a Correlated Subquery to Find Orders with Items Purchased More Than Once
-8.Using a Correlated Subquery to Find Orders Placed by Customers Who Have Purchased a Specific Product_id 200
-9.Using a Subquery to Find Products with the Highest and Lowest Prices
-10.Using a Correlated Subquery to Find Products with Sales in the Last 30 Days
-11.	Using a Subquery to Find Orders with a Total Amount Greater Than the Average Order Amount
-12.	Using a Subquery to Find Customers Who Have Placed More Than One Order
+/* drop table wiht cascade constraint
+drop table Users cascade constraint;
+drop table Categories cascade constraint;
+drop table Products cascade constraint;
+drop table ShoppingCart cascade constraint;
+drop table Orders cascade constraint;
+drop table OrderDetails cascade constraint;
+*/
+Day 3 Assigments: <Use the Day2 Shoppring cart schema >
+Schema and Table Structure:
+Users Table: Contains information about customers.
 
+CREATE TABLE Users (
+    user_id INT PRIMARY KEY,
+    username VARCHAR2(50) NOT NULL,
+    password VARCHAR2(50) NOT NULL,
+    email VARCHAR2(100),
+    first_name VARCHAR2(50),
+    last_name VARCHAR2(50),
+    created_at DATE DEFAULT SYSDATE
+);
+
+categories Table: Contains the product categories
+CREATE TABLE Categories (
+    category_id INT PRIMARY KEY,
+    category_name VARCHAR2(1000)
+);
+
+Products Table: Contains details about the products that users can add to their cart.
+
+CREATE TABLE Products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR2(100) NOT NULL,
+    description VARCHAR2(500),
+    category_id INT REFERENCES Categories(category_id),
+    price NUMBER(10, 2) NOT NULL,
+    stock_quantity INT NOT NULL,
+    created_at DATE DEFAULT SYSDATE
+);
+Shopping Cart Table: A temporary cart to hold products that a user adds before checking out.
+
+CREATE TABLE ShoppingCart (
+    cart_id INT PRIMARY KEY,
+    user_id INT,
+    product_id INT,
+    quantity INT,
+    added_at DATE DEFAULT SYSDATE,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+Orders Table: To store orders once the user checks out.
+
+CREATE TABLE Orders (
+    order_id INT PRIMARY KEY,
+    user_id INT,
+    order_date DATE DEFAULT SYSDATE,
+    total_amount NUMBER(10, 2),
+    status VARCHAR2(20),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
+Order Details Table: Stores the products that are part of an order.
+
+CREATE TABLE OrderDetails (
+    order_detail_id INT PRIMARY KEY,
+    order_id INT,
+    product_id INT,
+    quantity INT,
+    price NUMBER(10, 2),
+    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+-- Insert into Users
+INSERT INTO Users (user_id, username, password, email, first_name, last_name, created_at) VALUES
+(1, 'johndoe', 'password123', 'john.doe@example.com', 'John', 'Doe', TO_DATE('2025-01-01 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(2, 'janedoe', 'password456', 'jane.doe@example.com', 'Jane', 'Doe', TO_DATE('2025-01-02 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(3, 'mike123', 'pass987', 'mike@example.com', 'Mike', 'Johnson', TO_DATE('2025-01-03 12:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(4, 'sarah_23', 'hello123', 'sarah23@example.com', 'Sarah', 'Connor', TO_DATE('2025-01-04 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(5, 'daveking', 'kingdave5', 'daveking@example.com', 'Dave', 'King', TO_DATE('2025-01-05 09:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(6, 'emily_77', 'emily789', 'emily77@example.com', 'Emily', 'Clark', TO_DATE('2025-01-06 08:30:00', 'YYYY-MM-DD HH24:MI:SS')),
+(7, 'robert12', 'secure123', 'robert12@example.com', 'Robert', 'Lee', TO_DATE('2025-01-07 10:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+
+-- Insert into Categories
+INSERT INTO Categories (category_id, category_name) VALUES
+(1, 'Electronics'),
+(2, 'Home Appliances'),
+(3, 'Books'),
+(4, 'Clothing'),
+(5, 'Sports Equipment'),
+(6, 'Toys'),
+(7, 'Furniture');
+
+-- Insert into Products
+INSERT INTO Products (product_id, category_id, product_name, description, price, stock_quantity, created_at) VALUES
+(1, 1, 'Laptop', 'High-end gaming laptop', 1200.00, 10, TO_DATE('2025-01-01 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(2, 1, 'Smartphone', 'Latest 5G smartphone', 800.00, 15, TO_DATE('2025-01-01 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(3, 1, 'Wireless Mouse', 'Ergonomic wireless mouse', 50.00, 25, TO_DATE('2025-01-02 12:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(4, 1, 'Headphones', 'Noise-cancelling headphones', 150.00, 30, TO_DATE('2025-01-03 10:30:00', 'YYYY-MM-DD HH24:MI:SS')),
+(5, 1, 'Tablet', '10-inch Android tablet', 300.00, 20, TO_DATE('2025-01-04 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(6, 1, 'Smart Watch', 'Fitness tracking smartwatch', 200.00, 40, TO_DATE('2025-01-05 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(7, 1, 'Bluetooth Speaker', NULL, 70.00, 50, TO_DATE('2025-01-06 09:00:00', 'YYYY-MM-DD HH24:MI:SS')),  
+    (8, 2, 'Refrigerator', 'Double-door refrigerator', 1500.00, 5, TO_DATE('2025-01-07 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (9, 2, 'Washing Machine', 'Front-load washing machine', 800.00, 8, TO_DATE('2025-01-08 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (10, 3, 'Novel', 'Bestselling novel of the year', 20.00, 100, TO_DATE('2025-01-09 12:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (11, 4, 'T-shirt', 'Cotton t-shirt in various colors', 25.00, 200, TO_DATE('2025-01-10 14:30:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (12, 5, 'Soccer Ball', 'Official size soccer ball', 30.00, 150, TO_DATE('2025-01-11 10:15:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (13, 6, 'Action Figure', NULL, 15.00, 300, TO_DATE('2025-01-12 11:45:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (14, 7, 'Sofa Set', 'Luxury leather sofa set', 2500.00, 2, TO_DATE('2025-01-13 09:30:00', 'YYYY-MM-DD HH24:MI:SS'));
+
+-- Insert into ShoppingCart
+INSERT INTO ShoppingCart (cart_id, user_id, product_id, quantity, added_at) VALUES
+(1, 1, 1, 5, TO_DATE('2025-01-15 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(2, 1, 2, 1, TO_DATE('2025-01-15 14:05:00', 'YYYY-MM-DD HH24:MI:SS')),
+(3, 2, 3, 3, TO_DATE('2025-01-16 15:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(4, 3, 4, 2, TO_DATE('2025-01-17 10:30:00', 'YYYY-MM-DD HH24:MI:SS')),
+(5, 4, 5, 1, TO_DATE('2025-01-18 11:15:00', 'YYYY-MM-DD HH24:MI:SS')),
+(6, 5, 6, 1, TO_DATE('2025-01-19 12:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(7, 6, 7, 0, TO_DATE('2025-01-20 14:30:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (8, 7, 8, 1, TO_DATE('2025-01-21 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (9, 1, 9, 2, TO_DATE('2025-01-22 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (10, 2, 10, 3, TO_DATE('2025-01-23 12:30:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (11, 3, 11, 4, TO_DATE('2025-01-24 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (12, 4, 12, 1, TO_DATE('2025-01-25 09:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (13, 5, 13, NULL, TO_DATE('2025-01-26 15:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (14, 6, 14, NULL, TO_DATE('2025-01-27 17:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+
+-- Insert into Orders
+INSERT INTO Orders (order_id, user_id, order_date, total_amount, status) VALUES
+(1, 1, TO_DATE('2025-01-16 16:00:00', 'YYYY-MM-DD HH24:MI:SS'), 2400.00, 'Pending'),
+(2, 2, TO_DATE('2025-01-17 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 150.00, 'Pending'),
+(3, 3, TO_DATE('2025-01-18 12:30:00', 'YYYY-MM-DD HH24:MI:SS'), 300.00, 'Pending'),
+(4, 4, TO_DATE('2025-01-19 14:00:00', 'YYYY-MM-DD HH24:MI:SS'), 450.00, 'Pending'),
+(5, 5, TO_DATE('2025-01-20 09:00:00', 'YYYY-MM-DD HH24:MI:SS'), 200.00, 'Pending'),
+(6, 6, TO_DATE('2025-01-21 15:00:00', 'YYYY-MM-DD HH24:MI:SS'), 140.00, 'Pending'),
+(7, 7, TO_DATE('2025-01-22 17:00:00', 'YYYY-MM-DD HH24:MI:SS'), 140.00, 'Pending'),
+    
+        (8, 1, TO_DATE('2025-01-23 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 200.00, 'Pending'),
+        (9, 2, TO_DATE('2025-01-24 11:00:00', 'YYYY-MM-DD HH24:MI:SS'), 60.00, 'Pending'),
+        (10, 3, TO_DATE('2025-01-25 12:30:00', 'YYYY-MM-DD HH24:MI:SS'), 100.00, 'Pending'),
+        (11, 4, TO_DATE('2025-01-26 14:00:00', 'YYYY-MM-DD HH24:MI:SS'), 25.00, 'Pending'),
+        (12, 5, TO_DATE('2025-01-27 09:00:00', 'YYYY-MM-DD HH24:MI:SS'), 15.00, 'Pending'),
+        (13, 6, TO_DATE('2025-01-28 15:00:00', 'YYYY-MM-DD HH24:MI:SS'), NULL, 'Pending'),
+        (14, 7, TO_DATE('2025-01-29 17:00:00', 'YYYY-MM-DD HH24:MI:SS'), NULL, 'Pending');
+
+-- Insert into OrderDetails
+INSERT INTO OrderDetails (order_detail_id, order_id, product_id, quantity, price) VALUES
+(1, 1, 1, 5, 1200.00),
+(2, 1, 2, 1, 800.00),
+(3, 2, 3, 3, 50.00),
+(4, 3, 4, 2, 150.00),
+(5, 4, 5, 1, 300.00),
+(6, 5, 6, 1, 200.00),
+(7, 6, 7, 0, 70.00),
+(8, 7, 8, 1, 150.00),
+(9, 8, 9, 2, 800.00),
+(10, 9, 10, 3, 20.00),
+(11, 10, 11, 4, 25.00),
+(12, 11, 12, 1, 30.00),
+(13, 12, 13, NULL, 15.00),
+(14, 13, 14, NULL, NULL);
+
+Day 4
+1. Find the Products That Have Never Been Purchased
+<SQL Solution>
+
+2. Find Customers Who Have Not Made Any Purchases in the Last 3 Months
+<SQL Solution>
+
+-- Day 4 Assignments
+ 
+-- 1. Find the Products That Have Never Been Purchased
+-- <SQL Solution>
+ 
+-- 2. Find Customers Who Have Not Made Any Purchases in the Last 3 Months
+-- <SQL Solution>
+ 
+-- 3. Find customers who ordered more than 3 different products in a single order
+-- <SQL Solution>
+ 
+-- 4. Find the total number of products sold in each order
+-- <SQL Solution>
+ 
+-- 5. List products that are currently in shopping carts but not yet ordered
+-- <SQL Solution>
+ 
+-- 6. Find users who have purchased the same product more than once across different orders
+-- <SQL Solution>
+  
+-- 7. List all customers who ordered a product with a quantity greater than 3
+-- <SQL Solution>

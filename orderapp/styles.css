@@ -1,0 +1,24 @@
+/* Custom colors */
+.bg-orange {
+    background-color: orange;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+/* Sidebar links */
+.nav-link {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Footer links */
+footer a {
+    text-decoration: none;
+    font-size: 1rem;
+}

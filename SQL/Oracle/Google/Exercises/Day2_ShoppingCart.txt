@@ -1,6 +1,14 @@
--- To create a shopping cart application in Oracle, you'll need to define a schema with appropriate tables for products, users, orders, and the cart itself. Here's an example of how you might structure the tables and their relationships.
--- Schema and Table Structure:
--- 1. Users Table: Contains information about customers.
+/* drop table wiht cascade constraint
+drop table Users cascade constraint;
+drop table Categories cascade constraint;
+drop table Products cascade constraint;
+drop table ShoppingCart cascade constraint;
+drop table Orders cascade constraint;
+drop table OrderDetails cascade constraint;
+*/
+Day 3 Assigments: <Use the Day2 Shoppring cart schema >
+Schema and Table Structure:
+Users Table: Contains information about customers.
 
 CREATE TABLE Users (
     user_id INT PRIMARY KEY,
@@ -11,17 +19,25 @@ CREATE TABLE Users (
     last_name VARCHAR2(50),
     created_at DATE DEFAULT SYSDATE
 );
-2.	Products Table: Contains details about the products that users can add to their cart.
+
+categories Table: Contains the product categories
+CREATE TABLE Categories (
+    category_id INT PRIMARY KEY,
+    category_name VARCHAR2(1000)
+);
+
+Products Table: Contains details about the products that users can add to their cart.
 
 CREATE TABLE Products (
     product_id INT PRIMARY KEY,
     product_name VARCHAR2(100) NOT NULL,
     description VARCHAR2(500),
+    category_id INT REFERENCES Categories(category_id),
     price NUMBER(10, 2) NOT NULL,
     stock_quantity INT NOT NULL,
     created_at DATE DEFAULT SYSDATE
 );
-3.	Shopping Cart Table: A temporary cart to hold products that a user adds before checking out.
+Shopping Cart Table: A temporary cart to hold products that a user adds before checking out.
 
 CREATE TABLE ShoppingCart (
     cart_id INT PRIMARY KEY,
@@ -32,7 +48,7 @@ CREATE TABLE ShoppingCart (
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
     FOREIGN KEY (product_id) REFERENCES Products(product_id)
 );
-4.	Orders Table: To store orders once the user checks out.
+Orders Table: To store orders once the user checks out.
 
 CREATE TABLE Orders (
     order_id INT PRIMARY KEY,
@@ -42,7 +58,7 @@ CREATE TABLE Orders (
     status VARCHAR2(20),
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
 );
-5.	Order Details Table: Stores the products that are part of an order.
+Order Details Table: Stores the products that are part of an order.
 
 CREATE TABLE OrderDetails (
     order_detail_id INT PRIMARY KEY,
@@ -61,21 +77,34 @@ INSERT INTO Users (user_id, username, password, email, first_name, last_name, cr
 (4, 'sarah_23', 'hello123', 'sarah23@example.com', 'Sarah', 'Connor', TO_DATE('2025-01-04 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
 (5, 'daveking', 'kingdave5', 'daveking@example.com', 'Dave', 'King', TO_DATE('2025-01-05 09:00:00', 'YYYY-MM-DD HH24:MI:SS')),
 (6, 'emily_77', 'emily789', 'emily77@example.com', 'Emily', 'Clark', TO_DATE('2025-01-06 08:30:00', 'YYYY-MM-DD HH24:MI:SS')),
-(7, 'robert12', 'secure123', 'robert12@example.com', 'Robert', 'Lee', TO_DATE('2025-01-07 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(8, 'alex_smith', 'alexpass', 'alex.smith@example.com', 'Alex', 'Smith', TO_DATE('2025-01-08 10:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+(7, 'robert12', 'secure123', 'robert12@example.com', 'Robert', 'Lee', TO_DATE('2025-01-07 10:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+
+-- Insert into Categories
+INSERT INTO Categories (category_id, category_name) VALUES
+(1, 'Electronics'),
+(2, 'Home Appliances'),
+(3, 'Books'),
+(4, 'Clothing'),
+(5, 'Sports Equipment'),
+(6, 'Toys'),
+(7, 'Furniture');
 
 -- Insert into Products
-INSERT INTO Products (product_id, product_name, description, price, stock_quantity, created_at) VALUES
-(1, 'Laptop', 'High-end gaming laptop', 1200.00, 10, TO_DATE('2025-01-01 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(2, 'Smartphone', 'Latest 5G smartphone', 800.00, 15, TO_DATE('2025-01-01 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(3, 'Wireless Mouse', 'Ergonomic wireless mouse', 50.00, 25, TO_DATE('2025-01-02 12:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(4, 'Headphones', 'Noise-cancelling headphones', 150.00, 30, TO_DATE('2025-01-03 10:30:00', 'YYYY-MM-DD HH24:MI:SS')),
-(5, 'Tablet', '10-inch Android tablet', 300.00, 20, TO_DATE('2025-01-04 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(6, 'Smart Watch', 'Fitness tracking smartwatch', 200.00, 40, TO_DATE('2025-01-05 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(7, 'Bluetooth Speaker', NULL, 70.00, 50, TO_DATE('2025-01-06 09:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(8, 'Smart Glasses', 'Augmented reality smart glasses', 400.00, 12, TO_DATE('2025-01-07 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(9, 'Gaming Console', 'Next-gen gaming console', 500.00, 8, TO_DATE('2025-01-08 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(10, 'Action Camera', 'Waterproof action camera', 250.00, 15, TO_DATE('2025-01-09 12:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO Products (product_id, category_id, product_name, description, price, stock_quantity, created_at) VALUES
+(1, 1, 'Laptop', 'High-end gaming laptop', 1200.00, 10, TO_DATE('2025-01-01 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(2, 1, 'Smartphone', 'Latest 5G smartphone', 800.00, 15, TO_DATE('2025-01-01 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(3, 1, 'Wireless Mouse', 'Ergonomic wireless mouse', 50.00, 25, TO_DATE('2025-01-02 12:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(4, 1, 'Headphones', 'Noise-cancelling headphones', 150.00, 30, TO_DATE('2025-01-03 10:30:00', 'YYYY-MM-DD HH24:MI:SS')),
+(5, 1, 'Tablet', '10-inch Android tablet', 300.00, 20, TO_DATE('2025-01-04 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(6, 1, 'Smart Watch', 'Fitness tracking smartwatch', 200.00, 40, TO_DATE('2025-01-05 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+(7, 1, 'Bluetooth Speaker', NULL, 70.00, 50, TO_DATE('2025-01-06 09:00:00', 'YYYY-MM-DD HH24:MI:SS')),  
+    (8, 2, 'Refrigerator', 'Double-door refrigerator', 1500.00, 5, TO_DATE('2025-01-07 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (9, 2, 'Washing Machine', 'Front-load washing machine', 800.00, 8, TO_DATE('2025-01-08 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (10, 3, 'Novel', 'Bestselling novel of the year', 20.00, 100, TO_DATE('2025-01-09 12:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (11, 4, 'T-shirt', 'Cotton t-shirt in various colors', 25.00, 200, TO_DATE('2025-01-10 14:30:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (12, 5, 'Soccer Ball', 'Official size soccer ball', 30.00, 150, TO_DATE('2025-01-11 10:15:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (13, 6, 'Action Figure', NULL, 15.00, 300, TO_DATE('2025-01-12 11:45:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (14, 7, 'Sofa Set', 'Luxury leather sofa set', 2500.00, 2, TO_DATE('2025-01-13 09:30:00', 'YYYY-MM-DD HH24:MI:SS'));
 
 -- Insert into ShoppingCart
 INSERT INTO ShoppingCart (cart_id, user_id, product_id, quantity, added_at) VALUES
@@ -86,9 +115,13 @@ INSERT INTO ShoppingCart (cart_id, user_id, product_id, quantity, added_at) VALU
 (5, 4, 5, 1, TO_DATE('2025-01-18 11:15:00', 'YYYY-MM-DD HH24:MI:SS')),
 (6, 5, 6, 1, TO_DATE('2025-01-19 12:00:00', 'YYYY-MM-DD HH24:MI:SS')),
 (7, 6, 7, 0, TO_DATE('2025-01-20 14:30:00', 'YYYY-MM-DD HH24:MI:SS')),
-(8, 1, 8, 1, TO_DATE('2025-01-21 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(9, 6, 9, 2, TO_DATE('2025-01-22 15:00:00', 'YYYY-MM-DD HH24:MI:SS')),
-(10, 7, 10, 1, TO_DATE('2025-01-23 16:00:00', 'YYYY-MM-DD HH24:MI:SS'));
+    (8, 7, 8, 1, TO_DATE('2025-01-21 10:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (9, 1, 9, 2, TO_DATE('2025-01-22 11:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (10, 2, 10, 3, TO_DATE('2025-01-23 12:30:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (11, 3, 11, 4, TO_DATE('2025-01-24 14:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (12, 4, 12, 1, TO_DATE('2025-01-25 09:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (13, 5, 13, NULL, TO_DATE('2025-01-26 15:00:00', 'YYYY-MM-DD HH24:MI:SS')),
+    (14, 6, 14, NULL, TO_DATE('2025-01-27 17:00:00', 'YYYY-MM-DD HH24:MI:SS'));
 
 -- Insert into Orders
 INSERT INTO Orders (order_id, user_id, order_date, total_amount, status) VALUES
@@ -99,9 +132,14 @@ INSERT INTO Orders (order_id, user_id, order_date, total_amount, status) VALUES
 (5, 5, TO_DATE('2025-01-20 09:00:00', 'YYYY-MM-DD HH24:MI:SS'), 200.00, 'Pending'),
 (6, 6, TO_DATE('2025-01-21 15:00:00', 'YYYY-MM-DD HH24:MI:SS'), 140.00, 'Pending'),
 (7, 7, TO_DATE('2025-01-22 17:00:00', 'YYYY-MM-DD HH24:MI:SS'), 140.00, 'Pending'),
-(8, 1, TO_DATE('2025-01-24 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 400.00, 'Pending'),
-(9, 6, TO_DATE('2025-01-25 11:00:00', 'YYYY-MM-DD HH24:MI:SS'), 1000.00, 'Pending'),
-(10, 7, TO_DATE('2025-01-26 12:00:00', 'YYYY-MM-DD HH24:MI:SS'), 250.00, 'Pending');
+    
+        (8, 1, TO_DATE('2025-01-23 10:00:00', 'YYYY-MM-DD HH24:MI:SS'), 200.00, 'Pending'),
+        (9, 2, TO_DATE('2025-01-24 11:00:00', 'YYYY-MM-DD HH24:MI:SS'), 60.00, 'Pending'),
+        (10, 3, TO_DATE('2025-01-25 12:30:00', 'YYYY-MM-DD HH24:MI:SS'), 100.00, 'Pending'),
+        (11, 4, TO_DATE('2025-01-26 14:00:00', 'YYYY-MM-DD HH24:MI:SS'), 25.00, 'Pending'),
+        (12, 5, TO_DATE('2025-01-27 09:00:00', 'YYYY-MM-DD HH24:MI:SS'), 15.00, 'Pending'),
+        (13, 6, TO_DATE('2025-01-28 15:00:00', 'YYYY-MM-DD HH24:MI:SS'), NULL, 'Pending'),
+        (14, 7, TO_DATE('2025-01-29 17:00:00', 'YYYY-MM-DD HH24:MI:SS'), NULL, 'Pending');
 
 -- Insert into OrderDetails
 INSERT INTO OrderDetails (order_detail_id, order_id, product_id, quantity, price) VALUES
@@ -112,13 +150,19 @@ INSERT INTO OrderDetails (order_detail_id, order_id, product_id, quantity, price
 (5, 4, 5, 1, 300.00),
 (6, 5, 6, 1, 200.00),
 (7, 6, 7, 0, 70.00),
-(8, 8, 8, 1, 400.00),
-(9, 9, 9, 2, 500.00),
-(10, 10, 10, 1, 250.00);
+(8, 7, 8, 1, 150.00),
+(9, 8, 9, 2, 800.00),
+(10, 9, 10, 3, 20.00),
+(11, 10, 11, 4, 25.00),
+(12, 11, 12, 1, 30.00),
+(13, 12, 13, NULL, 15.00),
+(14, 13, 14, NULL, NULL);
 
 -- SQL Exercises
--- 1. if user 1 wants to change the quantity of product_id = 1 (Laptop) from 2 to 5.
--- UPDATE ShoppingCart
+-- 1. if user 1 wants to change the quantity of product_id = 1 (Laptop) from 2 to 5 in the cart:
+UPDATE ShoppingCart
+SET quantity = 5
+WHERE user_id = 1 AND product_id = 1;
 -- 2. How to remove product_id = 7 (Bluetooth Speaker) from user 6's cart:
 DELETE FROM ShoppingCart
 WHERE user_id = 6 AND product_id = 7;
@@ -136,6 +180,11 @@ SELECT product_name || ' - ' || description AS full_name
 -- 7. to get the first 3 characters from the product_name:
 SELECT SUBSTR(product_name, 1, 3) AS short_name
 FROM products;
+-- or
+SELECT LEFT(product_name, 3) AS short_name
+FROM products;
+
+
 -- 8. to find products that cost more than $100 and have a stock quantity greater than 10:
 SELECT * FROM Products
 WHERE price > 100 AND stock_quantity > 10;
@@ -152,14 +201,6 @@ WHERE product_id NOT IN (1, 3, 5);
 SELECT * FROM Products
 WHERE SUBSTR(product_name, 2, 1) = 'a';
 
--- 9. to find products whose product_name does not start with the letter "A":
--- <SQL Solution>
-
--- 10. to find products with product_id values 2, 4, or 6:
--- <SQL Solution>
-
--- 11. to find products where the product_id is not 1, 3, or 5:
--- <SQL Solution>
-
--- 12. to find product names where the second character is "a":
--- <SQL Solution>
+-- or 
+SELECT * FROM Products
+WHERE product_name LIKE '_a%' 
