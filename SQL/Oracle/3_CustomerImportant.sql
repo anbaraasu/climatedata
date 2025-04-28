@@ -27,6 +27,7 @@ The order of evaluation is as follows:
 
 SELECT first_name, last_name FROM hr.employees ORDER BY first_name FETCH FIRST 5 ROWS ONLY;
 SELECT first_name, last_name FROM hr.employees WHERE ROWNUM <= 6;
+-- SELECT first_name, last_name FROM hr.employees LIMIT 5; (SQLITE, MYSQL);
 
 -- Using Substitution Variables
 -- Substitution variables are used in SQL*Plus to prompt the user for input values. Substitution variables are defined using the DEFINE command and are referenced using the & symbol.

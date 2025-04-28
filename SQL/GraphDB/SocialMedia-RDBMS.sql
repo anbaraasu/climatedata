@@ -57,3 +57,4 @@ CREATE TABLE friendships (
     FOREIGN KEY (user_id1) REFERENCES users(user_id),
     FOREIGN KEY (user_id2) REFERENCES users(user_id)
 );
+
